@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نمشي — مشوار المليون خطوة بيبدأ بخطوة</title>
+<meta name="description" content="نمشي بيعدّ خطواتك، يحطك في تحديات مع صحابك وفريقك، ويحوّل المشي لعادة. يُعرض الآن على Google Play و App Store.">
+<meta name="theme-color" content="#120d0b">
+<meta property="og:title" content="Namshi — A million-step journey starts with one step">
+<meta property="og:image" content="video/namshi-hero-plate-poster.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23120d0b%22 stroke=%22%23f1e6d2%22 stroke-width=%222%22/%3E%3Cg transform=%22translate(4.5 4.5) scale(.95)%22 fill=%22none%22 stroke=%22%23f1e6d2%22 stroke-width=%222.1%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Ccircle cx=%2213.6%22 cy=%224.2%22 r=%221.9%22 fill=%22%23f1e6d2%22 stroke=%22none%22/%3E%3Cpath d=%22M12.6 8.2 10.8 14M10.8 14l2.6 3.2L13 21M10.8 14l-1.9 3.4-2.3 2.8M12.4 9.2l-3 2.2-.8 2.2M12.4 9.2l2.4 2.4 2.2.8%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rakkas&family=Noto+Naskh+Arabic:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root {
+	--black: #120d0b;
+	--black-2: #1c1512;
+	--black-3: #2a201b;
+	--rule: #4a3d35;
+	--bone: #f1e6d2;
+	--bone-dim: #bdb2a0;
+	--bone-faint: #9d9282;
+	--red: #d8362b;
+	--saffron: #f2a93b;
+	--saffron-hover: #ffc164;
+	--paper: #f1e6d2;
+	--paper-ink: #1c1411;
+	--paper-dim: #5a4c42;
+	--paper-red: #a8241b;
+	--paper-rule: #cdbfa7;
+	--gutter: clamp(16px, 4vw, 56px);
+	--max: 1280px;
+	--display: 'Rakkas', 'Noto Naskh Arabic', serif;
+	--text: 'Noto Naskh Arabic', 'Source Serif 4', serif;
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	color-scheme: dark;
+}
+html[lang="en"] { --text: 'Source Serif 4', 'Noto Naskh Arabic', serif; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scrollbar-color: var(--rule) var(--black); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--black); color: var(--bone); font-family: var(--text); font-size: 1.125rem; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+/* The film's grain carries off the hero onto every printed surface */
+body::after { content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: 0.14; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.9 0 0 0 0 0.82 0 0 0 14 -9.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+html[lang="en"] body { line-height: 1.6; }
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+button { font: inherit; color: inherit; }
+::selection { background: var(--saffron); color: var(--black); }
+:focus-visible { outline: 2px solid var(--saffron); outline-offset: 3px; border-radius: 4px; }
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 99px; border: 3px solid var(--black); }
+
+.wrap { width: min(100%, var(--max)); margin-inline: auto; padding-inline: var(--gutter); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; inset-inline-start: 16px; top: -60px; z-index: 100; background: var(--saffron); color: var(--black); padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: 700; }
+.skip:focus { top: 12px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.num { direction: ltr; unicode-bidi: isolate; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* Double rule: the printed programme's frame line */
+.dbl { border-block: 1.5px solid currentColor; padding-block: 6px; position: relative; }
+.dbl::before { content: ""; position: absolute; inset-inline: 0; top: 3px; bottom: 3px; border-block: 1px solid currentColor; opacity: 0.55; pointer-events: none; }
+
+/* ---------- Mark (temporary) ---------- */
+.mark { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.mark-o { width: 44px; height: 44px; border-radius: 50%; border: 2px solid currentColor; display: grid; place-items: center; }
+.mark-o svg { width: 26px; height: 26px; }
+.mark-t { font-family: var(--display); font-size: 1.7rem; line-height: 1; }
+
+/* ---------- Buttons ---------- */
+.stores { display: flex; flex-wrap: wrap; gap: 12px; }
+.store { display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding-block: 8px; padding-inline: 16px 22px; border-radius: 6px; text-decoration: none; border: 1.5px solid var(--bone); color: var(--bone); background: rgba(18, 13, 11, 0.55); transition: background-color 160ms, color 160ms, border-color 160ms, transform 160ms var(--ease-out); }
+.store:hover { background: var(--bone); color: var(--black); }
+.store:active { transform: scale(0.97); }
+.store.is-primary { background: var(--saffron); border-color: var(--saffron); color: var(--black); }
+.store.is-primary:hover { background: var(--saffron-hover); border-color: var(--saffron-hover); }
+.store svg { width: 26px; height: 26px; }
+.store-t { display: flex; flex-direction: column; line-height: 1.15; text-align: start; }
+.store-t small { font-size: 0.8rem; }
+.store-t b { font-family: 'Source Serif 4', serif; font-size: 1.2rem; font-weight: 700; direction: ltr; unicode-bidi: isolate; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.98rem; cursor: pointer; border: 1.5px solid transparent; transition: background-color 160ms, color 160ms, border-color 160ms; }
+.btn-go { background: var(--saffron); color: var(--black); }
+.btn-go:hover { background: var(--saffron-hover); }
+.btn-line { border-color: var(--bone); background: rgba(18, 13, 11, 0.4); }
+.btn-line:hover { background: var(--bone); color: var(--black); }
+
+/* ---------- Nav ---------- */
+.nav { position: absolute; inset-inline: 0; top: 0; z-index: 20; }
+.nav-in { height: 84px; display: flex; align-items: center; gap: 20px; }
+.nav-links { display: flex; gap: 2px; margin-inline-start: auto; }
+.nav-links a { padding: 8px 14px; border-radius: 4px; text-decoration: none; color: var(--bone); font-size: 1rem; text-shadow: 0 1px 12px rgba(0,0,0,0.5); }
+.nav-links a:hover { text-decoration: underline; }
+.nav-end { display: flex; align-items: center; gap: 10px; }
+.lang { min-height: 44px; min-width: 44px; padding: 0 14px; border-radius: 6px; border: 1.5px solid var(--bone); background: rgba(18, 13, 11, 0.4); cursor: pointer; font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px; }
+.lang:hover { background: var(--bone); color: var(--black); }
+@media (max-width: 900px) { .nav-links { display: none; } .nav-end { margin-inline-start: auto; } }
+@media (max-width: 560px) { .nav .btn-go { display: none; } }
+
+/* ---------- Hero: the film, edge to edge ---------- */
+.hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; background: var(--black); }
+.hero video, .hero .poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; z-index: -2; }
+@media (max-aspect-ratio: 3/4) { .hero video { object-position: 56% 30%; } }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background:
+	linear-gradient(0deg, rgba(18,13,11,0.96) 0%, rgba(18,13,11,0.86) 34%, rgba(18,13,11,0.35) 58%, rgba(18,13,11,0.1) 72%, rgba(18,13,11,0.6) 100%); }
+.hero-in { width: 100%; padding-block: 140px clamp(36px, 6vh, 72px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: end; }
+.now { margin-top: 24px; }
+.now span { display: inline-block; font-family: var(--display); font-size: 1.1rem; color: var(--bone); padding-inline: 6px; }
+html[lang="en"] .now span { letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.95rem; }
+.hero h1 { font-size: clamp(3rem, 8.4vw, 7.4rem); line-height: 1.12; text-shadow: 3px 2px 0 var(--red); }
+/* Rakkas closes Arabic word spaces almost to nothing at display size; open them back up. */
+html[lang="ar"] h1 { word-spacing: 0.22em; }
+html[lang="ar"] h2 { word-spacing: 0.06em; }
+.hero h1 .l2 { display: block; color: var(--saffron); }
+html[lang="en"] .hero h1 { font-size: clamp(2.6rem, 6.6vw, 6rem); line-height: 1.02; }
+.hero .subtitle { margin-top: 14px; font-family: 'Source Serif 4', serif; font-size: clamp(1.05rem, 1.6vw, 1.35rem); color: var(--bone-dim); font-style: italic; }
+html[lang="en"] .hero .subtitle { font-family: 'Noto Naskh Arabic', serif; font-style: normal; }
+html[dir="rtl"] .hero .subtitle { text-align: right; }
+html[dir="ltr"] .hero .subtitle { text-align: left; }
+.hero .stores { margin-top: 30px; }
+.credit { margin-top: 22px; color: var(--bone-dim); font-size: 1rem; }
+.credit b { color: var(--bone); font-weight: 700; }
+.credit .tag { color: var(--bone-faint); font-size: 0.9rem; }
+.hero-side { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+html[dir="rtl"] .hero-side { align-items: flex-start; }
+.reel { text-align: end; }
+html[dir="rtl"] .reel { text-align: start; }
+.reel small { display: block; color: var(--bone-dim); font-size: 0.92rem; }
+.film-ctl { display: flex; gap: 8px; }
+.film-ctl button { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 14px; border-radius: 6px; border: 1.5px solid var(--bone); background: rgba(18, 13, 11, 0.55); cursor: pointer; font-weight: 700; font-size: 0.95rem; }
+.film-ctl button:hover { background: var(--bone); color: var(--black); }
+.film-ctl svg { width: 18px; height: 18px; }
+@media (max-width: 860px) {
+	.hero-in { grid-template-columns: 1fr; padding-top: 120px; }
+	.hero-side { align-items: flex-start; }
+	html[dir="rtl"] .hero-side { align-items: flex-start; }
+	.reel { text-align: start; }
+	.stores { display: grid; grid-template-columns: 1fr 1fr; }
+	.store { padding-inline: 12px 14px; }
+	.store-t b { font-size: 1.05rem; }
+}
+
+/* Letterboard: every figure sits in fixed slots, like a cinema marquee */
+.board { display: inline-flex; direction: ltr; gap: 4px; }
+.board span { display: inline-grid; place-items: center; width: 1.02em; height: 1.4em; background: var(--black-2); border: 1px solid var(--rule); border-radius: 3px; font-family: var(--display); line-height: 1; }
+.board span.sep { width: 0.42em; background: none; border: 0; }
+.reel .board { font-size: 1.5rem; }
+
+/* ---------- The week: a printed programme page ---------- */
+.week { background: var(--paper); color: var(--paper-ink); padding-block: clamp(72px, 9vw, 128px); }
+.week { position: relative; isolation: isolate; }
+.week::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.3; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.week ::selection { background: var(--paper-ink); color: var(--paper); }
+.week :focus-visible { outline-color: var(--paper-red); }
+.week-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.week h2 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.15; color: var(--paper-ink); }
+.week h2 em { font-style: normal; color: var(--paper-red); }
+.box { margin-top: 34px; color: var(--paper-ink); }
+.box-l { font-family: var(--display); font-size: 1.3rem; }
+.week .board { margin-top: 12px; font-size: clamp(1.6rem, 4.2vw, 3.3rem); }
+.week .board span { background: var(--paper-ink); color: var(--paper); border-color: var(--paper-ink); }
+.week .board span.sep { background: none; color: var(--paper-ink); }
+.cast { margin-top: 30px; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.7; max-width: 30ch; }
+.cast b { color: var(--paper-red); font-weight: 700; }
+.basis { margin-top: 16px; color: var(--paper-dim); font-size: 0.98rem; max-width: 48ch; }
+.sample { margin-top: 10px; display: inline-flex; align-items: center; gap: 8px; color: var(--paper-dim); font-size: 0.95rem; }
+.sample svg { width: 18px; height: 18px; }
+.programme { color: var(--paper-ink); }
+.programme h3 { font-size: 1.6rem; padding-block: 10px; text-align: center; }
+.sched { list-style: none; margin: 18px 0 0; padding: 0; }
+.sched li { display: flex; align-items: baseline; gap: 10px; padding-block: 11px; border-bottom: 1px solid var(--paper-rule); font-size: 1.1rem; }
+.sched .d { font-weight: 700; }
+.sched .lead { flex: 1; border-bottom: 2px dotted var(--paper-rule); transform: translateY(-5px); min-width: 20px; }
+.sched .v { font-family: 'Source Serif 4', serif; font-weight: 600; direction: ltr; font-variant-numeric: tabular-nums; }
+.sched li.is-today .d, .sched li.is-today .v { color: var(--paper-red); }
+.sched li.is-later { color: var(--paper-dim); }
+.sched li.is-later .v { font-family: var(--text); font-weight: 400; }
+@media (max-width: 900px) { .week-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Scenes: the film strip ---------- */
+.scenes { position: relative; background: var(--black); }
+.scenes-head { padding-block: clamp(72px, 9vw, 120px) 32px; }
+.scenes-head h2 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.15; }
+.scenes-head p { margin-top: 14px; color: var(--bone-dim); max-width: 48ch; font-size: 1.15rem; }
+.strip-rail { position: relative; }
+.strip-stage { overflow: hidden; }
+.strip { list-style: none; margin: 0; padding: 56px 0 44px; display: flex; gap: 0; background: #070504; width: max-content; position: relative; }
+.strip::before, .strip::after { content: ""; position: absolute; inset-inline: 0; height: 18px; background-image: radial-gradient(circle at center, transparent 0, transparent 0), repeating-linear-gradient(90deg, transparent 0 14px, var(--black-3) 14px 30px, transparent 30px 36px); }
+.strip::before { top: 10px; }
+.strip::after { bottom: 10px; }
+.frame { width: clamp(300px, 34vw, 460px); padding-inline: 18px; display: grid; grid-template-columns: 1fr; gap: 16px; border-inline-end: 2px solid #000; }
+.frame figure { margin: 0; aspect-ratio: 9 / 13; overflow: hidden; border-radius: 4px; background: #000; }
+.frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: sepia(0.12) contrast(1.02); }
+.frame .cap { color: var(--bone); }
+.frame { position: relative; }
+/* Edge print: the scene number sits on the film's own margin, not above the heading */
+.edge { position: absolute; top: -26px; inset-inline-start: 22px; direction: ltr; font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.18em; color: var(--saffron); white-space: nowrap; }
+.frame h3 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); line-height: 1.2; margin-top: 2px; }
+.frame p { margin-top: 8px; color: var(--bone-dim); font-size: 1.02rem; line-height: 1.7; }
+.frame .note { margin-top: 6px; font-size: 0.92rem; color: var(--bone-faint); }
+.strip-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px 72px; color: var(--bone-dim); }
+.strip-count { font-family: var(--display); font-size: 1.2rem; color: var(--bone); }
+.strip-bar { flex: 1; height: 3px; background: var(--rule); border-radius: 3px; overflow: hidden; }
+.strip-bar i { display: block; height: 100%; width: var(--p, 0%); background: var(--saffron); }
+/* Scroll drives the strip on wide screens; small screens and reduced motion swipe it natively. */
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+	.js .strip-rail { height: var(--rail-h, 400vh); }
+	.js .strip-sticky { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+	.js .strip { transform: translateX(var(--x, 0px)); will-change: transform; }
+	.js .strip-foot { padding-bottom: 0; }
+	.frame { width: min(720px, 56vw); grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 28px; padding-inline: 26px; }
+	.frame figure { height: min(62vh, 620px); aspect-ratio: 9 / 16; }
+	.frame .cap { max-width: 30ch; }
+	.frame h3 { font-size: clamp(1.9rem, 2.6vw, 2.6rem); }
+}
+@media (max-width: 899px), (prefers-reduced-motion: reduce) {
+	.strip-stage { overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; }
+	.frame { scroll-snap-align: start; width: min(82vw, 380px); }
+	.strip-stage::-webkit-scrollbar { height: 0; }
+}
+
+/* ---------- The legal card, cinema style ---------- */
+.card-sec { padding-block: clamp(72px, 9vw, 128px); border-top: 1px solid var(--rule); }
+.legal { max-width: 900px; margin-inline: auto; text-align: center; color: var(--bone); padding: clamp(28px, 5vw, 56px) clamp(20px, 5vw, 64px); }
+.legal h2 { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.25; }
+.legal p { margin-top: 24px; font-size: clamp(1.15rem, 1.8vw, 1.45rem); line-height: 1.9; color: var(--bone-dim); }
+html[lang="en"] .legal p { line-height: 1.6; }
+.legal em { font-style: normal; color: var(--bone); font-weight: 700; }
+
+/* ---------- FAQ ---------- */
+.faq { padding-block: clamp(72px, 9vw, 128px); border-top: 1px solid var(--rule); }
+.faq-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.faq h2 { font-size: clamp(2.2rem, 4.4vw, 3.8rem); line-height: 1.2; }
+.faq-list { border-top: 1.5px solid var(--bone); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 4px; font-weight: 700; font-size: 1.15rem; line-height: 1.5; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--saffron); }
+.faq summary svg { transition: transform 240ms var(--ease-out); color: var(--bone-dim); }
+.faq details[open] summary svg { transform: rotate(45deg); }
+.faq details p { padding: 0 4px 22px; color: var(--bone-dim); max-width: 60ch; }
+@media (max-width: 860px) { .faq-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Now showing ---------- */
+.showing { border-top: 1px solid var(--rule); padding-block: clamp(80px, 11vw, 150px); text-align: center; }
+.showing h2 { font-size: clamp(3.4rem, 11vw, 9rem); line-height: 1.05; color: var(--bone); text-shadow: 4px 3px 0 var(--red); }
+.showing h2 span { display: block; color: var(--saffron); font-size: clamp(1.8rem, 5.5vw, 4.5rem); margin-top: 10px; }
+.showing .lead { margin: 26px auto 0; max-width: 40ch; color: var(--bone-dim); font-size: 1.2rem; }
+.showing-act { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px; }
+.ticket { display: flex; align-items: stretch; background: var(--paper); color: var(--paper-ink); border-radius: 6px; text-align: start; position: relative; }
+.ticket-l { padding: 14px 18px; display: flex; flex-direction: column; justify-content: center; border-inline-end: 2px dashed var(--paper-rule); }
+.ticket-l b { font-family: var(--display); font-weight: 400; font-size: 1.3rem; line-height: 1.2; }
+.ticket-l small { color: var(--paper-dim); font-size: 0.88rem; }
+.ticket-r { padding: 12px; display: grid; place-items: center; }
+.qr-box { width: 78px; height: 78px; border: 1.5px dashed var(--paper-dim); border-radius: 4px; display: grid; place-items: center; color: var(--paper-dim); }
+@media (max-width: 760px) { .ticket { display: none; } }
+
+/* ---------- Footer ---------- */
+.foot { border-top: 1px solid var(--rule); padding-block: 36px; color: var(--bone-faint); font-size: 0.95rem; }
+.foot-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--bone); text-decoration: underline; }
+.foot .mark { color: var(--bone); }
+.foot .mark-o { width: 36px; height: 36px; }
+.foot .mark-o svg { width: 20px; height: 20px; }
+.foot .mark-t { font-size: 1.4rem; }
+
+/* ---------- Full film dialog ---------- */
+dialog.theatre { width: min(96vw, 1280px); padding: 0; border: 0; background: #000; color: var(--bone); border-radius: 6px; }
+dialog.theatre::backdrop { background: rgba(8, 5, 4, 0.9); }
+.theatre video { width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.theatre-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px; }
+.theatre-bar p { color: var(--bone-dim); font-size: 0.95rem; }
+
+/* ---------- Motion: content visible by default ---------- */
+@media (prefers-reduced-motion: no-preference) {
+	.js .rise { opacity: 0; transform: translateY(22px); transition: opacity 800ms var(--ease-out), transform 1000ms var(--ease-out); }
+	.js .rise.is-in { opacity: 1; transform: none; }
+	.hero h1 .l1, .hero h1 .l2 { animation: stamp 900ms var(--ease-out) both; }
+	.hero h1 .l2 { animation-delay: 220ms; }
+	@keyframes stamp { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content">تخطّى للمحتوى</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+	<defs>
+		<symbol id="i-walker" viewBox="0 0 24 24"><circle cx="13.6" cy="4.2" r="1.9" fill="currentColor" stroke="none"/><path d="M12.6 8.2 10.8 14M10.8 14l2.6 3.2L13 21M10.8 14l-1.9 3.4-2.3 2.8M12.4 9.2l-3 2.2-.8 2.2M12.4 9.2l2.4 2.4 2.2.8" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+		<symbol id="i-play-store" viewBox="0 0 24 24"><path d="M4.6 2.9 13.9 12l-9.3 9.1c-.3-.2-.5-.6-.5-1V3.9c0-.4.2-.8.5-1Z" fill="currentColor"/><path d="m15.2 10.7-9-7.4 11.3 6.2-2.3 1.2Z M15.2 13.3l2.3 1.2-11.3 6.2 9-7.4Z M18.8 9.9l2 1.1c.8.5.8 1.5 0 2l-2 1.1-2.4-2.1 2.4-2.1Z" fill="currentColor"/></symbol>
+		<symbol id="i-apple" viewBox="0 0 24 24"><path d="M16.5 12.7c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8s-1.8-.8-3-.8c-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.6ZM14.2 5.7c.6-.8 1.1-1.8 1-2.9-1 0-2.1.7-2.8 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.8-1.3Z" fill="currentColor"/></symbol>
+		<symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+		<symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.8v14.4a.8.8 0 0 0 1.2.7l11.2-7.2a.8.8 0 0 0 0-1.4L8.2 4.1A.8.8 0 0 0 7 4.8Z" fill="currentColor"/></symbol>
+		<symbol id="i-sound" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></g></symbol>
+		<symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z"/></g></symbol>
+		<symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></g></symbol>
+		<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+		<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+		<symbol id="i-qr" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="6" height="6" rx="1"/><rect x="14.5" y="3.5" width="6" height="6" rx="1"/><rect x="3.5" y="14.5" width="6" height="6" rx="1"/><path d="M14.5 14.5h2.5v2.5h-2.5zM18 18h2.5v2.5H18zM14.5 20.5h1M20.5 14.5v1" stroke-linecap="round"/></g></symbol>
+	</defs>
+</svg>
+
+<header class="nav">
+	<div class="wrap nav-in">
+		<!-- TEMPORARY LOGO: a stand-in until the brand team delivers the mark. -->
+		<a class="mark" href="#top" aria-label="نمشي — الرئيسية" data-en-aria="Namshi — home">
+			<span class="mark-o"><svg><use href="#i-walker"/></svg></span><span class="mark-t" data-en="Namshi">نمشي</span>
+		</a>
+		<nav class="nav-links" aria-label="الأقسام" data-en-aria="Sections">
+			<a href="#week" data-en="This week">الأسبوع ده</a>
+			<a href="#scenes" data-en="The scenes">المشاهد</a>
+			<a href="#faq" data-en="Questions">أسئلة</a>
+		</nav>
+		<div class="nav-end">
+			<button class="lang" type="button" id="lang" aria-label="Switch to English" data-en-aria="التحويل للعربي"><svg class="i"><use href="#i-globe"/></svg><span id="lang-t" lang="en" data-en="عربي">English</span></button>
+			<a class="btn btn-go" href="#showing" data-en="Get the app">حمّل التطبيق</a>
+		</div>
+	</div>
+</header>
+
+<main id="main">
+	<section class="hero" id="top" aria-labelledby="hero-h">
+		<video id="plate" muted playsinline loop preload="metadata" poster="video/namshi-hero-plate-poster.jpg" aria-hidden="true">
+			<source src="video/namshi-hero-plate-1280x720.mp4" type="video/mp4">
+		</video>
+		<div class="wrap hero-in">
+			<div>
+				<h1 id="hero-h"><span class="l1" data-en="A million-step journey">مشوار المليون خطوة</span> <span class="l2" data-en="starts with one step.">بيبدأ بخطوة.</span></h1>
+				<p class="subtitle" data-en="مشوار المليون خطوة بيبدأ بخطوة." lang="en" dir="ltr">A million-step journey starts with one step.</p>
+				<div class="stores">
+					<a class="store" href="#" data-store="play"><svg><use href="#i-play-store"/></svg><span class="store-t"><small data-en="Get it on">حمّله من</small><b>Google Play</b></span></a>
+					<a class="store" href="#" data-store="apple"><svg><use href="#i-apple"/></svg><span class="store-t"><small data-en="Download on the">نزّله من</small><b>App Store</b></span></a>
+				</div>
+				<p class="now"><span class="dbl" data-en="Now showing on Google Play and the App Store">يُعرض الآن على Google Play و App Store</span></p>
+				<p class="credit" data-en="Starring <b><span class='num' data-live='walkers'>18,426</span> Egyptians</b> this week <span class='tag'>(sample figures)</span>">بطولة <b><span class="num" data-live="walkers">18,426</span> مصري ومصرية</b> الأسبوع ده <span class="tag">(أرقام توضيحية)</span></p>
+			</div>
+			<div class="hero-side">
+				<div class="reel" aria-hidden="true">
+					<small data-en="Steps this week">خطوات الأسبوع</small>
+					<span class="board" data-board="steps"></span>
+				</div>
+				<div class="film-ctl">
+					<button type="button" id="plate-ctl" aria-label="إيقاف الفيلم" data-en-aria="Pause the film"><svg class="i"><use href="#i-pause"/></svg></button>
+					<button type="button" id="watch"><svg class="i"><use href="#i-sound"/></svg><span data-en="Watch with sound">شوف الفيلم بالصوت</span></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="week" id="week" aria-labelledby="week-h">
+		<div class="wrap week-grid">
+			<div>
+				<h2 id="week-h" class="rise" data-en="This week, Egypt <em>walked</em>">الأسبوع ده، مصر <em>مشيت</em></h2>
+				<div class="box rise">
+					<p class="box-l" data-en="The week's box office, in steps">إيرادات الأسبوع، بالخطوة</p>
+					<p><span class="board" data-board="steps" role="img" aria-label="314,429,950 خطوة"></span></p>
+				</div>
+				<p class="cast rise" data-en="Starring <b><span class='num' data-live='walkers'>18,426</span> Egyptians</b>, walking together about <b><span class='num' data-live='trips'>314</span> trips</b> from Cairo to Luxor since Saturday.">بطولة <b><span class="num" data-live="walkers">18,426</span> مصري ومصرية</b>، مشيوا مع بعض حوالي <b><span class="num" data-live="trips">314</span> مشوار</b> من القاهرة للأقصر من السبت لحد النهارده.</p>
+				<p class="basis" data-en="Every million steps is roughly Cairo to Luxor, at an average step of about 65 cm.">كل مليون خطوة ≈ مشوار من القاهرة للأقصر، على أساس إن متوسط الخطوة حوالي 65 سم.</p>
+				<p class="sample"><svg class="i"><use href="#i-info"/></svg><span data-en="Sample figures in this design, to be wired to the app's real totals.">أرقام توضيحية في نسخة التصميم دي، وهتتربط بأرقام التطبيق الحقيقية.</span></p>
+			</div>
+			<div class="programme rise">
+				<h3 class="dbl" data-en="This week's screenings">حفلات الأسبوع</h3>
+				<ol class="sched" id="sched" aria-label="الخطوات في كل يوم" data-en-aria="Steps on each day"></ol>
+			</div>
+		</div>
+	</section>
+
+	<section class="scenes" id="scenes" aria-labelledby="scenes-h">
+		<div class="wrap scenes-head">
+			<h2 id="scenes-h" class="rise" data-en="The scenes">المشاهد</h2>
+			<p class="rise" data-en="Six scenes from the app, taken from its real screens. Keep scrolling and the strip runs.">ست مشاهد من التطبيق، من شاشاته الحقيقية. كمّل نزول والشريط هيلفّ.</p>
+		</div>
+		<div class="strip-rail" id="rail">
+			<div class="strip-sticky">
+				<div class="strip-stage" id="stage" tabindex="0" role="region" aria-label="مشاهد من التطبيق" data-en-aria="Scenes from the app">
+					<ol class="strip" id="strip">
+						<li class="frame">
+							<figure><img src="stills/home.webp" width="540" height="1101" loading="lazy" alt="الشاشة الرئيسية في نمشي: دايرة الهدف اليومي 0 من 10,000 وزرار ابدأ العدّ" data-en-alt="Namshi home screen: the daily goal ring at 0 of 10,000 and a Start counting button"></figure>
+							<span class="edge" aria-hidden="true">NAMSHI · 01</span><div class="cap"><h3 data-en="Your first step">أول خطوة</h3><p data-en="Sign in with a code we send you. Your everyday steps come in from Health Connect or Apple Health; tap “Start counting” when you head out on purpose.">ادخل بكود بيوصلك. خطواتك العادية بتتسحب لوحدها من Health Connect أو Apple Health، ولما تنزل تمشي مخصوص دوس «ابدأ العدّ».</p></div>
+						</li>
+						<li class="frame">
+							<figure><img src="stills/challenges.webp" width="540" height="1101" loading="lazy" alt="شاشة التحديات: محارب الأسبوع 47,342 من 70,000 خطوة" data-en-alt="Challenges screen: Weekly Warrior at 47,342 of 70,000 steps"></figure>
+							<span class="edge" aria-hidden="true">NAMSHI · 02</span><div class="cap"><h3 data-en="Challenges">التحديات</h3><p data-en="A target and a deadline: 70,000 steps in a week, or a set distance in a month. Finish and earn points and badges.">هدف وميعاد: 70,000 خطوة في أسبوع، أو مسافة معيّنة في شهر. خلّصها واكسب نقط وشارات.</p><p class="note" data-en="Challenges count the walks you record in the app.">التحديات بتتحسب من المشاوير اللي بتسجّلها في التطبيق.</p></div>
+						</li>
+						<li class="frame">
+							<figure><img src="stills/friends.webp" width="540" height="1101" loading="lazy" alt="شاشة الصحاب: ترتيب الصحاب بعدد الخطوات" data-en-alt="Friends screen: friends ranked by steps"></figure>
+							<span class="edge" aria-hidden="true">NAMSHI · 03</span><div class="cap"><h3 data-en="Your friends">صحابك</h3><p data-en="Add friends by their personal code, no searching and no phone numbers, and see who's ahead of you.">ضيف صحابك بالكود الشخصي بتاعهم، من غير بحث ولا أرقام تليفونات، وشوف مين سابقك.</p><p class="note" data-en="They see your steps, never your route.">بيشوفوا خطواتك، عمرهم ما بيشوفوا طريقك.</p></div>
+						</li>
+						<li class="frame">
+							<figure><img src="stills/teams.webp" width="540" height="1101" loading="lazy" alt="شاشة الفرق: ترتيب الفرق بمجموع الخطوات" data-en-alt="Teams screen: teams ranked by total steps"></figure>
+							<span class="edge" aria-hidden="true">NAMSHI · 04</span><div class="cap"><h3 data-en="Your team">فريقك</h3><p data-en="Make a team for your class, your department or your friends and share the code. Recorded walks count for the team.">اعمل فريق لفصلك أو قسمك أو شلّتك وابعت الكود. المشاوير المسجّلة بتتحسب للفريق.</p></div>
+						</li>
+						<li class="frame">
+							<figure><img src="stills/challenge.webp" width="540" height="948" loading="lazy" alt="تفاصيل تحدّي: التقدّم 60% و19.5 كم اتمشوا" data-en-alt="Challenge detail: 60% progress, 19.5 km walked"></figure>
+							<span class="edge" aria-hidden="true">NAMSHI · 05</span><div class="cap"><h3 data-en="Every kilometre counts">كل كيلو بيفرق</h3><p data-en="Each challenge shows where you stand, what's left, and when it ends.">كل تحدّي بيوريك إنت فين، وفاضل قد إيه، وبيخلص إمتى.</p></div>
+						</li>
+						<li class="frame">
+							<figure><img src="stills/badges.webp" width="540" height="970" loading="lazy" alt="شاشة الشارات: أول خطوة، قاهر الحديقة، بطل السلسلة" data-en-alt="Badges screen: First Steps, Park Conqueror, Streak Master"></figure>
+							<span class="edge" aria-hidden="true">NAMSHI · 06</span><div class="cap"><h3 data-en="Rankings and badges">الترتيب والشارات</h3><p data-en="Competitions between people, friends and teams, with live standings. And a badge for every milestone.">مسابقات بين الأفراد والصحاب والفرق، وترتيب بيتحدّث طول المسابقة. وكل إنجاز ليه شارة.</p></div>
+						</li>
+					</ol>
+				</div>
+				<div class="wrap strip-foot" aria-hidden="true">
+					<span class="strip-count" dir="ltr"><span id="scene-n">1</span> / 6</span>
+					<span class="strip-bar"><i id="strip-bar"></i></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="card-sec" aria-labelledby="legal-h">
+		<div class="wrap">
+			<div class="legal dbl rise">
+				<h2 id="legal-h" data-en="Your steps are shared. Your route stays yours.">خطواتك لصحابك. وطريقك ليك لوحدك.</h2>
+				<p data-en="Friends see <em>your steps</em>, not <em>your route</em>. Location is on <em>only while you record</em> a walk you started. Lost signal? The walk <em>is saved on your phone</em> and sent when you&#39;re back. And every walk <em>is checked</em> before it counts in a competition, with a person reviewing anything that needs a second look.">صحابك بيشوفوا <em>خطواتك</em>، مش <em>طريقك</em>. الموقع بيشتغل <em>بس وإنت بتسجّل</em> مشوار بدأته بنفسك. النت فصل؟ المشوار <em>بيتحفظ على موبايلك</em> وبيتبعت أول ما يرجع. وكل مشوار <em>بيتراجع</em> قبل ما يتحسب في المسابقات، واللي محتاج نظرة تانية بيراجعه بني آدم مننا.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="faq" id="faq" aria-labelledby="faq-h">
+		<div class="wrap faq-grid">
+			<h2 id="faq-h" class="rise" data-en="Questions people ask">أسئلة بتتسأل كتير</h2>
+			<div class="faq-list">
+				<details><summary><span data-en="Is it on Android and iPhone?">التطبيق على أندرويد وآيفون؟</span><svg class="i"><use href="#i-plus"/></svg></summary><p data-en="Yes. Namshi is on Google Play and the App Store.">أيوه، نمشي موجود على Google Play وعلى App Store.</p></details>
+				<details><summary><span data-en="Do my everyday steps count?">خطواتي العادية طول اليوم بتتحسب؟</span><svg class="i"><use href="#i-plus"/></svg></summary><p data-en="Yes, in your daily stats and your 10,000-step goal. Challenges and competitions count the walks you record in the app.">أيوه، في إحصائياتك اليومية وهدف الـ 10,000 خطوة. أما التحديات والمسابقات فبتتحسب من المشاوير اللي بتسجّلها في التطبيق.</p></details>
+				<details><summary><span data-en="How do I make a team for my work or school?">أعمل فريق لشغلي أو مدرستي إزاي؟</span><svg class="i"><use href="#i-plus"/></svg></summary><p data-en="Create a team in the app and you get a code. Anyone who enters the code joins. For a big place, make one team per class or department.">اعمل فريق من التطبيق وهتاخد كود. أي حد يكتب الكود بينضم. ولو المكان كبير، اعمل فريق لكل فصل أو قسم.</p></details>
+				<details><summary><span data-en="Will my friends know where I live?">صحابي هيعرفوا أنا ساكن فين؟</span><svg class="i"><use href="#i-plus"/></svg></summary><p data-en="No. Friends see your steps and totals. Your route, start point and end point are never shown to them.">لأ. صحابك بيشوفوا خطواتك ومجموعك بس. طريقك ونقطة البداية والنهاية عمرها ما بتظهر لهم.</p></details>
+				<details><summary><span data-en="What if I lose signal mid-walk?">لو النت فصل وأنا ماشي؟</span><svg class="i"><use href="#i-plus"/></svg></summary><p data-en="Keep walking. The app records offline and sends everything once you're connected again.">كمّل مشي عادي. التطبيق بيسجّل من غير نت وبيبعت كل حاجة أول ما ترجع أونلاين.</p></details>
+			</div>
+		</div>
+	</section>
+
+	<section class="showing" id="showing" aria-labelledby="showing-h">
+		<div class="wrap">
+			<h2 id="showing-h" data-en="Now showing <span>on every phone</span>">يُعرض الآن <span>على كل موبايل</span></h2>
+			<p class="lead" data-en="Download Namshi and take the first step. The other 999,999 we'll count together.">نزّل نمشي وخد أول خطوة. والـ 999,999 الباقيين هنعدّهم سوا.</p>
+			<div class="showing-act">
+				<div class="stores">
+					<a class="store" href="#" data-store="play"><svg><use href="#i-play-store"/></svg><span class="store-t"><small data-en="Get it on">حمّله من</small><b>Google Play</b></span></a>
+					<a class="store" href="#" data-store="apple"><svg><use href="#i-apple"/></svg><span class="store-t"><small data-en="Download on the">نزّله من</small><b>App Store</b></span></a>
+				</div>
+				<div class="ticket" aria-hidden="true">
+					<div class="ticket-l"><b data-en="Admit one step">تذكرة دخول: خطوة واحدة</b><small data-en="QR code for the download link goes here">هنا هيتحط QR لرابط التحميل</small></div>
+					<div class="ticket-r"><span class="qr-box"><svg class="i" style="width:30px;height:30px"><use href="#i-qr"/></svg></span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer class="foot">
+	<div class="wrap foot-in">
+		<a class="mark" href="#top" aria-label="نمشي — لأعلى الصفحة" data-en-aria="Namshi — back to top"><span class="mark-o"><svg><use href="#i-walker"/></svg></span><span class="mark-t" data-en="Namshi">نمشي</span></a>
+		<nav aria-label="روابط" data-en-aria="Links"><a href="#" data-en="Privacy policy">سياسة الخصوصية</a><a href="#" data-en="Terms">الشروط</a><a href="#" data-en="Contact us">كلّمنا</a></nav>
+		<p data-en="© 2026 Namshi · Footage: Pexels and Mixkit (free licences)">© 2026 نمشي · اللقطات من Pexels و Mixkit (رخص مجانية)</p>
+	</div>
+</footer>
+
+<dialog class="theatre" id="theatre" aria-label="فيلم نمشي" data-en-aria="The Namshi film">
+	<video id="theatre-v" controls playsinline preload="none" data-src-ar="video/namshi-cinema-ar-web-1280x720.mp4" data-src-en="video/namshi-cinema-en-web-1280x720.mp4"></video>
+	<div class="theatre-bar">
+		<p data-en="The Namshi film, 24 seconds.">فيلم نمشي، 24 ثانية.</p>
+		<button class="btn btn-line" type="button" id="theatre-x"><svg class="i"><use href="#i-x"/></svg><span data-en="Close">اقفل</span></button>
+	</div>
+</dialog>
+
+<script>
+(() => {
+	const root = document.documentElement;
+	root.classList.add('js');
+	const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+	const fmt = (n) => Math.round(n).toLocaleString('en-US');
+	const $ = (s, el = document) => el.querySelector(s);
+	const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+	// ---------- Language ----------
+	let lang = 'ar';
+	function swap(to) {
+		$$('[data-en]').forEach((el) => { if (!el.dataset.ar) el.dataset.ar = el.innerHTML; el.innerHTML = to === 'en' ? el.dataset.en : el.dataset.ar; });
+		$$('[data-en-aria]').forEach((el) => { if (!el.dataset.arAria) el.dataset.arAria = el.getAttribute('aria-label') || ''; el.setAttribute('aria-label', to === 'en' ? el.dataset.enAria : el.dataset.arAria); });
+		$$('[data-en-alt]').forEach((el) => { if (!el.dataset.arAlt) el.dataset.arAlt = el.alt; el.alt = to === 'en' ? el.dataset.enAlt : el.dataset.arAlt; });
+		const sub = $('.subtitle');
+		sub.lang = to === 'en' ? 'ar' : 'en';
+		sub.dir = to === 'en' ? 'rtl' : 'ltr';
+		root.lang = to; root.dir = to === 'ar' ? 'rtl' : 'ltr';
+		$('#lang-t').lang = to === 'ar' ? 'en' : 'ar';
+		document.title = to === 'ar' ? 'نمشي — مشوار المليون خطوة بيبدأ بخطوة' : 'Namshi — A million-step journey starts with one step';
+		lang = to;
+		renderSched(); tick(true); layoutStrip(); setPlateIcon();
+	}
+	$('#lang').addEventListener('click', () => swap(lang === 'ar' ? 'en' : 'ar'));
+
+	// ---------- Stores: the visitor's own store leads ----------
+	const STORE = {play: 'https://play.google.com/store/apps/details?id=REPLACE_ME', apple: 'https://apps.apple.com/app/idREPLACE_ME'};
+	const ua = navigator.userAgent;
+	const os = /android/i.test(ua) ? 'play' : /iphone|ipad|ipod|macintosh/i.test(ua) && 'ontouchend' in document ? 'apple' : null;
+	$$('[data-store]').forEach((a) => {
+		a.href = STORE[a.dataset.store]; a.rel = 'noopener';
+		if (a.dataset.store === (os || 'play')) a.classList.add('is-primary');
+		if (os === 'apple' && a.dataset.store === 'apple') a.parentElement.prepend(a);
+	});
+	$$('a[href="#showing"].btn').forEach((a) => { if (os) { a.href = STORE[os]; a.rel = 'noopener'; } });
+
+	// ---------- The week (sample data, shaped like the real aggregate) ----------
+	const DAY_AR = ['السبت', 'الحد', 'الاتنين', 'التلات', 'الأربع', 'الخميس', 'الجمعة'];
+	const DAY_EN = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+	const SAMPLE = [118240110, 124905332, 121630480, 126410950, 119877300, 109402210, 97120880];
+	const now = new Date();
+	const today = (now.getDay() + 1) % 7;
+	const frac = Math.max(0.25, (now.getHours() * 60 + now.getMinutes()) / 1440);
+	const days = SAMPLE.map((v, i) => (i < today ? v : i === today ? Math.round(v * frac) : 0));
+	const state = {walkers: 18426, steps: days.reduce((a, b) => a + b, 0)};
+
+	function renderSched() {
+		$('#sched').innerHTML = days.map((v, i) => {
+			const cls = i === today ? 'is-today' : i > today ? 'is-later' : '';
+			const name = (lang === 'ar' ? DAY_AR : DAY_EN)[i];
+			const val = i > today ? (lang === 'ar' ? 'لسه' : 'not yet') : i === today ? `${fmt(v)} ${lang === 'ar' ? '· شغّالة' : '· showing'}` : fmt(v);
+			return `<li class="${cls}"><span class="d">${name}</span><span class="lead" aria-hidden="true"></span><span class="v">${val}</span></li>`;
+		}).join('');
+	}
+	renderSched();
+
+	// Letterboard: one slot per character, so a changing figure never reflows.
+	function board(el, text) {
+		if (el.dataset.t === text) return;
+		const slots = [...text];
+		if (el.children.length !== slots.length) el.innerHTML = slots.map((c) => `<span class="${c === ',' ? 'sep' : ''}">${c}</span>`).join('');
+		else slots.forEach((c, i) => { if (el.children[i].textContent !== c) el.children[i].textContent = c; });
+		el.dataset.t = text;
+	}
+	function tick(force) {
+		if (!force) { state.steps += 900 + Math.random() * 900; if (Math.random() < 0.06) state.walkers += 1; }
+		const v = {walkers: fmt(state.walkers), steps: fmt(state.steps), trips: fmt(Math.floor(state.steps / 1e6))};
+		$$('[data-live]').forEach((el) => (el.textContent = v[el.dataset.live]));
+		$$('[data-board="steps"]').forEach((el) => { board(el, v.steps); if (el.getAttribute('role') === 'img') el.setAttribute('aria-label', `${v.steps} ${lang === 'ar' ? 'خطوة' : 'steps'}`); });
+	}
+	tick(true);
+	if (!reduce) setInterval(tick, 800);
+
+	// ---------- Hero plate ----------
+	const plate = $('#plate');
+	const pctl = $('#plate-ctl');
+	let userPaused = reduce;
+	function setPlateIcon() {
+		$('use', pctl).setAttribute('href', plate.paused ? '#i-play' : '#i-pause');
+		pctl.setAttribute('aria-label', plate.paused ? (lang === 'ar' ? 'شغّل الفيلم' : 'Play the film') : (lang === 'ar' ? 'إيقاف الفيلم' : 'Pause the film'));
+	}
+	plate.addEventListener('play', setPlateIcon); plate.addEventListener('pause', setPlateIcon);
+	pctl.addEventListener('click', () => { if (plate.paused) { userPaused = false; plate.play().catch(() => {}); } else { userPaused = true; plate.pause(); } });
+	new IntersectionObserver(([e]) => { if (e.isIntersecting && !userPaused) plate.play().catch(setPlateIcon); else if (!e.isIntersecting) plate.pause(); }, {threshold: 0.2}).observe(plate);
+	setPlateIcon();
+
+	// ---------- The full film, with sound ----------
+	const dlg = $('#theatre');
+	const tv = $('#theatre-v');
+	$('#watch').addEventListener('click', () => {
+		const src = tv.dataset[lang === 'ar' ? 'srcAr' : 'srcEn'];
+		if (!tv.src.endsWith(src)) tv.src = src;
+		plate.pause();
+		dlg.showModal();
+		tv.play().catch(() => {});
+	});
+	const closeT = () => { tv.pause(); dlg.close(); };
+	$('#theatre-x').addEventListener('click', closeT);
+	dlg.addEventListener('close', () => { tv.pause(); if (!userPaused) plate.play().catch(() => {}); });
+	dlg.addEventListener('click', (e) => { if (e.target === dlg) closeT(); });
+
+	// ---------- The scene strip: vertical scroll runs the film horizontally ----------
+	const rail = $('#rail');
+	const strip = $('#strip');
+	const stage = $('#stage');
+	const frames = $$('.frame', strip);
+	const wide = matchMedia('(min-width: 900px) and (prefers-reduced-motion: no-preference)');
+	let travel = 0;
+	function layoutStrip() {
+		if (!wide.matches) { rail.style.removeProperty('--rail-h'); strip.style.removeProperty('--x'); return; }
+		travel = Math.max(0, strip.scrollWidth - stage.clientWidth);
+		rail.style.setProperty('--rail-h', `${innerHeight + travel}px`);
+		onScroll();
+	}
+	function onScroll() {
+		let p;
+		if (wide.matches) {
+			const r = rail.getBoundingClientRect();
+			p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight)));
+			const dir = lang === 'ar' ? 1 : -1;
+			strip.style.setProperty('--x', `${dir * p * travel}px`);
+		} else {
+			const max = Math.max(1, stage.scrollWidth - stage.clientWidth);
+			p = Math.min(1, Math.abs(stage.scrollLeft) / max);
+		}
+		$('#strip-bar').style.setProperty('--p', `${p * 100}%`);
+		$('#scene-n').textContent = Math.min(frames.length, 1 + Math.round(p * (frames.length - 1)));
+	}
+	let raf = 0;
+	const onS = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; onScroll(); }); };
+	addEventListener('scroll', onS, {passive: true});
+	stage.addEventListener('scroll', onS, {passive: true});
+	addEventListener('resize', layoutStrip);
+	wide.addEventListener('change', layoutStrip);
+	addEventListener('load', layoutStrip);
+	layoutStrip();
+
+	// ---------- Reveal ----------
+	const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), {rootMargin: '0px 0px -8% 0px'});
+	$$('.rise').forEach((el) => io.observe(el));
+})();
+</script>
+</body>
+</html>

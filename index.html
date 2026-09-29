@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نمشي — تلات نسخ من الموقع</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink: #111317; --paper: #f4f5f0; --dim: #555a52; --rule: #d9dbd2; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Changa', sans-serif; line-height: 1.6; }
+main { width: min(100%, 1080px); margin-inline: auto; padding: clamp(40px, 7vw, 88px) 20px; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; }
+.lead { margin: 12px 0 0; color: var(--dim); font-size: 1.1rem; max-width: 56ch; }
+ol { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+a.v { display: flex; flex-direction: column; gap: 8px; min-height: 100%; padding: 22px 22px 20px; border: 3px solid var(--ink); text-decoration: none; color: var(--ink); background: #fff; transition: transform 140ms, background-color 140ms; }
+a.v:hover { transform: translateY(-3px); }
+a.v:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.n { font-weight: 800; font-size: 0.95rem; }
+.t { font-weight: 800; font-size: 1.6rem; line-height: 1.25; }
+.d { color: var(--dim); }
+.chips { display: flex; gap: 6px; margin-top: auto; padding-top: 10px; }
+.chips i { width: 28px; height: 18px; border: 2px solid var(--ink); display: block; }
+.go { font-weight: 800; }
+.v1 { border-color: #0e121e; } .v1 .chips i:nth-child(1) { background: #0e121e; } .v1 .chips i:nth-child(2) { background: #00ff85; }
+.v2 .chips i:nth-child(1) { background: #120d0b; } .v2 .chips i:nth-child(2) { background: #f1e6d2; } .v2 .chips i:nth-child(3) { background: #d8362b; } .v2 .chips i:nth-child(4) { background: #f2a93b; }
+.v3 .chips i:nth-child(1) { background: #ffd21f; } .v3 .chips i:nth-child(2) { background: #111317; } .v3 .chips i:nth-child(3) { background: #f4f5f0; }
+.note { margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--rule); color: var(--dim); font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<main>
+	<h1>نمشي: تلات نسخ من الموقع</h1>
+	<p class="lead">نفس القصة، "مشوار المليون خطوة بيبدأ بخطوة"، بتلات أشكال مختلفة. افتح كل نسخة واختار. كل نسخة بالعربي، وفيها زرار للإنجليزي.</p>
+	<ol>
+		<li><a class="v v1" href="landing/"><span class="n">النسخة 1</span><span class="t">مصر بالخطوة</span><span class="d">خريطة مصر والنيل، وفيلم موشن جرافيك من أول خطوة لحد المليون.</span><span class="chips" aria-hidden="true"><i></i><i></i></span><span class="go">افتح النسخة ←</span></a></li>
+		<li><a class="v v2" href="landing-v2/"><span class="n">النسخة 2</span><span class="t">أفيش سينما مصري</span><span class="d">فيلم بلقطات حقيقية من مصر مالي الشاشة، بشكل أفيشات السينما القديمة.</span><span class="chips" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="go">افتح النسخة ←</span></a></li>
+		<li><a class="v v3" href="landing-v3/"><span class="n">النسخة 3</span><span class="t">الأسبوعية الرياضية</span><span class="d">مجلة رياضية بالأصفر والأسود، وفيلم موشن جرافيك لبنت بتمشي وبتجري في مصر.</span><span class="chips" aria-hidden="true"><i></i><i></i><i></i></span><span class="go">افتح النسخة ←</span></a></li>
+	</ol>
+	<p class="note">نسخ تصميم: اللوجو ولينكات المتاجر والأرقام لسه مؤقتة.</p>
+</main>
+</body>
+</html>

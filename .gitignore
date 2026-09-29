@@ -1,0 +1,4 @@
+node_modules/
+video-src/
+.impeccable/
+*.log

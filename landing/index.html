@@ -1,0 +1,2700 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>نمشي — مشوار المليون خطوة بيبدأ بخطوة</title>
+    <meta name="description" content="نمشي بيعدّ خطواتك، يحطك في تحديات مع صحابك وفريقك، ويحوّل المشي لعادة. حمّله من Google Play أو App Store." />
+    <meta name="theme-color" content="#0e121e" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%2300ff85%22/%3E%3Cg transform=%22translate(4 4)%22 fill=%22none%22 stroke=%22%2303140b%22 stroke-width=%222.1%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Ccircle cx=%2213.6%22 cy=%224.2%22 r=%221.9%22 fill=%22%2303140b%22 stroke=%22none%22/%3E%3Cpath d=%22M12.6 8.2 10.8 14M10.8 14l2.6 3.2L13 21M10.8 14l-1.9 3.4-2.3 2.8M12.4 9.2l-3 2.2-.8 2.2M12.4 9.2l2.4 2.4 2.2.8%22/%3E%3C/g%3E%3C/svg%3E"
+    />
+    <meta property="og:title" content="نمشي — مشوار المليون خطوة بيبدأ بخطوة" />
+    <meta property="og:description" content="امشي مع مصر كلها. عدّاد خطوات، تحديات، صحاب وفرق." />
+    <meta property="og:image" content="video/namshy-hero-ar-1080-poster.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=Readex+Pro:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ground: #0e121e;
+        --ground-2: #111827;
+        --card: #1c252e;
+        --card-2: #232d37;
+        --line: #27313c;
+        --line-2: #36424f;
+        --land: #161e29;
+        --river: #2c5660;
+        --green: #00ff85;
+        --green-hover: #5cffae;
+        --green-ink: #03140b;
+        --green-deep: #0d2a28;
+        --green-edge: #17784a;
+        --ink: #eef1f5;
+        --ink-dim: #a6afb9;
+        --ink-faint: #8d97a3;
+        --amber: #f5a524;
+        --coral: #ff8f63;
+        --r-card: 24px;
+        --r-md: 16px;
+        --nav-h: 72px;
+        --gutter: clamp(16px, 4vw, 48px);
+        --max: 1240px;
+        --font-display: "Alexandria", "Readex Pro", system-ui, sans-serif;
+        --font-text: "Readex Pro", "Alexandria", system-ui, sans-serif;
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        color-scheme: dark;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(var(--nav-h) + 16px);
+        -webkit-text-size-adjust: 100%;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--ground);
+        color: var(--ink);
+        font-family: var(--font-text);
+        font-size: 1.0625rem;
+        line-height: 1.75;
+        font-variant-numeric: tabular-nums;
+        -webkit-font-smoothing: antialiased;
+      }
+      html[lang="en"] body {
+        line-height: 1.6;
+      }
+      img,
+      svg,
+      video {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 0.25em;
+        text-decoration-thickness: 1px;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+      }
+      ::selection {
+        background: var(--green);
+        color: var(--green-ink);
+      }
+      input,
+      textarea {
+        caret-color: var(--green);
+      }
+      :focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      html {
+        scrollbar-color: var(--line-2) var(--ground);
+      }
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--ground);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--line-2);
+        border-radius: 99px;
+        border: 3px solid var(--ground);
+      }
+
+      .wrap {
+        width: min(100%, var(--max));
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .skip {
+        position: absolute;
+        inset-inline-start: 16px;
+        top: -60px;
+        z-index: 100;
+        background: var(--green);
+        color: var(--green-ink);
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .skip:focus {
+        top: 12px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-display);
+        margin: 0;
+        text-wrap: balance;
+      }
+      h1 {
+        font-size: clamp(2.4rem, 4.2vw, 4rem);
+        font-weight: 800;
+        line-height: 1.22;
+      }
+      .hero-text {
+        container-type: inline-size;
+      }
+      .hero-text h1 {
+        font-size: clamp(2.3rem, 9.6cqi, 3.9rem);
+      }
+      h2 {
+        font-size: clamp(2rem, 3.6vw, 3.25rem);
+        font-weight: 700;
+        line-height: 1.25;
+      }
+      h3 {
+        font-size: clamp(1.4rem, 2vw, 1.75rem);
+        font-weight: 700;
+        line-height: 1.35;
+      }
+      html[lang="en"] h1 {
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+      }
+      html[lang="en"] h2 {
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      p {
+        margin: 0;
+      }
+      .num {
+        font-family: var(--font-display);
+        font-weight: 700;
+        direction: ltr;
+        unicode-bidi: isolate;
+        white-space: nowrap;
+      }
+
+      /* ---------- Icons ---------- */
+      .i {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex: none;
+      }
+      .i-fill {
+        fill: currentColor;
+        stroke: none;
+      }
+      .mirror {
+        transform: scaleX(1);
+      }
+      html[dir="rtl"] .mirror {
+        transform: scaleX(-1);
+      }
+
+      /* ---------- Buttons ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1;
+        text-decoration: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition:
+          background-color 160ms,
+          border-color 160ms,
+          color 160ms,
+          transform 160ms var(--ease-out);
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+      .btn-go {
+        background: var(--green);
+        color: var(--green-ink);
+      }
+      .btn-go:hover {
+        background: var(--green-hover);
+      }
+
+      .stores {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .store {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 60px;
+        padding-block: 8px;
+        padding-inline: 16px 22px;
+        border-radius: var(--r-md);
+        text-decoration: none;
+        background: var(--card);
+        border: 1px solid var(--line-2);
+        color: var(--ink);
+        transition:
+          background-color 160ms,
+          border-color 160ms,
+          transform 160ms var(--ease-out);
+      }
+      .store:hover {
+        background: var(--card-2);
+        border-color: var(--ink-faint);
+      }
+      .store:active {
+        transform: scale(0.97);
+      }
+      .store.is-primary {
+        background: var(--green);
+        border-color: var(--green);
+        color: var(--green-ink);
+      }
+      .store.is-primary:hover {
+        background: var(--green-hover);
+        border-color: var(--green-hover);
+      }
+      .store svg {
+        width: 28px;
+        height: 28px;
+      }
+      .store-t {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+        text-align: start;
+      }
+      .store-t small {
+        font-size: 0.78rem;
+        opacity: 0.85;
+      }
+      .store-t b {
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 700;
+        direction: ltr;
+        unicode-bidi: isolate;
+      }
+
+      /* ---------- Nav ---------- */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(14, 18, 30, 0.94);
+        border-bottom: 1px solid transparent;
+        transition: border-color 200ms;
+      }
+      .nav.is-scrolled {
+        border-bottom-color: var(--line);
+      }
+      .nav-in {
+        height: var(--nav-h);
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.45rem;
+      }
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: var(--green);
+        color: var(--green-ink);
+        display: grid;
+        place-items: center;
+      }
+      .brand-mark svg {
+        width: 28px;
+        height: 28px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 4px;
+        margin-inline-start: auto;
+      }
+      .nav-links a {
+        padding: 8px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--ink-dim);
+        font-size: 0.95rem;
+        transition:
+          color 160ms,
+          background-color 160ms;
+      }
+      .nav-links a:hover {
+        color: var(--ink);
+        background: var(--card);
+      }
+      .nav-end {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .lang {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: transparent;
+        border: 1px solid var(--line-2);
+        cursor: pointer;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .lang:hover {
+        background: var(--card);
+      }
+      .lang svg {
+        width: 18px;
+        height: 18px;
+      }
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-end {
+          margin-inline-start: auto;
+        }
+      }
+      @media (max-width: 560px) {
+        .nav .btn-go {
+          display: none;
+        }
+        .stores {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .store {
+          padding-inline: 12px 14px;
+          gap: 10px;
+          min-height: 58px;
+        }
+        .store svg {
+          width: 24px;
+          height: 24px;
+        }
+        .store-t b {
+          font-size: 1.02rem;
+        }
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        padding-block: clamp(28px, 5vw, 64px) clamp(64px, 8vw, 112px);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: clamp(32px, 5vw, 80px);
+        align-items: center;
+      }
+      .hero h1 .l1,
+      .hero h1 .l2 {
+        display: block;
+      }
+      .hero h1 .l2 {
+        color: var(--green);
+      }
+      @media (min-width: 1100px) {
+        html[lang="ar"] .hero h1 .l1 {
+          white-space: nowrap;
+        }
+      }
+      .lead {
+        text-wrap: pretty;
+        margin-top: 24px;
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+        color: var(--ink-dim);
+        max-width: 36ch;
+      }
+      .hero .stores {
+        margin-top: 36px;
+      }
+      .pulse {
+        margin-top: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 14px;
+        color: var(--ink-dim);
+        font-size: 0.98rem;
+      }
+      .pulse strong {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      .pulse .tag {
+        color: var(--ink-faint);
+        font-size: 0.88rem;
+      }
+      .pulse > span:not(.live-dot) {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+      .pulse > a {
+        flex-basis: 100%;
+        padding-inline-start: 24px;
+      }
+      .pulse a {
+        color: var(--green);
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .pulse a:hover {
+        text-decoration: underline;
+      }
+      .pulse a svg {
+        width: 18px;
+        height: 18px;
+      }
+      .live-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--green);
+        position: relative;
+        flex: none;
+      }
+      .live-dot::after {
+        content: "";
+        position: absolute;
+        inset: -5px;
+        border-radius: 50%;
+        border: 2px solid var(--green);
+        opacity: 0;
+        animation: ping 2.4s var(--ease-out) infinite;
+      }
+      @keyframes ping {
+        0% {
+          transform: scale(0.4);
+          opacity: 0.8;
+        }
+        80%,
+        100% {
+          transform: scale(1.6);
+          opacity: 0;
+        }
+      }
+
+      .film {
+        position: relative;
+        margin: 0;
+      }
+      .film-frame {
+        position: relative;
+        aspect-ratio: 1;
+        border-radius: 32px;
+        overflow: hidden;
+        background: var(--ground-2);
+        border: 1px solid var(--line);
+      }
+      .film-frame video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .film-ctl {
+        position: absolute;
+        inset-block-end: 16px;
+        inset-inline-end: 16px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid var(--line-2);
+        background: rgba(28, 37, 46, 0.92);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition: background-color 160ms;
+      }
+      .film-ctl:hover {
+        background: var(--card-2);
+      }
+      .film-ctl svg {
+        width: 20px;
+        height: 20px;
+      }
+      .film figcaption {
+        margin-top: 14px;
+        color: var(--ink-faint);
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .film {
+          max-width: 560px;
+        }
+      }
+
+      /* ---------- Walk: this week + journey, one map ---------- */
+      .walk {
+        border-top: 1px solid var(--line);
+        background: var(--ground);
+      }
+      .walk-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas: "week map" "journey map";
+        column-gap: clamp(32px, 5vw, 80px);
+      }
+      .week {
+        grid-area: week;
+        padding-block: clamp(72px, 9vw, 128px) clamp(56px, 7vw, 96px);
+      }
+      .journey {
+        grid-area: journey;
+        padding-block: clamp(56px, 7vw, 96px) clamp(72px, 9vw, 128px);
+      }
+      .map-col {
+        grid-area: map;
+      }
+      .egypt {
+        position: sticky;
+        top: calc(var(--nav-h) + 2vh);
+        height: calc(100vh - var(--nav-h) - 4vh);
+        min-height: 560px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+      }
+      .egypt svg {
+        width: 100%;
+        height: auto;
+        max-height: calc(100% - 120px);
+        direction: ltr;
+      }
+
+      .bulletin {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+        line-height: 1.55;
+        margin-top: 32px;
+        max-width: 22ch;
+      }
+      html[lang="en"] .bulletin {
+        max-width: 24ch;
+        line-height: 1.35;
+        letter-spacing: -0.01em;
+      }
+      .bulletin .num {
+        color: var(--green);
+        font-weight: 800;
+      }
+      .bulletin + .bulletin {
+        margin-top: 20px;
+        color: var(--ink-dim);
+        font-size: clamp(1.3rem, 2.1vw, 1.8rem);
+      }
+      .bulletin + .bulletin .num {
+        color: var(--ink);
+      }
+      .basis {
+        margin-top: 24px;
+        color: var(--ink-faint);
+        font-size: 0.95rem;
+        max-width: 46ch;
+      }
+      .sample {
+        margin-top: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--ink-dim);
+        font-size: 0.9rem;
+      }
+      .sample svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .days-cap {
+        margin-top: 48px;
+        color: var(--ink-faint);
+        font-size: 0.9rem;
+      }
+      .days {
+        list-style: none;
+        margin: 14px 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 10px;
+        align-items: end;
+        max-width: 520px;
+      }
+      .day {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .day-bar {
+        width: 100%;
+        height: 150px;
+        border-radius: 12px;
+        background: var(--card);
+        position: relative;
+        overflow: hidden;
+      }
+      .day-bar i {
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        height: var(--h, 0%);
+        background: var(--green-edge);
+        border-radius: 12px;
+        transition: height 900ms var(--ease-out);
+      }
+      .day.is-today .day-bar i {
+        background: var(--green);
+      }
+      .day.is-later .day-bar {
+        background: transparent;
+        border: 1px dashed var(--line-2);
+      }
+      .day-name {
+        font-size: 0.85rem;
+        color: var(--ink-dim);
+        white-space: nowrap;
+      }
+      .day.is-today .day-name {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .day-val {
+        font-size: 0.8rem;
+        color: var(--ink-faint);
+        font-family: var(--font-display);
+        direction: ltr;
+        min-height: 1.2em;
+      }
+
+      /* Map */
+      .m-land {
+        fill: var(--land);
+        stroke: var(--line-2);
+        stroke-width: 2;
+        stroke-linejoin: round;
+      }
+      .m-river {
+        fill: none;
+        stroke: var(--river);
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .m-lake {
+        fill: none;
+        stroke: var(--river);
+        stroke-width: 11;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .m-canal {
+        fill: none;
+        stroke: var(--river);
+        stroke-width: 2.5;
+        stroke-dasharray: 6 6;
+      }
+      .m-walkers circle {
+        fill: var(--green);
+        opacity: 0.5;
+        animation: twinkle 3.2s ease-in-out infinite;
+        animation-delay: calc(var(--d) * -3.2s);
+        transition: opacity 500ms;
+      }
+      @keyframes twinkle {
+        50% {
+          opacity: 0.18;
+        }
+      }
+      .m-route-glow {
+        fill: none;
+        stroke: var(--green);
+        stroke-opacity: 0.18;
+        stroke-width: 22;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .m-route {
+        fill: none;
+        stroke: var(--green);
+        stroke-width: 7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .m-route-ghost {
+        fill: none;
+        stroke: var(--ink-faint);
+        stroke-width: 2.5;
+        stroke-dasharray: 2 10;
+        stroke-linecap: round;
+        opacity: 0;
+        transition: opacity 500ms;
+      }
+      .m-head {
+        fill: var(--green);
+      }
+      .m-stn circle {
+        fill: var(--ground);
+        stroke: var(--ink-faint);
+        stroke-width: 3;
+        transition:
+          fill 300ms,
+          stroke 300ms;
+      }
+      .m-stn text {
+        font-family: var(--font-display);
+        font-size: 34px;
+        font-weight: 600;
+        fill: var(--ink-dim);
+        transition: fill 300ms;
+      }
+      .m-stn.is-reached circle {
+        fill: var(--green);
+        stroke: var(--green);
+      }
+      .m-stn.is-reached text {
+        fill: var(--ink);
+      }
+      .m-journey {
+        opacity: 0;
+        transition: opacity 500ms;
+      }
+      .egypt.is-journey .m-journey,
+      .egypt.is-journey .m-route-ghost {
+        opacity: 1;
+      }
+      .egypt.is-journey .m-walkers circle {
+        opacity: 0.16;
+        animation: none;
+      }
+
+      .odo {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px 20px;
+        border-radius: var(--r-md);
+        background: var(--card);
+      }
+      .odo-l {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.3;
+      }
+      .odo-l small {
+        color: var(--ink-dim);
+        font-size: 0.85rem;
+      }
+      .odo-l b {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+      .odo-n {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+        line-height: 1;
+        direction: ltr;
+      }
+      .egypt:not(.is-journey) .odo {
+        display: none;
+      }
+      .legend {
+        color: var(--ink-faint);
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .legend i {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--green);
+        opacity: 0.7;
+        flex: none;
+      }
+      .egypt.is-journey .legend {
+        display: none;
+      }
+
+      /* Journey stations */
+      .journey-intro {
+        margin-top: 20px;
+        color: var(--ink-dim);
+        font-size: 1.15rem;
+        max-width: 44ch;
+      }
+      .stations {
+        list-style: none;
+        margin: 56px 0 0;
+        padding: 0;
+        position: relative;
+      }
+      .stations::before,
+      .stations::after {
+        content: "";
+        position: absolute;
+        top: 12px;
+      }
+      .stations::before {
+        inset-inline-start: 11.5px;
+        bottom: 12px;
+        border-inline-start: 2px dashed var(--line-2);
+      }
+      .stations::after {
+        inset-inline-start: 11px;
+        width: 3px;
+        border-radius: 3px;
+        height: var(--rail, 0px);
+        background: var(--green);
+      }
+      .station {
+        position: relative;
+        padding-inline-start: 56px;
+        padding-bottom: clamp(72px, 10vw, 120px);
+      }
+      .station:last-child {
+        padding-bottom: 0;
+      }
+      .station-dot {
+        position: absolute;
+        inset-inline-start: 0;
+        top: 8px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: var(--ground);
+        border: 3px solid var(--line-2);
+        transition:
+          background-color 300ms,
+          border-color 300ms;
+        z-index: 1;
+      }
+      .station.is-reached .station-dot {
+        background: var(--green);
+        border-color: var(--green);
+      }
+      .station h3 .at {
+        display: inline-block;
+        margin-inline-start: 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--ink-faint);
+        white-space: nowrap;
+        vertical-align: 0.15em;
+      }
+      .station h3 .at .city {
+        color: var(--ink-dim);
+      }
+      .station.is-reached h3 .at .city {
+        color: var(--green);
+      }
+      .station > p {
+        margin-top: 12px;
+        color: var(--ink-dim);
+        max-width: 46ch;
+      }
+      .station .note {
+        margin-top: 10px;
+        font-size: 0.92rem;
+        color: var(--ink-faint);
+      }
+
+      /* App replicas: the participant app's own language, re-drawn */
+      .app {
+        margin-top: 28px;
+        max-width: 400px;
+        background: var(--card);
+        border-radius: var(--r-card);
+        padding: 24px;
+        border: 1px solid var(--line);
+      }
+      .app-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .ring {
+        display: grid;
+        place-items: center;
+        position: relative;
+        width: 200px;
+        margin-inline: auto;
+      }
+      .ring svg {
+        width: 200px;
+        height: 200px;
+        transform: rotate(-90deg);
+      }
+      .ring-in {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-content: center;
+        text-align: center;
+      }
+      .ring-in b {
+        font-family: var(--font-display);
+        font-size: 2.6rem;
+        line-height: 1;
+        direction: ltr;
+      }
+      .ring-in small {
+        color: var(--ink-dim);
+        font-size: 0.9rem;
+        margin-top: 6px;
+      }
+      .app-start {
+        margin: 22px auto 0;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 48px;
+        border-radius: 999px;
+        border: 1px solid var(--green-edge);
+        background: var(--green-deep);
+        font-family: var(--font-display);
+        font-weight: 600;
+        max-width: 260px;
+      }
+      .app-start i {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+      .streak {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: var(--card-2);
+        font-size: 0.95rem;
+        margin: 18px auto 0;
+      }
+      .streak b {
+        color: var(--green);
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+      }
+      .app-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 16px;
+        border-radius: var(--r-md);
+        background: var(--card-2);
+      }
+      .person + .person {
+        margin-top: 10px;
+      }
+      .person.is-you {
+        background: var(--green-deep);
+        border: 1px solid var(--green-edge);
+      }
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #2a343c;
+        display: grid;
+        place-items: center;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.95rem;
+        flex: none;
+      }
+      .avatar.warm {
+        background: #3b2419;
+        color: var(--coral);
+      }
+      .person-m {
+        flex: 1;
+        min-width: 0;
+      }
+      .person-m b {
+        display: block;
+        font-family: var(--font-display);
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      .person-m b small {
+        color: var(--green);
+        font-weight: 500;
+        font-size: 0.8rem;
+        margin-inline-start: 6px;
+      }
+      .person-m .bar {
+        margin-top: 8px;
+        height: 5px;
+        border-radius: 9px;
+        background: var(--ground);
+        overflow: hidden;
+      }
+      .person-m .bar i {
+        display: block;
+        height: 100%;
+        width: var(--w);
+        background: var(--green);
+        border-radius: 9px;
+      }
+      .person .steps {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.1rem;
+        direction: ltr;
+      }
+      .person .rank {
+        width: 28px;
+        text-align: center;
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--ink-dim);
+        flex: none;
+      }
+      .person .rank.gold {
+        color: var(--amber);
+      }
+      .ahead {
+        margin-top: 16px;
+        font-size: 0.95rem;
+        color: var(--ink-dim);
+      }
+      .ahead b {
+        color: var(--coral);
+        font-weight: 600;
+      }
+      .team-meta {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--ink-dim);
+        font-weight: 400;
+      }
+      .chal-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--green);
+      }
+      .chal-top b {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+      }
+      .chal-name {
+        margin-top: 14px;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .chal-sub {
+        text-align: center;
+        color: var(--ink-dim);
+        margin-top: 4px;
+      }
+      .pbar {
+        margin-top: 18px;
+        height: 12px;
+        border-radius: 9px;
+        background: var(--ground);
+        overflow: hidden;
+      }
+      .pbar i {
+        display: block;
+        height: 100%;
+        width: var(--w);
+        background: var(--green);
+        border-radius: 9px;
+      }
+      .pbar-n {
+        text-align: end;
+        color: var(--ink-dim);
+        font-size: 0.85rem;
+        margin-top: 8px;
+        font-family: var(--font-display);
+      }
+      .badges {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .badge {
+        aspect-ratio: 0.92;
+        border-radius: var(--r-md);
+        background: var(--card-2);
+        border: 1px solid var(--green-edge);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+        padding: 8px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        line-height: 1.3;
+      }
+      .badge svg {
+        width: 30px;
+        height: 30px;
+        color: var(--green);
+      }
+      .badge.is-locked {
+        border-color: transparent;
+        color: var(--ink-faint);
+      }
+      .badge.is-locked svg {
+        color: var(--ink-faint);
+      }
+      .rankline {
+        margin-top: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: var(--r-md);
+        background: var(--card-2);
+      }
+      .rankline b {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        color: var(--amber);
+        direction: ltr;
+      }
+
+      .arrive {
+        margin-top: 40px;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: clamp(1.3rem, 2vw, 1.6rem);
+        line-height: 1.5;
+        max-width: 26ch;
+      }
+      .arrive a {
+        color: var(--green);
+        white-space: nowrap;
+      }
+
+      @media (max-width: 960px) {
+        .walk-grid {
+          grid-template-columns: 1fr;
+          grid-template-areas: "week" "map" "journey";
+        }
+        .egypt {
+          position: static;
+          height: auto;
+          min-height: 0;
+        }
+        .egypt svg {
+          max-height: none;
+          max-width: 520px;
+          margin-inline: auto;
+        }
+        .journey {
+          padding-top: 24px;
+        }
+        .egypt .odo {
+          display: none !important;
+        }
+        .egypt.is-journey .legend {
+          display: flex;
+        }
+        .egypt.is-journey .m-walkers circle {
+          opacity: 0.5;
+          animation: twinkle 3.2s ease-in-out infinite;
+          animation-delay: calc(var(--d) * -3.2s);
+        }
+        .egypt.is-journey .m-journey,
+        .egypt.is-journey .m-route-ghost {
+          opacity: 0;
+        }
+        .week {
+          padding-bottom: 32px;
+        }
+      }
+
+      /* ---------- Trust ---------- */
+      .trust {
+        border-top: 1px solid var(--line);
+        padding-block: clamp(72px, 9vw, 128px);
+      }
+      .trust h2 {
+        max-width: 18ch;
+      }
+      .statement {
+        margin-top: 40px;
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(1.35rem, 2.4vw, 2.1rem);
+        line-height: 1.7;
+        color: var(--ink-dim);
+        max-width: 38ch;
+      }
+      html[lang="en"] .statement {
+        line-height: 1.45;
+      }
+      .statement em {
+        font-style: normal;
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      /* ---------- FAQ ---------- */
+      .faq {
+        padding-block: clamp(72px, 9vw, 128px);
+        border-top: 1px solid var(--line);
+      }
+      .faq-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: clamp(32px, 5vw, 80px);
+        align-items: start;
+      }
+      .faq-list {
+        border-top: 1px solid var(--line);
+      }
+      .faq details {
+        border-bottom: 1px solid var(--line);
+      }
+      .faq summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 22px 4px;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1.15rem;
+        line-height: 1.5;
+      }
+      .faq summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq summary:hover {
+        color: var(--green);
+      }
+      .faq summary svg {
+        transition: transform 240ms var(--ease-out);
+        color: var(--ink-dim);
+      }
+      .faq details[open] summary svg {
+        transform: rotate(45deg);
+      }
+      .faq details p {
+        padding: 0 4px 24px;
+        color: var(--ink-dim);
+        max-width: 60ch;
+      }
+      @media (max-width: 860px) {
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Finale ---------- */
+      .finale {
+        border-top: 1px solid var(--line);
+        padding-block: clamp(80px, 11vw, 160px);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .finale-n {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: clamp(3.6rem, 12vw, 10rem);
+        line-height: 1;
+        color: var(--green);
+        direction: ltr;
+        letter-spacing: -0.02em;
+      }
+      .finale-u {
+        color: var(--ink-dim);
+        font-size: 1.2rem;
+        margin-top: 8px;
+      }
+      .finale h2 {
+        margin: 40px auto 0;
+        max-width: 20ch;
+      }
+      .finale .lead {
+        margin-inline: auto;
+      }
+      .finale-act {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+      }
+      .qr {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-align: start;
+        color: var(--ink-dim);
+        font-size: 0.9rem;
+        max-width: 220px;
+      }
+      .qr-box {
+        width: 88px;
+        height: 88px;
+        flex: none;
+        border-radius: 14px;
+        border: 1.5px dashed var(--line-2);
+        display: grid;
+        place-items: center;
+        color: var(--ink-faint);
+      }
+      @media (max-width: 760px) {
+        .qr {
+          display: none;
+        }
+      }
+
+      /* ---------- Footer ---------- */
+      .foot {
+        border-top: 1px solid var(--line);
+        padding-block: 40px 120px;
+        color: var(--ink-faint);
+        font-size: 0.92rem;
+      }
+      .foot-in {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .foot nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 22px;
+      }
+      .foot a {
+        text-decoration: none;
+      }
+      .foot a:hover {
+        color: var(--ink);
+        text-decoration: underline;
+      }
+      .foot .brand {
+        font-size: 1.2rem;
+        color: var(--ink);
+      }
+      .foot .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+      }
+      .foot .brand-mark svg {
+        width: 22px;
+        height: 22px;
+      }
+      @media (min-width: 961px) {
+        .foot {
+          padding-bottom: 40px;
+        }
+      }
+
+      /* ---------- Mobile dock ---------- */
+      .dock {
+        position: fixed;
+        inset-inline: 12px;
+        bottom: 12px;
+        z-index: 60;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-block: 10px;
+        padding-inline: 16px 10px;
+        border-radius: 20px;
+        background: var(--card);
+        border: 1px solid var(--line-2);
+        transform: translateY(140%);
+        transition: transform 380ms var(--ease-out);
+      }
+      .dock.is-on {
+        transform: translateY(0);
+      }
+      .dock-map {
+        display: none;
+        width: 34px;
+        height: 52px;
+        flex: none;
+        overflow: visible;
+      }
+      .dock.is-journey .dock-map {
+        display: block;
+      }
+      .dm-end {
+        fill: var(--card);
+        stroke: var(--ink-dim);
+        stroke-width: 14;
+      }
+      .dm-track {
+        fill: none;
+        stroke: var(--line-2);
+        stroke-width: 22;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .dm-walk {
+        fill: none;
+        stroke: var(--green);
+        stroke-width: 26;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      #dm-dot {
+        fill: var(--green);
+        stroke: var(--card);
+        stroke-width: 14;
+      }
+      .dock-l {
+        flex: 1;
+      }
+      .dock-l {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.25;
+        min-width: 0;
+      }
+      .dock-l small {
+        color: var(--ink-dim);
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .dock-l b {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        direction: ltr;
+        text-align: start;
+      }
+      @media (max-width: 960px) {
+        .dock {
+          display: flex;
+        }
+      }
+
+      /* ---------- Reveal (content is visible by default; motion only adds) ---------- */
+      @media (prefers-reduced-motion: no-preference) {
+        .js .rise {
+          opacity: 0;
+          transform: translateY(24px);
+          transition:
+            opacity 700ms var(--ease-out),
+            transform 900ms var(--ease-out);
+        }
+        .js .rise.is-in {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .live-dot::after,
+        .m-walkers circle {
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main" data-en="Skip to content">تخطّى للمحتوى</a>
+
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-walker" viewBox="0 0 24 24">
+          <circle cx="13.6" cy="4.2" r="1.9" fill="currentColor" stroke="none" />
+          <path
+            d="M12.6 8.2 10.8 14M10.8 14l2.6 3.2L13 21M10.8 14l-1.9 3.4-2.3 2.8M12.4 9.2l-3 2.2-.8 2.2M12.4 9.2l2.4 2.4 2.2.8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-play-store" viewBox="0 0 24 24">
+          <path d="M4.6 2.9 13.9 12l-9.3 9.1c-.3-.2-.5-.6-.5-1V3.9c0-.4.2-.8.5-1Z" fill="currentColor" />
+          <path
+            d="m15.2 10.7-9-7.4 11.3 6.2-2.3 1.2Z M15.2 13.3l2.3 1.2-11.3 6.2 9-7.4Z M18.8 9.9l2 1.1c.8.5.8 1.5 0 2l-2 1.1-2.4-2.1 2.4-2.1Z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="i-apple" viewBox="0 0 24 24">
+          <path
+            d="M16.5 12.7c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8s-1.8-.8-3-.8c-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.6ZM14.2 5.7c.6-.8 1.1-1.8 1-2.9-1 0-2.1.7-2.8 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.8-1.3Z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24">
+          <path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-play" viewBox="0 0 24 24">
+          <path d="M7 4.8v14.4a.8.8 0 0 0 1.2.7l11.2-7.2a.8.8 0 0 0 0-1.4L8.2 4.1A.8.8 0 0 0 7 4.8Z" fill="currentColor" />
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z" />
+          </g>
+        </symbol>
+        <symbol id="i-info" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 11v5.5M12 7.6v.1" />
+          </g>
+        </symbol>
+        <symbol id="i-route" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="6" cy="18" r="2.2" />
+            <circle cx="18" cy="6" r="2.2" />
+            <path d="M8.2 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.8" />
+            <path d="m3 3 18 18" stroke-width="2" />
+          </g>
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />
+            <circle cx="12" cy="10" r="2.3" />
+          </g>
+        </symbol>
+        <symbol id="i-offline" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M12 19.5h.01M8.8 16.2a4.6 4.6 0 0 1 6.4 0M5.6 12.9a9 9 0 0 1 4-2.3M18.4 12.9a9 9 0 0 0-2.1-1.5M2.5 9.6a13.4 13.4 0 0 1 4.8-3M21.5 9.6A13.5 13.5 0 0 0 11 5.8M3 3l18 18"
+            />
+          </g>
+        </symbol>
+        <symbol id="i-scale" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5v17M7 20.5h10M5 7.5h14M5 7.5l-2.8 6.2a3 3 0 0 0 5.6 0L5 7.5ZM19 7.5l-2.8 6.2a3 3 0 0 0 5.6 0L19 7.5Z" />
+          </g>
+        </symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24">
+          <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.2 2.8 5.5 13.4h5.8l-1 7.8 7.7-10.6h-5.8l1-7.8Z" fill="currentColor" /></symbol>
+        <symbol id="i-flame" viewBox="0 0 24 24">
+          <path
+            d="M12.4 2.5c.4 3-1.3 4.6-2.9 6.3C8 10.4 6.5 12 6.5 14.7A5.5 5.5 0 0 0 12 20.5a5.5 5.5 0 0 0 5.5-5.8c0-2.2-1-3.8-2-5 0 1.6-.7 2.6-1.7 3 .6-3.8-.2-7.6-1.4-10.2Z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.6A8 8 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1Z" fill="currentColor" /></symbol>
+        <symbol id="i-medal" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+            <path d="M8 3h8l-2.2 6.2h-3.6L8 3Z" />
+            <circle cx="12" cy="15" r="5.5" />
+            <path d="m12 12.3.9 1.8 2 .3-1.4 1.4.3 2-1.8-1-1.8 1 .3-2-1.4-1.4 2-.3.9-1.8Z" fill="currentColor" />
+          </g>
+        </symbol>
+        <symbol id="i-qr" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3.5" y="3.5" width="6" height="6" rx="1" />
+            <rect x="14.5" y="3.5" width="6" height="6" rx="1" />
+            <rect x="3.5" y="14.5" width="6" height="6" rx="1" />
+            <path d="M14.5 14.5h2.5v2.5h-2.5zM18 18h2.5v2.5H18zM14.5 20.5h1M20.5 14.5v1" stroke-linecap="round" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="nav" id="top">
+      <div class="wrap nav-in">
+        <!-- TEMPORARY LOGO: stand-in taken from the current app icon until the brand team delivers the mark. -->
+        <a class="brand" href="#top" aria-label="نمشي — الرئيسية" data-en-aria="Namshy — home">
+          <span class="brand-mark"
+            ><svg><use href="#i-walker" /></svg
+          ></span>
+          <span data-en="Namshi">نمشي</span>
+        </a>
+        <nav class="nav-links" aria-label="الأقسام" data-en-aria="Sections">
+          <a href="#this-week" data-en="This week">الأسبوع ده</a>
+          <a href="#journey" data-en="How it works">إزاي بيشتغل</a>
+          <a href="#trust" data-en="Privacy">الخصوصية</a>
+          <a href="#faq" data-en="Questions">أسئلة</a>
+        </nav>
+        <div class="nav-end">
+          <button class="lang" type="button" id="lang" aria-label="Switch to English" data-en-aria="التحويل للعربي">
+            <svg class="i"><use href="#i-globe" /></svg><span id="lang-t" lang="en" data-en="عربي">English</span>
+          </button>
+          <a class="btn btn-go" href="#get" data-en="Get the app">حمّل التطبيق</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-text">
+            <h1 class="rise">
+              <span class="l1" data-en="A <span style='white-space:nowrap'>million-step</span> journey">مشوار المليون خطوة</span>
+              <span class="l2" data-en="starts with one step.">بيبدأ بخطوة.</span>
+            </h1>
+            <p
+              class="lead rise"
+              data-en="Namshi counts your steps, puts you in challenges with your friends and your team, and turns walking into a habit you look forward to."
+            >
+              نمشي بيعدّ خطواتك، بيحطك في تحديات مع صحابك وفريقك، وبيخلّي المشي عادة تستناها كل يوم.
+            </p>
+            <div class="stores rise">
+              <a class="store" href="#" data-store="play">
+                <svg><use href="#i-play-store" /></svg>
+                <span class="store-t"><small data-en="Get it on">حمّله من</small><b>Google Play</b></span>
+              </a>
+              <a class="store" href="#" data-store="apple">
+                <svg><use href="#i-apple" /></svg>
+                <span class="store-t"><small data-en="Download on the">نزّله من</small><b>App Store</b></span>
+              </a>
+            </div>
+            <p class="pulse rise">
+              <span class="live-dot" aria-hidden="true"></span>
+              <span
+                data-en="<strong><span class='num' data-live='walkers'>18,426</span> people</strong> walked <strong><span class='num' data-live='steps'>314,429,950</span> steps</strong> this week <span class='tag'>(sample)</span>"
+                ><strong><span class="num" data-live="walkers">18,426</span> شخص</strong> مشيوا
+                <strong><span class="num" data-live="steps">314,429,950</span> خطوة</strong> الأسبوع ده <span class="tag">(أرقام توضيحية)</span></span
+              >
+              <a href="#this-week"
+                ><span data-en="See Egypt's week">شوف أسبوع مصر</span><svg class="mirror"><use href="#i-arrow" /></svg
+              ></a>
+            </p>
+          </div>
+          <figure class="film rise">
+            <div class="film-frame">
+              <video
+                id="film"
+                muted
+                playsinline
+                loop
+                preload="metadata"
+                poster="video/namshy-hero-ar-1080-poster.jpg"
+                data-src-ar="video/namshy-hero-ar-1080.mp4"
+                data-src-en="video/namshy-hero-en-1080.mp4"
+                data-poster-ar="video/namshy-hero-ar-1080-poster.jpg"
+                data-poster-en="video/namshy-hero-en-1080-poster.jpg"
+                aria-label="فيلم قصير: خطوة واحدة بتكبر لحد مليون خطوة، من القاهرة للأقصر"
+                data-en-aria="Short film: one step grows into a million, from Cairo to Luxor"
+              >
+                <source src="video/namshy-hero-ar-1080.mp4" type="video/mp4" />
+              </video>
+              <button class="film-ctl" type="button" id="film-ctl" aria-label="إيقاف الفيلم" data-en-aria="Pause the film">
+                <svg class="i" id="film-ico"><use href="#i-pause" /></svg>
+              </button>
+            </div>
+            <figcaption>
+              <span data-en="From one step to a million, 20 seconds">من خطوة لمليون، في 20 ثانية</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="walk" aria-labelledby="week-h">
+        <div class="wrap walk-grid">
+          <div class="week" id="this-week">
+            <h2 id="week-h" class="rise" data-en="This week, Egypt walked">الأسبوع ده، مصر مشيت</h2>
+            <p
+              class="bulletin rise"
+              data-en="<span class='num' data-live='walkers'>18,426</span> people walked with Namshy since Saturday, and together they took <span class='num' data-live='steps'>314,429,950</span> steps."
+            >
+              <span class="num" data-live="walkers">18,426</span> شخص مشيوا مع نمشي من السبت لحد النهارده، وجمعوا
+              <span class="num" data-live="steps">314,429,950</span> خطوة.
+            </p>
+            <p
+              class="bulletin rise"
+              data-en="That's about <span class='num' data-live='trips'>314</span> trips from Cairo to Luxor, or <span class='num' data-live='earth'>5.1</span> times around the Earth."
+            >
+              يعني حوالي <span class="num" data-live="trips">314</span> مشوار من القاهرة للأقصر، أو
+              <span class="num" data-live="earth">5.1</span> لفّة حوالين الأرض.
+            </p>
+            <p class="basis" data-en="Every million steps is roughly Cairo to Luxor, taking an average step of about 65 cm.">
+              كل مليون خطوة ≈ مشوار من القاهرة للأقصر، على أساس إن متوسط الخطوة حوالي 65 سم.
+            </p>
+            <p class="sample">
+              <svg class="i"><use href="#i-info" /></svg
+              ><span data-en="Sample figures in this design. They will be wired to the app's real totals."
+                >أرقام توضيحية في نسخة التصميم دي، وهتتربط بأرقام التطبيق الحقيقية.</span
+              >
+            </p>
+            <p class="days-cap" data-en="Steps each day, in millions">الخطوات كل يوم، بالمليون</p>
+            <ol class="days" id="days" aria-label="الخطوات في كل يوم من الأسبوع" data-en-aria="Steps on each day of the week"></ol>
+          </div>
+
+          <div class="map-col">
+            <figure class="egypt" id="egypt">
+              <svg viewBox="0 0 1251 1103" role="img" aria-labelledby="map-t">
+                <title id="map-t" data-en="Map of Egypt: people walking this week, and the route from Cairo to Luxor">
+                  خريطة مصر: ناس بتمشي الأسبوع ده، ومشوار من القاهرة للأقصر
+                </title>
+                <path
+                  class="m-land"
+                  d="M64.7 24.4L109.4 21.1L144.2 20L208.8 34.4L273.4 46.5L328 65.3L387.6 81.9L442.3 102.9L487 89.7L538.7 63.1L556.6 52.1L581.4 34.4L606.2 35.5L646 23.3L690.7 26.6L729.4 28.8L755.3 54.3L775.2 57.6L805 76.4L844.7 73.1L884.5 70.9L924.2 72L965.9 52.1L993.8 115.1L1013.6 187L1033.5 254.4L1018.6 297.5L1005.7 330.7L993.8 369.4L985.8 413.6L973.9 435.7L968.9 449L939.1 424.7L909.3 397L884.5 358.3L859.6 314.1L829.8 269.9L809.9 225.7L800 201.3L780.1 242.2L805 292L829.8 336.2L859.6 386L894.4 446.8L924.2 496.6L937.1 551.8L959 601.6L973.9 634.8L1003.7 690.1L1033.5 745.3L1063.3 795.1L1088.1 844.9L1108 878L1093.1 911.2L1103.1 961L1132.9 1005.2L1177.6 1049.4L1230.2 1082.6L685.7 1082.6L49.8 1082.6L49.8 280.9L20 181.4L44.8 120.6L59.7 65.3Z"
+                />
+                <path
+                  class="m-lake"
+                  d="M680.8 1082.6L682.3 1080.2L685.4 1075.3L690.1 1068.1L696.3 1058.4L703.1 1048.7L710.6 1039L718.6 1029.4L727.3 1019.7L736.7 1009.7L746.6 999.3L757.1 988.6L768.3 977.5L778.9 966.1L788.8 954.4L798.1 942.3L806.8 929.9L814.2 917.6L820.1 905.6L824.7 893.8L827.9 882.2L830.4 873.5L832 867.7L832.8 864.8"
+                />
+                <path
+                  class="m-river"
+                  d="M832.8 864.8L832.9 863.9L833.2 862.3L833.5 859.8L834 856.5L834.7 851.3L835.6 844.4L836.6 835.7L837.9 825.2L838.3 813.8L837.9 801.5L836.8 788.3L834.8 774.2L831.3 761.5L826.3 750.2L819.9 740.2L811.9 731.7L806.5 722.5L803.7 712.7L803.4 702.2L805.6 691.2L808 681.3L810.6 672.8L813.4 665.5L816.4 659.4L818.4 653.1L819.6 646.6L819.7 639.9L819 633L816.8 628.1L813.2 625.2L808.2 624.3L801.7 625.4L795.5 626.7L789.4 628.2L783.5 629.9L777.8 631.9L771.3 631.3L764.1 628.3L756.2 622.7L747.5 614.7L739.8 607.2L733.1 600.1L727.3 593.6L722.6 587.5L717.8 581.5L713 575.5L708.1 569.7L703.1 563.9L697.4 556.7L690.9 548.1L683.7 538.2L675.8 526.8L667.7 514.5L659.5 501.3L651.2 487L642.8 471.8L635.9 457.9L630.5 445.1L626.7 433.7L624.5 423.4L623.4 412L623.4 399.3L624.5 385.3L626.7 370.1L630 355.8L634.4 342.4L639.8 329.9L646.2 318.3L652 305.9L657.1 292.8L661.5 278.9L665.2 264.2L668 250.1L669.7 236.6L670.5 223.6L670.2 211.1L669.1 200.8L667.3 192.5L664.6 186.3L661.1 182.1L658.5 179L656.8 176.9L655.9 175.9"
+                />
+                <path
+                  class="m-river"
+                  d="M655.9 175.9L655 174.2L653.1 170.7L650.3 165.5L646.6 158.6L643 150.9L639.5 142.3L636.2 132.9L632.9 122.7L629.3 113.4L625.2 105.1L620.6 97.8L615.7 91.5L610.9 85L606.3 78.3L601.9 71.6L597.7 64.6L594 58.3L590.9 52.5L588.4 47.2L586.4 42.5L584.9 39L583.9 36.7L583.4 35.5"
+                  style="stroke-width: 3"
+                />
+                <path
+                  class="m-river"
+                  d="M655.9 175.9L656.4 174L657.4 170.3L658.9 164.7L660.9 157.2L662.8 149.7L664.7 142.1L666.5 134.4L668.2 126.7L670.3 118.9L672.8 111L675.7 103.1L678.9 95L682.8 87.4L687.4 80.1L692.7 73.1L698.6 66.4L704.3 60.5L709.6 55.2L714.7 50.7L719.4 46.8L723.1 43.2L725.8 39.9L727.6 36.9L728.3 34.1L728.9 32L729.3 30.6L729.4 30"
+                  style="stroke-width: 3"
+                />
+                <path class="m-canal" d="M775.2 57.6L775.2 131.7L780.1 164.8L800 201.3" />
+                <g class="m-walkers">
+                  <circle cx="651.2" cy="311" r="4.7" style="--d: 0.25" />
+                  <circle cx="709.3" cy="136.1" r="5.2" style="--d: 0.49" />
+                  <circle cx="833" cy="847" r="5.0" style="--d: 0.18" />
+                  <circle cx="631.6" cy="145.9" r="4.5" style="--d: 0.72" />
+                  <circle cx="710.3" cy="141.2" r="3.0" style="--d: 0.42" />
+                  <circle cx="111.6" cy="279.9" r="4.6" style="--d: 0.57" />
+                  <circle cx="756" cy="58.5" r="3.2" style="--d: 0.31" />
+                  <circle cx="664.9" cy="299.9" r="5.2" style="--d: 0.27" />
+                  <circle cx="641.9" cy="308.7" r="2.8" style="--d: 0.65" />
+                  <circle cx="824" cy="649.6" r="4.3" style="--d: 0.57" />
+                  <circle cx="563.9" cy="51" r="3.8" style="--d: 0.48" />
+                  <circle cx="638.2" cy="48.5" r="3.6" style="--d: 0.75" />
+                  <circle cx="608.2" cy="701.3" r="5.2" style="--d: 0.27" />
+                  <circle cx="815.1" cy="742.5" r="5.0" style="--d: 0.41" />
+                  <circle cx="629.4" cy="108.4" r="3.4" style="--d: 0.17" />
+                  <circle cx="265" cy="40.8" r="5.4" style="--d: 0.79" />
+                  <circle cx="652.5" cy="300.4" r="4.4" style="--d: 0.45" />
+                  <circle cx="699.4" cy="76.9" r="2.9" style="--d: 0.37" />
+                  <circle cx="632.7" cy="122.9" r="4.2" style="--d: 0.88" />
+                  <circle cx="836.6" cy="757.6" r="3.2" style="--d: 0.76" />
+                  <circle cx="837.2" cy="783.4" r="3.1" style="--d: 0.79" />
+                  <circle cx="984.8" cy="420.7" r="5.6" style="--d: 0.32" />
+                  <circle cx="726.3" cy="583.5" r="4.2" style="--d: 0.98" />
+                  <circle cx="840.9" cy="793.9" r="4.9" style="--d: 0.86" />
+                  <circle cx="762.6" cy="634.8" r="4.8" style="--d: 0.5" />
+                  <circle cx="587.7" cy="59.3" r="4.8" style="--d: 0.55" />
+                  <circle cx="659.2" cy="94.8" r="5.5" style="--d: 0.11" />
+                  <circle cx="735.3" cy="37.4" r="3.8" style="--d: 0.01" />
+                  <circle cx="722.9" cy="46.3" r="3.3" style="--d: 0.19" />
+                  <circle cx="841.2" cy="831.8" r="2.6" style="--d: 0.08" />
+                  <circle cx="666.4" cy="182.2" r="3.4" style="--d: 0.02" />
+                  <circle cx="734.7" cy="593.7" r="3.6" style="--d: 0.99" />
+                  <circle cx="828.8" cy="785" r="3.5" style="--d: 0.95" />
+                  <circle cx="653.8" cy="59.3" r="2.8" style="--d: 0.67" />
+                  <circle cx="812" cy="626.3" r="4.0" style="--d: 0.52" />
+                  <circle cx="658.3" cy="495.1" r="2.7" style="--d: 0.04" />
+                  <circle cx="810.4" cy="673" r="2.9" style="--d: 0.77" />
+                  <circle cx="804.5" cy="620.5" r="4.7" style="--d: 0.44" />
+                  <circle cx="674.5" cy="527.7" r="4.4" style="--d: 0.16" />
+                  <circle cx="806.9" cy="621.9" r="3.2" style="--d: 0.76" />
+                  <circle cx="620.8" cy="370.4" r="3.4" style="--d: 0" />
+                  <circle cx="828.1" cy="845.7" r="4.2" style="--d: 0.66" />
+                  <circle cx="657.8" cy="300.2" r="5.5" style="--d: 0.4" />
+                  <circle cx="733.9" cy="609.1" r="4.5" style="--d: 0.28" />
+                  <circle cx="671.8" cy="203" r="4.8" style="--d: 0.38" />
+                  <circle cx="807.5" cy="687.9" r="4.5" style="--d: 0.05" />
+                  <circle cx="584.9" cy="84.8" r="3.2" style="--d: 0.87" />
+                  <circle cx="709.1" cy="47.4" r="5.2" style="--d: 0.33" />
+                  <circle cx="739.8" cy="607.1" r="4.1" style="--d: 0.53" />
+                  <circle cx="619.2" cy="138.8" r="3.8" style="--d: 0.28" />
+                  <circle cx="806.7" cy="674.2" r="5.9" style="--d: 0.61" />
+                  <circle cx="589.1" cy="65.7" r="2.6" style="--d: 0.62" />
+                  <circle cx="729.8" cy="118.2" r="3.3" style="--d: 0" />
+                  <circle cx="725.8" cy="584.2" r="5.7" style="--d: 0.08" />
+                  <circle cx="660.4" cy="153.8" r="4.7" style="--d: 0.99" />
+                  <circle cx="741.4" cy="86.6" r="4.8" style="--d: 0.25" />
+                  <circle cx="711" cy="57" r="4.2" style="--d: 0.51" />
+                  <circle cx="844.5" cy="808.5" r="5.5" style="--d: 0.89" />
+                  <circle cx="654.8" cy="301.3" r="3.7" style="--d: 0.02" />
+                  <circle cx="647.8" cy="151.3" r="3.4" style="--d: 0.53" />
+                  <circle cx="661.3" cy="197.7" r="5.6" style="--d: 0.98" />
+                  <circle cx="758.6" cy="88.3" r="2.9" style="--d: 0.39" />
+                  <circle cx="610.1" cy="702.5" r="3.2" style="--d: 0.86" />
+                  <circle cx="650.5" cy="162.6" r="4.5" style="--d: 0.05" />
+                  <circle cx="810.5" cy="673.1" r="3.2" style="--d: 0.14" />
+                  <circle cx="634.8" cy="349.7" r="3.2" style="--d: 0.5" />
+                  <circle cx="678.4" cy="106.9" r="4.0" style="--d: 0.27" />
+                  <circle cx="630.3" cy="402.7" r="5.7" style="--d: 1" />
+                  <circle cx="694.8" cy="100" r="5.6" style="--d: 0.21" />
+                  <circle cx="713.8" cy="80.9" r="3.2" style="--d: 0.06" />
+                  <circle cx="814.1" cy="684.7" r="4.5" style="--d: 0.36" />
+                  <circle cx="729.3" cy="110.7" r="5.2" style="--d: 0.43" />
+                  <circle cx="635.6" cy="363.8" r="4.4" style="--d: 0.32" />
+                  <circle cx="771.4" cy="136.8" r="3.2" style="--d: 0.3" />
+                  <circle cx="690.4" cy="85" r="4.4" style="--d: 0.2" />
+                  <circle cx="800.3" cy="696.7" r="4.2" style="--d: 0.39" />
+                  <circle cx="693.4" cy="75.8" r="4.2" style="--d: 0.26" />
+                  <circle cx="99.1" cy="291.8" r="3.0" style="--d: 0.64" />
+                  <circle cx="574.9" cy="44.3" r="4.8" style="--d: 0.47" />
+                  <circle cx="829.6" cy="853.7" r="3.2" style="--d: 0.59" />
+                  <circle cx="672.1" cy="262.7" r="5.0" style="--d: 0.06" />
+                  <circle cx="692.3" cy="549.3" r="3.2" style="--d: 0.23" />
+                  <circle cx="691.3" cy="550.1" r="3.4" style="--d: 0.41" />
+                  <circle cx="835.9" cy="772.3" r="3.6" style="--d: 0.14" />
+                  <circle cx="653.2" cy="282" r="4.7" style="--d: 0.4" />
+                  <circle cx="688" cy="90.9" r="4.7" style="--d: 0.67" />
+                  <circle cx="639.3" cy="331.7" r="4.0" style="--d: 0.44" />
+                  <circle cx="708.4" cy="575" r="3.0" style="--d: 0.62" />
+                  <circle cx="618.1" cy="83" r="5.4" style="--d: 0.09" />
+                  <circle cx="593.5" cy="58.8" r="4.4" style="--d: 0.62" />
+                  <circle cx="749.6" cy="100.4" r="5.1" style="--d: 0.99" />
+                  <circle cx="668.5" cy="513.1" r="2.5" style="--d: 0.22" />
+                  <circle cx="672.7" cy="110.4" r="5.0" style="--d: 0.96" />
+                  <circle cx="676.4" cy="535.2" r="5.0" style="--d: 0.83" />
+                  <circle cx="751.4" cy="622.5" r="3.2" style="--d: 0.77" />
+                  <circle cx="621.3" cy="390.5" r="5.2" style="--d: 0.37" />
+                  <circle cx="662.8" cy="194.2" r="3.2" style="--d: 0.89" />
+                  <circle cx="819.6" cy="753.3" r="3.6" style="--d: 0.22" />
+                  <circle cx="704.6" cy="38.8" r="4.6" style="--d: 0.88" />
+                  <circle cx="542.1" cy="56.7" r="3.8" style="--d: 0.24" />
+                  <circle cx="800.2" cy="701.3" r="5.4" style="--d: 0.57" />
+                  <circle cx="679.3" cy="152.6" r="4.8" style="--d: 0.53" />
+                  <circle cx="708.1" cy="575.5" r="4.2" style="--d: 0.33" />
+                  <circle cx="731.5" cy="592.4" r="5.5" style="--d: 0.1" />
+                  <circle cx="634.8" cy="366.4" r="5.8" style="--d: 0.24" />
+                  <circle cx="711.5" cy="49.6" r="2.8" style="--d: 0.6" />
+                  <circle cx="808.5" cy="662.7" r="5.8" style="--d: 0.92" />
+                  <circle cx="801.2" cy="693.6" r="5.5" style="--d: 0.4" />
+                  <circle cx="803.8" cy="632.5" r="5.1" style="--d: 0.53" />
+                  <circle cx="936" cy="501.6" r="5.7" style="--d: 0.86" />
+                  <circle cx="664" cy="248.5" r="4.1" style="--d: 0.29" />
+                  <circle cx="685.9" cy="549.3" r="5.3" style="--d: 0.37" />
+                  <circle cx="603.6" cy="701.8" r="3.0" style="--d: 0.9" />
+                  <circle cx="664.9" cy="520.1" r="4.6" style="--d: 0.38" />
+                  <circle cx="795.9" cy="623.2" r="3.5" style="--d: 0.95" />
+                  <circle cx="688.6" cy="71.6" r="3.1" style="--d: 0.56" />
+                  <circle cx="266" cy="59.6" r="5.6" style="--d: 0.73" />
+                  <circle cx="666.8" cy="503" r="3.0" style="--d: 0.15" />
+                  <circle cx="598.5" cy="116.8" r="3.1" style="--d: 0.3" />
+                  <circle cx="740.6" cy="106.1" r="5.9" style="--d: 0.45" />
+                  <circle cx="765.8" cy="49.4" r="5.5" style="--d: 0.56" />
+                  <circle cx="696.2" cy="546.7" r="5.8" style="--d: 0.55" />
+                  <circle cx="672.9" cy="515.3" r="2.9" style="--d: 0.93" />
+                  <circle cx="651.2" cy="323.6" r="3.3" style="--d: 0.32" />
+                  <circle cx="686.1" cy="529.8" r="5.1" style="--d: 0.17" />
+                  <circle cx="610.7" cy="84.8" r="3.5" style="--d: 0.13" />
+                  <circle cx="263.1" cy="59.3" r="5.8" style="--d: 0.72" />
+                  <circle cx="638" cy="268.5" r="5.5" style="--d: 0.65" />
+                  <circle cx="602.6" cy="39.7" r="5.6" style="--d: 0.87" />
+                  <circle cx="718.8" cy="577.4" r="3.4" style="--d: 0.46" />
+                  <circle cx="655.4" cy="288.1" r="2.8" style="--d: 0.19" />
+                  <circle cx="700.5" cy="149.4" r="4.9" style="--d: 0.63" />
+                  <circle cx="831.9" cy="831.1" r="5.0" style="--d: 0.87" />
+                  <circle cx="833.1" cy="823.1" r="4.2" style="--d: 0.16" />
+                  <circle cx="830.9" cy="772.5" r="4.2" style="--d: 0.34" />
+                  <circle cx="677.1" cy="540.7" r="5.8" style="--d: 0.78" />
+                  <circle cx="736.9" cy="108.3" r="4.3" style="--d: 0.52" />
+                  <circle cx="664.4" cy="42" r="4.1" style="--d: 0.61" />
+                  <circle cx="831.2" cy="826.5" r="4.0" style="--d: 0.25" />
+                  <circle cx="761.9" cy="76.1" r="5.8" style="--d: 0.67" />
+                  <circle cx="579.6" cy="40.3" r="3.6" style="--d: 0.73" />
+                  <circle cx="623.4" cy="431.7" r="4.7" style="--d: 0.4" />
+                  <circle cx="842.4" cy="808.1" r="5.7" style="--d: 0.52" />
+                  <circle cx="698.3" cy="114" r="3.3" style="--d: 0.57" />
+                  <circle cx="708" cy="123.6" r="2.9" style="--d: 0.34" />
+                  <circle cx="655.6" cy="168.1" r="2.9" style="--d: 0.13" />
+                  <circle cx="589.4" cy="45.2" r="3.5" style="--d: 0.95" />
+                  <circle cx="800.9" cy="628.7" r="3.0" style="--d: 0.09" />
+                  <circle cx="631.9" cy="116.7" r="3.2" style="--d: 0.67" />
+                  <circle cx="841.1" cy="768.3" r="3.2" style="--d: 0.52" />
+                  <circle cx="710.4" cy="133.1" r="3.5" style="--d: 0.83" />
+                  <circle cx="576.3" cy="72.5" r="3.9" style="--d: 0.35" />
+                  <circle cx="629.7" cy="276.4" r="5.7" style="--d: 0.57" />
+                  <circle cx="831" cy="848.3" r="5.6" style="--d: 0.96" />
+                  <circle cx="664" cy="255.4" r="2.6" style="--d: 0.17" />
+                  <circle cx="725.4" cy="128.1" r="3.8" style="--d: 0.98" />
+                  <circle cx="651.6" cy="490.4" r="4.3" style="--d: 0.93" />
+                  <circle cx="842.1" cy="826.5" r="4.7" style="--d: 0.86" />
+                  <circle cx="697" cy="562.4" r="3.8" style="--d: 0.51" />
+                  <circle cx="723.8" cy="57.8" r="5.5" style="--d: 0.88" />
+                  <circle cx="276.4" cy="51.9" r="3.8" style="--d: 0.03" />
+                  <circle cx="591.9" cy="712.5" r="3.9" style="--d: 0.48" />
+                  <circle cx="261.5" cy="57.3" r="3.2" style="--d: 0.2" />
+                  <circle cx="702.2" cy="135.9" r="2.8" style="--d: 0.6" />
+                  <circle cx="575.9" cy="88.8" r="2.9" style="--d: 0.97" />
+                  <circle cx="748.4" cy="97.7" r="3.4" style="--d: 0.37" />
+                  <circle cx="745.5" cy="109.2" r="3.4" style="--d: 0.38" />
+                  <circle cx="606.6" cy="77.4" r="3.4" style="--d: 0.18" />
+                  <circle cx="819.9" cy="647.4" r="4.1" style="--d: 0.59" />
+                  <circle cx="826.1" cy="745.4" r="5.5" style="--d: 0.12" />
+                  <circle cx="668.9" cy="182.8" r="5.5" style="--d: 0.49" />
+                  <circle cx="704.2" cy="573.1" r="5.0" style="--d: 0.29" />
+                  <circle cx="102.8" cy="292.8" r="5.5" style="--d: 0.06" />
+                  <circle cx="797.9" cy="720.5" r="2.9" style="--d: 0.39" />
+                  <circle cx="660.6" cy="164.3" r="5.8" style="--d: 0.72" />
+                  <circle cx="648.4" cy="475.8" r="3.7" style="--d: 0.69" />
+                  <circle cx="601.2" cy="700.1" r="3.9" style="--d: 0.45" />
+                  <circle cx="799.7" cy="711.5" r="3.2" style="--d: 0.55" />
+                  <circle cx="823.7" cy="745.6" r="5.3" style="--d: 0.64" />
+                  <circle cx="666.1" cy="290.1" r="5.1" style="--d: 0" />
+                  <circle cx="759.4" cy="57.1" r="4.4" style="--d: 0.66" />
+                  <circle cx="837.7" cy="760.3" r="3.4" style="--d: 0.31" />
+                  <circle cx="642.4" cy="463.1" r="5.5" style="--d: 0.69" />
+                  <circle cx="836.3" cy="856.3" r="5.4" style="--d: 0.37" />
+                  <circle cx="779.9" cy="633.8" r="3.7" style="--d: 0.5" />
+                  <circle cx="626.3" cy="385.2" r="4.8" style="--d: 0.83" />
+                  <circle cx="637.6" cy="149.4" r="5.5" style="--d: 0.91" />
+                  <circle cx="599.6" cy="73.7" r="4.7" style="--d: 0.33" />
+                  <circle cx="623.2" cy="434.1" r="5.5" style="--d: 0.81" />
+                  <circle cx="835.5" cy="860.1" r="4.5" style="--d: 0.11" />
+                </g>
+                <path
+                  class="m-route-ghost"
+                  d="M669.8 192.5L669.8 193.3L669.9 194.8L669.9 197.2L670 200.3L670.1 204.2L670.2 208.8L670.3 214.3L670.4 220.5L670.3 226.8L669.9 233.3L669.3 240L668.4 246.7L667.3 253.6L665.9 260.7L664.3 267.9L662.4 275.2L660.4 282.3L658.2 289.3L655.8 296L653.3 302.6L650.6 309L647.7 315.2L644.6 321.2L641.4 327L638.4 333L635.7 339.3L633.3 345.7L631.1 352.4L629.2 359.4L627.6 366.5L626.2 373.9L625.1 381.5L624.2 388.8L623.7 395.8L623.4 402.4L623.4 408.8L623.7 414.8L624.2 420.6L625.1 426L626.2 431.1L627.7 436.5L629.6 442.3L631.9 448.3L634.5 454.7L637.6 461.3L641 468.3L644.9 475.6L649.1 483.2L653.3 490.6L657.4 497.7L661.6 504.6L665.7 511.2L669.7 517.6L673.8 523.8L677.8 529.7L681.8 535.3L685.5 540.6L689.1 545.6L692.6 550.3L695.8 554.5L698.8 558.5L701.7 562.1L704.4 565.3L706.8 568.2L709.3 571.1L711.8 574.1L714.2 577L716.6 580L719 583L721.4 586L723.8 589L726.2 592.1L728.8 595.2L731.6 598.5L734.7 601.9L738.1 605.4L741.7 609.1L745.5 612.8L749.6 616.7L754 620.7L758.1 624.1L762.1 626.9L765.9 629L769.5 630.6L772.9 631.5L776.1 631.7L779.2 631.4L782 630.4L785 629.5L787.9 628.6L790.9 627.8L793.9 627.1L797 626.4L800.2 625.7L803.4 625.1L806.6 624.5L809.5 624.5L812 624.9L814.1 625.9L815.9 627.3L817.4 629.3L818.5 631.7L819.2 634.7L819.6 638.2L819.7 641.6L819.6 644.9L819.3 648.2L818.7 651.5L817.9 654.7L816.9 657.8L815.6 660.9L814.2 663.9L812.9 666.6L811.7 668.9L810.8 670.8L810.1 672.3L809.5 673.4L809.1 674.2L808.9 674.6"
+                />
+                <g class="m-journey">
+                  <path
+                    class="m-route-glow"
+                    id="route-glow"
+                    d="M669.8 192.5L669.8 193.3L669.9 194.8L669.9 197.2L670 200.3L670.1 204.2L670.2 208.8L670.3 214.3L670.4 220.5L670.3 226.8L669.9 233.3L669.3 240L668.4 246.7L667.3 253.6L665.9 260.7L664.3 267.9L662.4 275.2L660.4 282.3L658.2 289.3L655.8 296L653.3 302.6L650.6 309L647.7 315.2L644.6 321.2L641.4 327L638.4 333L635.7 339.3L633.3 345.7L631.1 352.4L629.2 359.4L627.6 366.5L626.2 373.9L625.1 381.5L624.2 388.8L623.7 395.8L623.4 402.4L623.4 408.8L623.7 414.8L624.2 420.6L625.1 426L626.2 431.1L627.7 436.5L629.6 442.3L631.9 448.3L634.5 454.7L637.6 461.3L641 468.3L644.9 475.6L649.1 483.2L653.3 490.6L657.4 497.7L661.6 504.6L665.7 511.2L669.7 517.6L673.8 523.8L677.8 529.7L681.8 535.3L685.5 540.6L689.1 545.6L692.6 550.3L695.8 554.5L698.8 558.5L701.7 562.1L704.4 565.3L706.8 568.2L709.3 571.1L711.8 574.1L714.2 577L716.6 580L719 583L721.4 586L723.8 589L726.2 592.1L728.8 595.2L731.6 598.5L734.7 601.9L738.1 605.4L741.7 609.1L745.5 612.8L749.6 616.7L754 620.7L758.1 624.1L762.1 626.9L765.9 629L769.5 630.6L772.9 631.5L776.1 631.7L779.2 631.4L782 630.4L785 629.5L787.9 628.6L790.9 627.8L793.9 627.1L797 626.4L800.2 625.7L803.4 625.1L806.6 624.5L809.5 624.5L812 624.9L814.1 625.9L815.9 627.3L817.4 629.3L818.5 631.7L819.2 634.7L819.6 638.2L819.7 641.6L819.6 644.9L819.3 648.2L818.7 651.5L817.9 654.7L816.9 657.8L815.6 660.9L814.2 663.9L812.9 666.6L811.7 668.9L810.8 670.8L810.1 672.3L809.5 673.4L809.1 674.2L808.9 674.6"
+                  />
+                  <path
+                    class="m-route"
+                    id="route"
+                    d="M669.8 192.5L669.8 193.3L669.9 194.8L669.9 197.2L670 200.3L670.1 204.2L670.2 208.8L670.3 214.3L670.4 220.5L670.3 226.8L669.9 233.3L669.3 240L668.4 246.7L667.3 253.6L665.9 260.7L664.3 267.9L662.4 275.2L660.4 282.3L658.2 289.3L655.8 296L653.3 302.6L650.6 309L647.7 315.2L644.6 321.2L641.4 327L638.4 333L635.7 339.3L633.3 345.7L631.1 352.4L629.2 359.4L627.6 366.5L626.2 373.9L625.1 381.5L624.2 388.8L623.7 395.8L623.4 402.4L623.4 408.8L623.7 414.8L624.2 420.6L625.1 426L626.2 431.1L627.7 436.5L629.6 442.3L631.9 448.3L634.5 454.7L637.6 461.3L641 468.3L644.9 475.6L649.1 483.2L653.3 490.6L657.4 497.7L661.6 504.6L665.7 511.2L669.7 517.6L673.8 523.8L677.8 529.7L681.8 535.3L685.5 540.6L689.1 545.6L692.6 550.3L695.8 554.5L698.8 558.5L701.7 562.1L704.4 565.3L706.8 568.2L709.3 571.1L711.8 574.1L714.2 577L716.6 580L719 583L721.4 586L723.8 589L726.2 592.1L728.8 595.2L731.6 598.5L734.7 601.9L738.1 605.4L741.7 609.1L745.5 612.8L749.6 616.7L754 620.7L758.1 624.1L762.1 626.9L765.9 629L769.5 630.6L772.9 631.5L776.1 631.7L779.2 631.4L782 630.4L785 629.5L787.9 628.6L790.9 627.8L793.9 627.1L797 626.4L800.2 625.7L803.4 625.1L806.6 624.5L809.5 624.5L812 624.9L814.1 625.9L815.9 627.3L817.4 629.3L818.5 631.7L819.2 634.7L819.6 638.2L819.7 641.6L819.6 644.9L819.3 648.2L818.7 651.5L817.9 654.7L816.9 657.8L815.6 660.9L814.2 663.9L812.9 666.6L811.7 668.9L810.8 670.8L810.1 672.3L809.5 673.4L809.1 674.2L808.9 674.6"
+                  />
+                  <g class="m-stn">
+                    <circle cx="669.8" cy="192.5" r="9" />
+                    <text x="649.8" y="203.5" text-anchor="end" data-en="Cairo">القاهرة</text>
+                  </g>
+                  <g class="m-stn">
+                    <circle cx="655.9" cy="300.8" r="9" />
+                    <text x="675.9" y="311.8" text-anchor="start" data-en="Beni Suef">بني سويف</text>
+                  </g>
+                  <g class="m-stn">
+                    <circle cx="621.1" cy="408.1" r="9" />
+                    <text x="601.1" y="419.1" text-anchor="end" data-en="Minya">المنيا</text>
+                  </g>
+                  <g class="m-stn">
+                    <circle cx="663.9" cy="509.8" r="9" />
+                    <text x="683.9" y="520.8" text-anchor="start" data-en="Asyut">أسيوط</text>
+                  </g>
+                  <g class="m-stn">
+                    <circle cx="715.5" cy="578.4" r="9" />
+                    <text x="695.5" y="589.4" text-anchor="end" data-en="Sohag">سوهاج</text>
+                  </g>
+                  <g class="m-stn">
+                    <circle cx="808.9" cy="674.6" r="9" />
+                    <text x="828.9" y="685.6" text-anchor="start" data-en="Luxor">الأقصر</text>
+                  </g>
+                  <circle class="m-head" id="head" r="11" cx="0" cy="0" />
+                </g>
+              </svg>
+              <figcaption class="legend">
+                <i></i><span data-en="Each dot is people walking right now (illustrative)">كل نقطة = ناس ماشية دلوقتي (توضيحي)</span>
+              </figcaption>
+              <div class="odo" aria-live="off">
+                <div class="odo-l"><small data-en="Steps so far">خطوات المشوار</small><b id="odo-city" data-en="Cairo">القاهرة</b></div>
+                <div class="odo-n" id="odo">0</div>
+              </div>
+            </figure>
+          </div>
+
+          <div class="journey" id="journey">
+            <h2 class="rise" data-en="Walk it with us">امشي المشوار معانا</h2>
+            <p
+              class="journey-intro rise"
+              data-en="Cairo to Luxor is about a million steps. Scroll down as you walk: each stop is one thing Namshy does for you."
+            >
+              من القاهرة للأقصر حوالي مليون خطوة. انزل في الصفحة كأنك ماشي، وكل محطة هتوريك حاجة بيعملهالك نمشي.
+            </p>
+
+            <ol class="stations" id="stations">
+              <li class="station" data-steps="0" data-k="cairo">
+                <span class="station-dot" aria-hidden="true"></span>
+                <h3>
+                  <span data-en="Your first step">أول خطوة</span>
+                  <span class="at"
+                    ><span class="city" data-en="Cairo">القاهرة</span> · <span class="num" data-st></span> <span data-en="steps">خطوة</span></span
+                  >
+                </h3>
+                <p
+                  data-en="Download the app and sign in with a code we send you. Your everyday steps come in by themselves from Health Connect or Apple Health, and when you head out on purpose, tap “Start counting”."
+                >
+                  نزّل التطبيق وادخل بكود بيوصلك. خطواتك العادية بتتسحب لوحدها من Health Connect أو Apple Health، ولما تنزل تمشي مخصوص، دوس «ابدأ
+                  العدّ».
+                </p>
+                <div class="app app-center" aria-hidden="true">
+                  <div class="ring">
+                    <svg viewBox="0 0 200 200">
+                      <circle cx="100" cy="100" r="88" fill="none" stroke="#1d2a32" stroke-width="14" />
+                      <circle cx="100" cy="100" r="68" fill="none" stroke="#20242d" stroke-width="16" />
+                    </svg>
+                    <div class="ring-in"><b>0</b><small data-en="of 10,000">من 10,000</small></div>
+                  </div>
+                  <div class="app-start"><i></i><span data-en="Start counting">ابدأ العدّ</span></div>
+                </div>
+              </li>
+
+              <li class="station" data-k="beniSuef">
+                <span class="station-dot" aria-hidden="true"></span>
+                <h3>
+                  <span data-en="A goal every day">هدف كل يوم</span>
+                  <span class="at"
+                    ><span class="city" data-en="Beni Suef">بني سويف</span> · <span class="num" data-st></span>
+                    <span data-en="steps">خطوة</span></span
+                  >
+                </h3>
+                <p data-en="10,000 steps a day. The ring fills in front of you, and every day you close it adds to your streak.">
+                  10,000 خطوة في اليوم. الدائرة بتتملى قدام عينك، وكل يوم تقفلها فيه بيطوّل السلسلة بتاعتك.
+                </p>
+                <div class="app app-center" aria-hidden="true">
+                  <div class="ring">
+                    <svg viewBox="0 0 200 200">
+                      <circle cx="100" cy="100" r="88" fill="none" stroke="#1d2a32" stroke-width="14" />
+                      <circle cx="100" cy="100" r="68" fill="none" stroke="#20242d" stroke-width="16" />
+                      <circle
+                        cx="100"
+                        cy="100"
+                        r="68"
+                        fill="none"
+                        stroke="#00ff85"
+                        stroke-width="16"
+                        stroke-linecap="round"
+                        stroke-dasharray="427"
+                        stroke-dashoffset="114"
+                      />
+                    </svg>
+                    <div class="ring-in"><b>7,342</b><small data-en="of 10,000">من 10,000</small></div>
+                  </div>
+                  <div class="streak"><b>12</b><span data-en="days in a row">يوم ورا بعض</span></div>
+                </div>
+              </li>
+
+              <li class="station" data-k="minya">
+                <span class="station-dot" aria-hidden="true"></span>
+                <h3>
+                  <span data-en="Your friends">صحابك</span>
+                  <span class="at"
+                    ><span class="city" data-en="Minya">المنيا</span> · <span class="num" data-st></span> <span data-en="steps">خطوة</span></span
+                  >
+                </h3>
+                <p data-en="Add friends with their personal code. No searching, no phone numbers. Then see who's ahead of you, and by how much.">
+                  ضيف صحابك بالكود الشخصي بتاعهم، من غير بحث ولا أرقام تليفونات. وشوف مين سابقك وبكام خطوة.
+                </p>
+                <p class="note" data-en="They see your steps. Never your route, where you started or where you stopped.">
+                  بيشوفوا خطواتك، لكن عمرهم ما بيشوفوا طريقك ولا مكان ما بدأت ولا مكان ما وقفت.
+                </p>
+                <div class="app" aria-hidden="true">
+                  <div class="person">
+                    <span class="avatar warm" data-en="KA">كع</span>
+                    <div class="person-m">
+                      <b data-en="Karim">كريم</b>
+                      <div class="bar"><i style="--w: 98%"></i></div>
+                    </div>
+                    <span class="steps">9,821</span>
+                  </div>
+                  <div class="person is-you">
+                    <span class="avatar" data-en="NH">نح</span>
+                    <div class="person-m">
+                      <b><span data-en="Nada">ندى</span><small data-en="you">إنتِ</small></b>
+                      <div class="bar"><i style="--w: 73%"></i></div>
+                    </div>
+                    <span class="steps">7,342</span>
+                  </div>
+                  <div class="person">
+                    <span class="avatar" data-en="YS">يس</span>
+                    <div class="person-m">
+                      <b data-en="Youssef">يوسف</b>
+                      <div class="bar"><i style="--w: 61%"></i></div>
+                    </div>
+                    <span class="steps">6,108</span>
+                  </div>
+                  <p class="ahead" data-en="Karim is ahead of you by <b>2,479 steps</b>">كريم سابقك بـ <b>2,479 خطوة</b></p>
+                </div>
+              </li>
+
+              <li class="station" data-k="asyut">
+                <span class="station-dot" aria-hidden="true"></span>
+                <h3>
+                  <span data-en="Your team">فريقك</span>
+                  <span class="at"
+                    ><span class="city" data-en="Asyut">أسيوط</span> · <span class="num" data-st></span> <span data-en="steps">خطوة</span></span
+                  >
+                </h3>
+                <p
+                  data-en="Make a team for your class, your department or your group of friends, and share the code. The walks each member records count for the team."
+                >
+                  اعمل فريق لفصلك أو قسمك أو شلّتك، وابعت الكود. المشاوير اللي كل واحد بيسجّلها بتتحسب للفريق.
+                </p>
+                <div class="app" aria-hidden="true">
+                  <div class="person">
+                    <span class="rank gold">1</span>
+                    <div class="person-m">
+                      <b data-en="Maadi Walkers">مشّائين المعادي</b><span class="team-meta" data-en="6 members">6 أعضاء</span>
+                    </div>
+                    <span class="steps">38,420</span>
+                  </div>
+                  <div class="person is-you">
+                    <span class="rank">2</span>
+                    <div class="person-m">
+                      <b><span data-en="Marketing dept.">قسم التسويق</span><small data-en="your team">فريقك</small></b
+                      ><span class="team-meta" data-en="5 members">5 أعضاء</span>
+                    </div>
+                    <span class="steps">34,100</span>
+                  </div>
+                  <div class="person">
+                    <span class="rank">3</span>
+                    <div class="person-m"><b data-en="Class of 2027">دفعة 2027</b><span class="team-meta" data-en="3 members">3 أعضاء</span></div>
+                    <span class="steps">28,700</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="station" data-k="sohag">
+                <span class="station-dot" aria-hidden="true"></span>
+                <h3>
+                  <span data-en="Challenges">التحديات</span>
+                  <span class="at"
+                    ><span class="city" data-en="Sohag">سوهاج</span> · <span class="num" data-st></span> <span data-en="steps">خطوة</span></span
+                  >
+                </h3>
+                <p
+                  data-en="Challenges with a target and a deadline: 70,000 steps in a week, or a set distance in a month. Finish one and earn points and badges."
+                >
+                  تحديات ليها هدف ومعاد: 70,000 خطوة في أسبوع، أو مسافة معيّنة في شهر. خلّصها واكسب نقط وشارات.
+                </p>
+                <p class="note" data-en="Challenges count the walks you record in the app.">التحديات بتتحسب من المشاوير اللي بتسجّلها في التطبيق.</p>
+                <div class="app" aria-hidden="true">
+                  <div class="chal-top">
+                    <svg class="i"><use href="#i-bolt" /></svg><b data-en="+750 pts">+750 نقطة</b>
+                  </div>
+                  <p class="chal-name" data-en="Weekly Warrior">محارب الأسبوع</p>
+                  <p class="chal-sub" data-en="47,342 of 70,000 steps">47,342 من 70,000 خطوة</p>
+                  <div class="pbar"><i style="--w: 68%"></i></div>
+                  <p class="pbar-n">68%</p>
+                </div>
+              </li>
+
+              <li class="station" data-k="luxor">
+                <span class="station-dot" aria-hidden="true"></span>
+                <h3>
+                  <span data-en="Rankings and badges">الترتيب والشارات</span>
+                  <span class="at"
+                    ><span class="city" data-en="Luxor">الأقصر</span> · <span class="num" data-st></span> <span data-en="steps">خطوة</span></span
+                  >
+                </h3>
+                <p
+                  data-en="Competitions between people, friends and teams, with standings that update while the competition runs. And every milestone earns a badge."
+                >
+                  مسابقات بين الأفراد والصحاب والفرق، وترتيب بيتحدّث طول ما المسابقة شغّالة. وكل إنجاز ليه شارة.
+                </p>
+                <div class="app" aria-hidden="true">
+                  <div class="badges">
+                    <div class="badge">
+                      <svg><use href="#i-walker" /></svg><span data-en="First steps">أول خطوة</span>
+                    </div>
+                    <div class="badge">
+                      <svg><use href="#i-flame" /></svg><span data-en="Streak master">بطل السلسلة</span>
+                    </div>
+                    <div class="badge">
+                      <svg><use href="#i-moon" /></svg><span data-en="Night walker">ماشي بالليل</span>
+                    </div>
+                  </div>
+                  <div class="rankline"><span data-en="September competition">مسابقة سبتمبر</span><b>#3</b></div>
+                </div>
+                <p class="arrive">
+                  <span data-en="You made it to Luxor, a million steps in. Now walk it for real."
+                    >وصلت الأقصر، بعد مليون خطوة. دلوقتي امشيها بجد.</span
+                  >
+                  <a href="#get" data-en="Get the app">حمّل التطبيق</a>
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust" id="trust" aria-labelledby="trust-h">
+        <div class="wrap">
+          <h2 id="trust-h" class="rise" data-en="Your steps are shared. Your route stays yours.">خطواتك لصحابك. وطريقك ليك لوحدك.</h2>
+          <p
+            class="statement rise"
+            data-en="Friends see <em>your steps</em>, not <em>your route</em>. Location is on <em>only while you record</em> a walk you started. Lost signal? The walk <em>is saved on your phone</em> and sent when you&#39;re back. And every walk <em>is checked</em> before it counts in a competition, with a person reviewing anything that needs a second look."
+          >
+            صحابك بيشوفوا <em>خطواتك</em>، مش <em>طريقك</em>. الموقع بيشتغل <em>بس وإنت بتسجّل</em> مشوار بدأته بنفسك. النت فصل؟ المشوار
+            <em>بيتحفظ على موبايلك</em> وبيتبعت أول ما يرجع. وكل مشوار <em>بيتراجع</em> قبل ما يتحسب في المسابقات، واللي محتاج نظرة تانية بيراجعه بني
+            آدم مننا.
+          </p>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-h">
+        <div class="wrap faq-grid">
+          <h2 id="faq-h" class="rise" data-en="Questions people ask">أسئلة بتتسأل كتير</h2>
+          <div class="faq-list">
+            <details>
+              <summary>
+                <span data-en="Is it on Android and iPhone?">التطبيق على أندرويد وآيفون؟</span><svg class="i"><use href="#i-plus" /></svg>
+              </summary>
+              <p data-en="Yes. Namshy is on Google Play and the App Store.">أيوه، نمشي موجود على Google Play وعلى App Store.</p>
+            </details>
+            <details>
+              <summary>
+                <span data-en="Do my everyday steps count?">خطواتي العادية طول اليوم بتتحسب؟</span><svg class="i"><use href="#i-plus" /></svg>
+              </summary>
+              <p data-en="Yes, in your daily stats and your 10,000-step goal. Challenges and competitions count the walks you record in the app.">
+                أيوه، في إحصائياتك اليومية وهدف الـ 10,000 خطوة. أما التحديات والمسابقات فبتتحسب من المشاوير اللي بتسجّلها في التطبيق.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span data-en="How do I make a team for my work or school?">أعمل فريق لشغلي أو مدرستي إزاي؟</span
+                ><svg class="i"><use href="#i-plus" /></svg>
+              </summary>
+              <p
+                data-en="Create a team in the app and you get a code. Anyone who enters the code joins. For a big place, make one team per class or department."
+              >
+                اعمل فريق من التطبيق وهتاخد كود. أي حد يكتب الكود بينضم. ولو المكان كبير، اعمل فريق لكل فصل أو قسم.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span data-en="Will my friends know where I live?">صحابي هيعرفوا أنا ساكن فين؟</span><svg class="i"><use href="#i-plus" /></svg>
+              </summary>
+              <p data-en="No. Friends see your steps and totals. Your route, start point and end point are never shown to them.">
+                لأ. صحابك بيشوفوا خطواتك ومجموعك بس. طريقك ونقطة البداية والنهاية عمرها ما بتظهر لهم.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span data-en="What if I lose signal mid-walk?">لو النت فصل وأنا ماشي؟</span><svg class="i"><use href="#i-plus" /></svg>
+              </summary>
+              <p data-en="Keep walking. The app records offline and sends everything once you're connected again.">
+                كمّل مشي عادي. التطبيق بيسجّل من غير نت وبيبعت كل حاجة أول ما ترجع أونلاين.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="finale" id="get" aria-labelledby="get-h">
+        <div class="wrap">
+          <p class="finale-n" id="finale-n" aria-hidden="true">1,000,000</p>
+          <p class="finale-u" data-en="steps, one at a time">خطوة، واحدة ورا التانية</p>
+          <h2 id="get-h" data-en="The first step is yours. We'll count the rest.">الخطوة الأولى عليك. والباقي علينا.</h2>
+          <p class="lead" data-en="Download Namshy today and take your first step with thousands of people across Egypt.">
+            نزّل نمشي النهارده، وابدأ أول خطوة مع آلاف الناس في مصر كلها.
+          </p>
+          <div class="finale-act">
+            <div class="stores">
+              <a class="store" href="#" data-store="play"
+                ><svg><use href="#i-play-store" /></svg><span class="store-t"><small data-en="Get it on">حمّله من</small><b>Google Play</b></span></a
+              >
+              <a class="store" href="#" data-store="apple"
+                ><svg><use href="#i-apple" /></svg><span class="store-t"><small data-en="Download on the">نزّله من</small><b>App Store</b></span></a
+              >
+            </div>
+            <div class="qr">
+              <span class="qr-box" aria-hidden="true"
+                ><svg class="i" style="width: 34px; height: 34px"><use href="#i-qr" /></svg></span
+              ><span data-en="On a computer? Scan the code with your phone.">على الكمبيوتر؟ امسح الكود بموبايلك.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot-in">
+        <a class="brand" href="#top" aria-label="نمشي — لأعلى الصفحة" data-en-aria="Namshy — back to top"
+          ><span class="brand-mark"
+            ><svg><use href="#i-walker" /></svg></span
+          ><span data-en="Namshy">نمشي</span></a
+        >
+        <nav aria-label="روابط" data-en-aria="Links">
+          <a href="#" data-en="Privacy policy">سياسة الخصوصية</a>
+          <a href="#" data-en="Terms">الشروط</a>
+          <a href="#" data-en="Contact us">كلّمنا</a>
+        </nav>
+        <p data-en="© 2026 Namshy">© 2026 نمشي</p>
+      </div>
+    </footer>
+
+    <div class="dock" id="dock" aria-hidden="true">
+      <svg class="dock-map" viewBox="593 162 256 542">
+        <path
+          class="dm-track"
+          d="M669.8 192.5L669.8 193.3L669.9 194.8L669.9 197.2L670 200.3L670.1 204.2L670.2 208.8L670.3 214.3L670.4 220.5L670.3 226.8L669.9 233.3L669.3 240L668.4 246.7L667.3 253.6L665.9 260.7L664.3 267.9L662.4 275.2L660.4 282.3L658.2 289.3L655.8 296L653.3 302.6L650.6 309L647.7 315.2L644.6 321.2L641.4 327L638.4 333L635.7 339.3L633.3 345.7L631.1 352.4L629.2 359.4L627.6 366.5L626.2 373.9L625.1 381.5L624.2 388.8L623.7 395.8L623.4 402.4L623.4 408.8L623.7 414.8L624.2 420.6L625.1 426L626.2 431.1L627.7 436.5L629.6 442.3L631.9 448.3L634.5 454.7L637.6 461.3L641 468.3L644.9 475.6L649.1 483.2L653.3 490.6L657.4 497.7L661.6 504.6L665.7 511.2L669.7 517.6L673.8 523.8L677.8 529.7L681.8 535.3L685.5 540.6L689.1 545.6L692.6 550.3L695.8 554.5L698.8 558.5L701.7 562.1L704.4 565.3L706.8 568.2L709.3 571.1L711.8 574.1L714.2 577L716.6 580L719 583L721.4 586L723.8 589L726.2 592.1L728.8 595.2L731.6 598.5L734.7 601.9L738.1 605.4L741.7 609.1L745.5 612.8L749.6 616.7L754 620.7L758.1 624.1L762.1 626.9L765.9 629L769.5 630.6L772.9 631.5L776.1 631.7L779.2 631.4L782 630.4L785 629.5L787.9 628.6L790.9 627.8L793.9 627.1L797 626.4L800.2 625.7L803.4 625.1L806.6 624.5L809.5 624.5L812 624.9L814.1 625.9L815.9 627.3L817.4 629.3L818.5 631.7L819.2 634.7L819.6 638.2L819.7 641.6L819.6 644.9L819.3 648.2L818.7 651.5L817.9 654.7L816.9 657.8L815.6 660.9L814.2 663.9L812.9 666.6L811.7 668.9L810.8 670.8L810.1 672.3L809.5 673.4L809.1 674.2L808.9 674.6"
+        />
+        <path
+          class="dm-walk"
+          id="dm-walk"
+          d="M669.8 192.5L669.8 193.3L669.9 194.8L669.9 197.2L670 200.3L670.1 204.2L670.2 208.8L670.3 214.3L670.4 220.5L670.3 226.8L669.9 233.3L669.3 240L668.4 246.7L667.3 253.6L665.9 260.7L664.3 267.9L662.4 275.2L660.4 282.3L658.2 289.3L655.8 296L653.3 302.6L650.6 309L647.7 315.2L644.6 321.2L641.4 327L638.4 333L635.7 339.3L633.3 345.7L631.1 352.4L629.2 359.4L627.6 366.5L626.2 373.9L625.1 381.5L624.2 388.8L623.7 395.8L623.4 402.4L623.4 408.8L623.7 414.8L624.2 420.6L625.1 426L626.2 431.1L627.7 436.5L629.6 442.3L631.9 448.3L634.5 454.7L637.6 461.3L641 468.3L644.9 475.6L649.1 483.2L653.3 490.6L657.4 497.7L661.6 504.6L665.7 511.2L669.7 517.6L673.8 523.8L677.8 529.7L681.8 535.3L685.5 540.6L689.1 545.6L692.6 550.3L695.8 554.5L698.8 558.5L701.7 562.1L704.4 565.3L706.8 568.2L709.3 571.1L711.8 574.1L714.2 577L716.6 580L719 583L721.4 586L723.8 589L726.2 592.1L728.8 595.2L731.6 598.5L734.7 601.9L738.1 605.4L741.7 609.1L745.5 612.8L749.6 616.7L754 620.7L758.1 624.1L762.1 626.9L765.9 629L769.5 630.6L772.9 631.5L776.1 631.7L779.2 631.4L782 630.4L785 629.5L787.9 628.6L790.9 627.8L793.9 627.1L797 626.4L800.2 625.7L803.4 625.1L806.6 624.5L809.5 624.5L812 624.9L814.1 625.9L815.9 627.3L817.4 629.3L818.5 631.7L819.2 634.7L819.6 638.2L819.7 641.6L819.6 644.9L819.3 648.2L818.7 651.5L817.9 654.7L816.9 657.8L815.6 660.9L814.2 663.9L812.9 666.6L811.7 668.9L810.8 670.8L810.1 672.3L809.5 673.4L809.1 674.2L808.9 674.6"
+        />
+        <circle class="dm-end" cx="669.8" cy="192.5" r="26" />
+        <circle class="dm-end" cx="808.9" cy="674.6" r="26" />
+        <circle id="dm-dot" r="38" />
+      </svg>
+      <div class="dock-l">
+        <small id="dock-label" data-en="walked with Namshy this week (sample)">مشيوا مع نمشي الأسبوع ده (توضيحي)</small><b id="dock-n">18,426</b>
+      </div>
+      <a class="btn btn-go" href="#get" tabindex="-1" data-en="Get the app">حمّل التطبيق</a>
+    </div>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        root.classList.add("js");
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const fmt = (n) => Math.round(n).toLocaleString("en-US");
+        const $ = (s, el = document) => el.querySelector(s);
+        const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+        // ---------- Language ----------
+        let lang = "ar";
+        const swap = (to) => {
+          $$("[data-en]").forEach((el) => {
+            if (!el.dataset.ar) el.dataset.ar = el.innerHTML;
+            el.innerHTML = to === "en" ? el.dataset.en : el.dataset.ar;
+          });
+          $$("[data-en-aria]").forEach((el) => {
+            if (!el.dataset.arAria) el.dataset.arAria = el.getAttribute("aria-label") || "";
+            el.setAttribute("aria-label", to === "en" ? el.dataset.enAria : el.dataset.arAria);
+          });
+          root.lang = to;
+          $("#lang-t").lang = to === "ar" ? "en" : "ar";
+          root.dir = to === "ar" ? "rtl" : "ltr";
+          document.title = to === "ar" ? "نمشي — مشوار المليون خطوة بيبدأ بخطوة" : "Namshy — A million-step journey starts with one step";
+          lang = to;
+          const v = $("#film");
+          const src = v.dataset["src" + (to === "ar" ? "Ar" : "En")];
+          if (!v.currentSrc.endsWith(src)) {
+            const playing = !v.paused;
+            v.poster = v.dataset["poster" + (to === "ar" ? "Ar" : "En")];
+            v.src = src;
+            if (playing) v.play().catch(() => {});
+          }
+          renderDays();
+          tick(true);
+          stationSteps();
+          onScroll();
+        };
+        $("#lang").addEventListener("click", () => swap(lang === "ar" ? "en" : "ar"));
+
+        // ---------- Store links: the visitor's own store leads ----------
+        // Placeholder URLs until the listings are live.
+        const STORE = { play: "https://play.google.com/store/apps/details?id=REPLACE_ME", apple: "https://apps.apple.com/app/idREPLACE_ME" };
+        const ua = navigator.userAgent;
+        const os = /android/i.test(ua) ? "play" : /iphone|ipad|ipod|macintosh/i.test(ua) && "ontouchend" in document ? "apple" : null;
+        $$("[data-store]").forEach((a) => {
+          a.href = STORE[a.dataset.store];
+          a.rel = "noopener";
+          if (a.dataset.store === (os || "play")) a.classList.add("is-primary");
+          if (os === "apple" && a.dataset.store === "apple") a.parentElement.prepend(a);
+        });
+        $$('a[href="#get"].btn').forEach((a) => {
+          if (os) {
+            a.href = STORE[os];
+            a.rel = "noopener";
+          }
+        });
+
+        // ---------- This week (sample data, shaped like the real aggregate will be) ----------
+        const DAY_AR = ["السبت", "الحد", "الاتنين", "التلات", "الأربع", "الخميس", "الجمعة"];
+        const DAY_EN = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+        const SAMPLE_DAYS = [118240110, 124905332, 121630480, 126410950, 119877300, 109402210, 97120880];
+        const now = new Date();
+        const todayIdx = (now.getDay() + 1) % 7; // the Egyptian week starts on Saturday
+        const dayFrac = Math.max(0.25, (now.getHours() * 60 + now.getMinutes()) / 1440);
+        const dayVals = SAMPLE_DAYS.map((v, i) => (i < todayIdx ? v : i === todayIdx ? Math.round(v * dayFrac) : 0));
+        const state = { walkers: 18426, steps: dayVals.reduce((a, b) => a + b, 0) };
+        const maxDay = Math.max(...SAMPLE_DAYS);
+        const short = (v) => `${Math.round(v / 1e6)}`;
+        function renderDays() {
+          const ol = $("#days");
+          ol.innerHTML = dayVals
+            .map((v, i) => {
+              const cls = i === todayIdx ? "is-today" : i > todayIdx ? "is-later" : "";
+              const name = lang === "ar" ? DAY_AR[i] : DAY_EN[i];
+              const today = i === todayIdx ? (lang === "ar" ? " (النهارده)" : " (today)") : "";
+              const label = i > todayIdx ? (lang === "ar" ? "لسه" : "not yet") : `${fmt(v)} ${lang === "ar" ? "خطوة" : "steps"}`;
+              return `<li class="day ${cls}"><span class="day-val" aria-hidden="true">${i > todayIdx ? "" : short(v)}</span><span class="day-bar" aria-hidden="true"><i style="--h:${(v / maxDay) * 100}%"></i></span><span class="day-name">${i === todayIdx ? (lang === "ar" ? "النهارده" : "Today") : name}</span><span class="sr-only">${name}${today}: ${label}</span></li>`;
+            })
+            .join("");
+        }
+        renderDays();
+
+        function tick(force) {
+          if (!force) {
+            state.steps += 900 + Math.random() * 900;
+            if (Math.random() < 0.06) state.walkers += 1;
+          }
+          const vals = {
+            walkers: fmt(state.walkers),
+            steps: fmt(state.steps),
+            trips: fmt(Math.floor(state.steps / 1e6)),
+            earth: ((state.steps * 0.00065) / 40075).toFixed(1),
+          };
+          $$("[data-live]").forEach((el) => (el.textContent = vals[el.dataset.live]));
+          if (!inJourney) $("#dock-n").textContent = vals.walkers;
+        }
+        let inJourney = false;
+        tick(true);
+        if (!reduce) setInterval(tick, 700);
+
+        // ---------- The Nile rail ----------
+        const FRAC = { cairo: 0, beniSuef: 0.1847, minya: 0.376, asyut: 0.5623, sohag: 0.707, luxor: 1 };
+        const stations = $$("#stations .station");
+        const stationSteps = () =>
+          stations.forEach((li) => {
+            li.dataset.steps = Math.round(FRAC[li.dataset.k] * 1e6);
+            const n = $("[data-st]", li);
+            if (n) n.textContent = fmt(+li.dataset.steps);
+          });
+        stationSteps();
+        const route = $("#route");
+        const glow = $("#route-glow");
+        const head = $("#head");
+        const len = route.getTotalLength();
+        [route, glow].forEach((p) => {
+          p.style.strokeDasharray = `${len} ${len}`;
+        });
+        const egypt = $("#egypt");
+        const list = $("#stations");
+        const dock = $("#dock");
+        const nav = $(".nav");
+        const heroEnd = $(".walk");
+        const finale = $("#get");
+        const mapStations = $$(".m-stn");
+        const dmWalk = $("#dm-walk");
+        const dmDot = $("#dm-dot");
+        const dmLen = dmWalk.getTotalLength();
+        dmWalk.style.strokeDasharray = `${dmLen} ${dmLen}`;
+
+        function onScroll() {
+          const vh = innerHeight;
+          const line = vh * 0.5;
+          nav.classList.toggle("is-scrolled", scrollY > 8);
+          const jTop = $("#journey").getBoundingClientRect().top;
+          inJourney = jTop < line;
+          egypt.classList.toggle("is-journey", inJourney);
+
+          // Steps follow the reading line from one station to the next.
+          const anchors = stations.map((li) => ({ y: li.getBoundingClientRect().top + 20, v: +li.dataset.steps }));
+          let v = 0;
+          if (line >= anchors[anchors.length - 1].y) v = 1e6;
+          else if (line > anchors[0].y) {
+            for (let i = 0; i < anchors.length - 1; i++) {
+              const a = anchors[i],
+                b = anchors[i + 1];
+              if (line >= a.y && line < b.y) {
+                v = a.v + ((line - a.y) / (b.y - a.y)) * (b.v - a.v);
+                break;
+              }
+            }
+          }
+          const f = v / 1e6;
+          const off = len * (1 - f);
+          route.style.strokeDashoffset = off;
+          glow.style.strokeDashoffset = off;
+          const p = route.getPointAtLength(len * f);
+          head.setAttribute("cx", p.x);
+          head.setAttribute("cy", p.y);
+          let current = 0;
+          stations.forEach((li, i) => {
+            const reached = anchors[i].y <= line;
+            li.classList.toggle("is-reached", reached);
+            mapStations[i] && mapStations[i].classList.toggle("is-reached", reached);
+            if (reached) current = i;
+          });
+          const lr = list.getBoundingClientRect();
+          list.style.setProperty("--rail", `${Math.max(0, Math.min(lr.height - 24, line - lr.top - 12))}px`);
+          $("#odo").textContent = fmt(v);
+          $("#odo-city").textContent = $(".city", stations[current]).textContent;
+
+          // Mobile dock: walkers this week above the fold, the walk's own count inside the journey.
+          const showDock = heroEnd.getBoundingClientRect().top < vh * 0.6 && finale.getBoundingClientRect().top > vh * 0.9;
+          dock.classList.toggle("is-on", showDock);
+          const jEnd = list.getBoundingClientRect().bottom;
+          dock.classList.toggle("is-journey", inJourney && jEnd > 0);
+          dmWalk.style.strokeDashoffset = dmLen * (1 - f);
+          const dp = dmWalk.getPointAtLength(dmLen * f);
+          dmDot.setAttribute("cx", dp.x);
+          dmDot.setAttribute("cy", dp.y);
+          if (inJourney && jEnd > 0) {
+            $("#dock-n").textContent = fmt(v);
+            $("#dock-label").textContent =
+              lang === "ar"
+                ? `خطوات المشوار · ${$(".city", stations[current]).textContent}`
+                : `Steps so far · ${$(".city", stations[current]).textContent}`;
+          } else {
+            $("#dock-label").textContent = lang === "ar" ? "مشيوا مع نمشي الأسبوع ده (توضيحي)" : "walked with Namshy this week (sample)";
+            $("#dock-n").textContent = fmt(state.walkers);
+          }
+        }
+        let raf = 0;
+        addEventListener(
+          "scroll",
+          () => {
+            if (!raf)
+              raf = requestAnimationFrame(() => {
+                raf = 0;
+                onScroll();
+              });
+          },
+          { passive: true },
+        );
+        addEventListener("resize", onScroll);
+        onScroll();
+
+        // ---------- Film ----------
+        const v = $("#film");
+        const ctl = $("#film-ctl");
+        const ico = $("#film-ico use");
+        let userPaused = reduce;
+        const setIcon = () => {
+          const paused = v.paused;
+          ico.setAttribute("href", paused ? "#i-play" : "#i-pause");
+          ctl.setAttribute(
+            "aria-label",
+            paused ? (lang === "ar" ? "شغّل الفيلم" : "Play the film") : lang === "ar" ? "إيقاف الفيلم" : "Pause the film",
+          );
+        };
+        v.addEventListener("play", setIcon);
+        v.addEventListener("pause", setIcon);
+        ctl.addEventListener("click", () => {
+          if (v.paused) {
+            userPaused = false;
+            v.play().catch(() => {});
+          } else {
+            userPaused = true;
+            v.pause();
+          }
+        });
+        new IntersectionObserver(
+          ([e]) => {
+            if (e.isIntersecting && !userPaused) v.play().catch(setIcon);
+            else if (!e.isIntersecting) v.pause();
+          },
+          { threshold: 0.35 },
+        ).observe(v);
+        setIcon();
+
+        // ---------- Finale count ----------
+        const fin = $("#finale-n");
+        new IntersectionObserver(
+          ([e], o) => {
+            if (!e.isIntersecting || reduce) return;
+            o.disconnect();
+            const t0 = performance.now();
+            const run = (t) => {
+              const k = Math.min(1, (t - t0) / 2200);
+              const eased = 1 - Math.pow(1 - k, 4);
+              fin.textContent = fmt(Math.pow(10, 6 * eased));
+              if (k < 1) requestAnimationFrame(run);
+            };
+            requestAnimationFrame(run);
+          },
+          { threshold: 0.6 },
+        ).observe(fin);
+
+        // ---------- Reveal ----------
+        const io = new IntersectionObserver(
+          (es) =>
+            es.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-in");
+                io.unobserve(e.target);
+              }
+            }),
+          { rootMargin: "0px 0px -8% 0px" },
+        );
+        $$(".rise").forEach((el) => io.observe(el));
+      })();
+    </script>
+  </body>
+</html>

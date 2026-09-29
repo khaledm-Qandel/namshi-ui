@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نمشي الأسبوعية — مشوار المليون خطوة بيبدأ بخطوة</title>
+<meta name="description" content="نمشي بيعدّ خطواتك، يحطك في تحديات مع صحابك وفريقك، ويخلّي المشي في مصر ماتش كل أسبوع. مجاناً على Google Play و App Store.">
+<meta name="theme-color" content="#ffd21f">
+<meta property="og:title" content="Namshi Weekly — A million-step journey starts with one step">
+<meta property="og:image" content="video/namshi-weekly-hero-poster.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2216%22 fill=%22%23111317%22/%3E%3Cg transform=%22translate(4.5 4.5) scale(.95)%22 fill=%22none%22 stroke=%22%23ffd21f%22 stroke-width=%222.3%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Ccircle cx=%2213.6%22 cy=%224.2%22 r=%221.9%22 fill=%22%23ffd21f%22 stroke=%22none%22/%3E%3Cpath d=%22M12.6 8.2 10.8 14M10.8 14l2.6 3.2L13 21M10.8 14l-1.9 3.4-2.3 2.8M12.4 9.2l-3 2.2-.8 2.2M12.4 9.2l2.4 2.4 2.2.8%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Big+Shoulders:wght@700;800;900&family=Changa:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+	--ink: #111317;
+	--paper: #f4f5f0;
+	--paper-dim: #555a52;
+	--yellow: #ffd21f;
+	--yellow-hi: #ffe066;
+	--grey-on-ink: #c9ccc3;
+	--bar: 4px;
+	--gutter: clamp(16px, 4vw, 56px);
+	--max: 1320px;
+	--display: 'Lalezar', 'Changa', sans-serif;
+	--figures: 'Big Shoulders', 'Changa', sans-serif;
+	--text: 'Changa', sans-serif;
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	color-scheme: light;
+}
+html[lang="en"] { --display: 'Big Shoulders', 'Changa', sans-serif; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scrollbar-color: var(--ink) var(--yellow); scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 1.0625rem; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+html[lang="en"] body { line-height: 1.6; }
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 2px; }
+button { font: inherit; color: inherit; }
+::selection { background: var(--ink); color: var(--yellow); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: var(--yellow); }
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--yellow); }
+::-webkit-scrollbar-thumb { background: var(--ink); border: 3px solid var(--yellow); }
+
+.wrap { width: min(100%, var(--max)); margin-inline: auto; padding-inline: var(--gutter); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; inset-inline-start: 16px; top: -60px; z-index: 100; background: var(--ink); color: var(--yellow); padding: 10px 16px; text-decoration: none; font-weight: 700; }
+.skip:focus { top: 12px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+html[lang="en"] h1, html[lang="en"] h2 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.005em; }
+html[lang="en"] h3 { font-family: var(--text); font-weight: 800; }
+p { margin: 0; }
+.num { direction: ltr; unicode-bidi: isolate; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.fig { font-family: var(--figures); font-weight: 900; }
+.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* Slot numerals: one fixed cell per character, so a climbing count never reflows */
+.slots { display: inline-flex; direction: ltr; font-family: var(--figures); font-weight: 900; line-height: 0.9; font-variant-numeric: tabular-nums; }
+.slots span { display: inline-block; width: 0.56em; text-align: center; }
+.slots span.sep { width: 0.22em; }
+
+/* ---------- Mark (temporary) ---------- */
+.mark { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.mark-o { width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: var(--yellow); display: grid; place-items: center; flex: none; }
+.mark-o svg { width: 26px; height: 26px; }
+.mark-t { font-family: 'Lalezar', var(--text); font-size: 1.75rem; line-height: 1; padding-top: 4px; }
+html[lang="en"] .mark-t { font-family: var(--figures); font-weight: 900; font-size: 1.7rem; padding-top: 0; }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 18px; text-decoration: none; font-weight: 800; font-size: 1rem; cursor: pointer; border: var(--bar) solid var(--ink); background: var(--ink); color: var(--paper); transition: background-color 140ms, color 140ms, transform 140ms var(--ease-out); }
+.btn:hover { background: var(--yellow); color: var(--ink); }
+.btn:active { transform: translateY(2px); }
+.stores { display: flex; flex-wrap: wrap; gap: 10px; }
+.store { display: inline-flex; align-items: center; gap: 12px; min-height: 62px; padding-block: 8px; padding-inline: 14px 20px; text-decoration: none; border: var(--bar) solid var(--ink); background: var(--ink); color: var(--paper); transition: background-color 140ms, color 140ms, transform 140ms var(--ease-out); }
+.store:hover { background: var(--paper); color: var(--ink); }
+.store:active { transform: translateY(2px); }
+.store.is-primary { background: var(--yellow); color: var(--ink); }
+.store.is-primary:hover { background: var(--yellow-hi); }
+.store svg { width: 26px; height: 26px; }
+.store-t { display: flex; flex-direction: column; line-height: 1.1; text-align: start; }
+.store-t small { font-size: 0.82rem; font-weight: 600; }
+.store-t b { font-family: var(--figures); font-size: 1.45rem; font-weight: 900; direction: ltr; unicode-bidi: isolate; letter-spacing: 0.01em; }
+
+/* The price flash: the round sticker every cover carries */
+.flash { display: grid; place-items: center; text-align: center; width: 128px; height: 128px; border-radius: 50%; background: var(--ink); color: var(--yellow); border: var(--bar) solid var(--yellow); transform: rotate(-9deg); flex: none; }
+.flash b { font-family: var(--display); font-weight: 400; font-size: 2.1rem; line-height: 1; display: block; padding-top: 6px; }
+html[lang="en"] .flash b { font-weight: 900; font-size: 2.4rem; padding-top: 0; }
+.flash small { display: block; font-weight: 700; font-size: 0.78rem; line-height: 1.2; margin-top: 2px; }
+
+/* ---------- Masthead ---------- */
+.mast { position: sticky; top: 0; z-index: 40; background: var(--yellow); border-bottom: var(--bar) solid var(--ink); }
+.mast-in { min-height: 68px; display: flex; align-items: center; gap: 18px; }
+.mast-title { display: flex; align-items: baseline; gap: 12px; }
+.mast-weekly { font-family: 'Lalezar', var(--text); font-size: 1.45rem; line-height: 1; }
+html[lang="en"] .mast-weekly { font-family: var(--figures); font-weight: 900; letter-spacing: 0.08em; font-size: 1.3rem; }
+.mast-issue { font-weight: 700; font-size: 0.92rem; padding-inline-start: 14px; border-inline-start: 2px solid var(--ink); }
+.mast-links { display: flex; gap: 2px; margin-inline-start: auto; }
+.mast-links a { padding: 6px 12px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+.mast-links a:hover { background: var(--ink); color: var(--yellow); }
+.mast-end { display: flex; align-items: center; gap: 8px; }
+.lang { min-height: 46px; min-width: 46px; padding: 0 12px; border: var(--bar) solid var(--ink); background: var(--yellow); cursor: pointer; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px; }
+.lang:hover { background: var(--ink); color: var(--yellow); }
+@media (max-width: 1100px) { .mast-links { display: none; } .mast-end { margin-inline-start: auto; } }
+@media (max-width: 760px) { .mast-issue { display: none; } }
+@media (max-width: 520px) { .mast .btn { display: none; } .mast-weekly { font-size: 1.2rem; } .mark-t { font-size: 1.5rem; } .lang { padding: 0 10px; } }
+
+/* ---------- Pages: each spread printed in one spot colour ---------- */
+main { position: relative; }
+.page { position: relative; padding-block: clamp(84px, 10vw, 140px); }
+.page > .wrap { position: relative; z-index: 2; }
+.p-ink { background: var(--ink); color: var(--paper); }
+.p-yellow { background: var(--yellow); color: var(--ink); }
+.p-paper { background: var(--paper); color: var(--ink); }
+.page + .page { border-top: var(--bar) solid var(--ink); }
+.page-h { font-size: clamp(2.9rem, 7vw, 6rem); line-height: 1.12; }
+html[lang="en"] .page-h { line-height: 0.95; }
+
+/* Folio: the page number in the top corner, a checkpoint on the walk line */
+.folio { position: absolute; top: 22px; z-index: 3; display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.9rem; }
+.folio.at-start { inset-inline-start: var(--gutter); }
+.folio.at-end { inset-inline-end: var(--gutter); flex-direction: row-reverse; }
+.folio .pg { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--paper); color: var(--ink); border: var(--bar) solid var(--ink); font-family: var(--figures); font-weight: 900; font-size: 1.15rem; line-height: 1; }
+.folio .run { opacity: 0.9; }
+@media (max-width: 600px) {
+	.folio .run { display: none; }
+	.folio.at-start { inset-inline-start: 0; }
+	.folio.at-end { inset-inline-end: 0; }
+	.folio .pg { width: 24px; height: 24px; font-size: 0.85rem; border-width: 3px; }
+	.walk .w-under { stroke-width: 8; }
+	.walk .w-over { stroke-width: 3; }
+}
+
+/* The walk line: drawn behind the content, over the pages */
+.walk { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: visible; }
+.walk path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.walk .w-under { stroke: var(--ink); stroke-width: 12; }
+.walk .w-over { stroke: var(--paper); stroke-width: 5; }
+.walk .w-head { transition: opacity 200ms; }
+
+/* ---------- Cover: the film plays whole on one half; the headline owns the ink half ---------- */
+.cover { position: relative; min-height: calc(100svh - 72px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: 1fr auto; background: var(--ink); color: var(--paper); }
+.cover-media { position: relative; grid-column: 2; grid-row: 1; overflow: hidden; background: var(--yellow); border-inline-start: var(--bar) solid var(--yellow); }
+.cover-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+.cover-in { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 0; padding-block: 64px 32px; padding-inline: var(--gutter) clamp(24px, 4vw, 56px); }
+html[dir="rtl"] .cover-in { padding-inline: var(--gutter) clamp(24px, 4vw, 56px); }
+.cover h1 { font-size: clamp(2.6rem, 4.8vw, 5.4rem); line-height: 1.15; color: var(--paper); }
+.cover h1 > span { display: block; }
+.cover h1 > .l2 { color: var(--yellow); }
+html[lang="en"] .cover h1 { font-size: clamp(2.5rem, 4.4vw, 5rem); line-height: 0.95; }
+.sub { margin-top: 12px; font-weight: 600; font-size: 1.05rem; color: var(--grey-on-ink); }
+html[dir="rtl"] .sub { text-align: right; }
+html[dir="ltr"] .sub { text-align: left; }
+.cover-act { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+/* Film controls sit on the film's own corner */
+.cover-side { position: absolute; inset-inline-end: 16px; bottom: 16px; z-index: 2; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+html[dir="rtl"] .cover-side { align-items: flex-start; }
+.film-ctl { display: flex; gap: 8px; }
+.film-ctl button, .film-ctl a { min-height: 46px; min-width: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 14px; border: var(--bar) solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; font-weight: 800; font-size: 0.95rem; text-decoration: none; }
+.film-ctl button:hover, .film-ctl a:hover { background: var(--yellow); }
+.film-ctl svg { width: 18px; height: 18px; }
+.sample-tag { font-size: 0.85rem; font-weight: 700; background: var(--ink); color: var(--paper); padding: 2px 8px; }
+/* The ticker: the week's figures run along the foot of the cover like a match broadcast */
+.ticker { grid-column: 1 / -1; grid-row: 2; background: var(--ink); border-top: var(--bar) solid var(--yellow); }
+.ticker-in { display: flex; align-items: center; gap: 0; min-height: 64px; }
+.ticker-in > * { display: flex; align-items: baseline; gap: 10px; padding-block: 12px; padding-inline: 20px; font-weight: 700; font-size: 1rem; color: var(--paper); }
+.ticker-in > *:first-child { padding-inline-start: 0; }
+.ticker-in > * + * { border-inline-start: 2px solid #3a3d42; }
+.ticker .fig, .ticker .slots { font-size: 1.9rem; color: var(--yellow); line-height: 1; }
+.ticker a { margin-inline-start: auto; text-decoration: none; align-items: center; }
+.ticker a:hover { color: var(--yellow); }
+.ticker a svg { transition: transform 160ms var(--ease-out); }
+.ticker a:hover svg { transform: translateX(-4px); }
+html[dir="ltr"] .ticker a svg { transform: scaleX(-1); }
+html[dir="ltr"] .ticker a:hover svg { transform: scaleX(-1) translateX(-4px); }
+@media (max-width: 960px) {
+	.cover { grid-template-columns: 1fr; grid-template-rows: auto auto auto; min-height: 0; }
+	.cover-media { grid-column: 1; grid-row: 1; aspect-ratio: 16 / 10; border-inline-start: 0; border-bottom: var(--bar) solid var(--yellow); }
+	.cover-in { grid-column: 1; grid-row: 2; padding-block: 28px 28px; padding-inline: var(--gutter); }
+	html[dir="rtl"] .cover-in { padding-inline: var(--gutter); }
+	.ticker { grid-row: 3; }
+	.ticker-in { flex-wrap: wrap; }
+	.ticker a { margin-inline-start: 0; flex-basis: 100%; border-inline-start: 0; border-top: 2px solid #3a3d42; padding-inline-start: 0; }
+}
+@media (max-width: 560px) {
+	.cover h1 { font-size: clamp(2.3rem, 10.5vw, 3.2rem); }
+	html[lang="en"] .cover h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+	.stores { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+	.store { padding-inline: 10px 12px; gap: 8px; }
+	.store-t b { font-size: 1.2rem; }
+	/* The price flash pins the store stack: buttons run full width, content at the start, flash on the free end */
+	.cover-act { position: relative; }
+	.cover-act .stores { grid-template-columns: 1fr; }
+	.cover-act .store { justify-content: flex-start; }
+	.cover-act .flash { position: absolute; inset-inline-end: 12px; top: 50%; margin-top: -44px; width: 88px; height: 88px; }
+	.cover-act .flash b { font-size: 1.55rem; }
+	.cover-act .flash small { font-size: 0.66rem; }
+	.cover-side { inset-inline-end: 10px; bottom: 10px; }
+	.film-ctl a span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+	.sample-tag { display: none; }
+	.ticker-in > * { padding-inline: 12px; font-size: 0.92rem; }
+	.ticker .fig, .ticker .slots { font-size: 1.5rem; }
+}
+
+/* ---------- Results (ink) ---------- */
+.score { margin-top: clamp(28px, 4vw, 48px); border-block: var(--bar) solid var(--paper); padding-block: 18px 22px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px 28px; }
+.team { font-family: var(--display); font-size: clamp(1.7rem, 3.4vw, 2.8rem); line-height: 1.1; }
+html[lang="en"] .team { font-weight: 900; text-transform: uppercase; }
+.team small { display: block; font-family: var(--text); font-size: 0.95rem; font-weight: 600; color: var(--grey-on-ink); text-transform: none; }
+.score .goals { justify-self: center; display: flex; align-items: center; gap: clamp(10px, 2vw, 26px); color: var(--yellow); }
+.score .goals .slots { font-size: clamp(2.6rem, 8.4vw, 8.2rem); }
+.score .dash { font-family: var(--figures); font-weight: 900; font-size: clamp(2rem, 5vw, 4.5rem); color: var(--paper); }
+.team.away { text-align: end; }
+.basis { margin-top: 18px; max-width: 64ch; color: var(--grey-on-ink); }
+.basis b { color: var(--paper); }
+.note { margin-top: 10px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 600; color: var(--grey-on-ink); }
+.note svg { width: 18px; height: 18px; }
+.results { margin-top: clamp(40px, 6vw, 72px); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.results h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; padding-bottom: 10px; border-bottom: var(--bar) solid var(--paper); }
+.table { width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 1.02rem; }
+.table th { text-align: start; font-weight: 700; font-size: 0.85rem; color: var(--grey-on-ink); padding: 10px 8px 8px; border-bottom: 2px solid rgba(244,245,240,0.4); }
+.table td { padding: 9px 8px; border-bottom: 1px solid rgba(244,245,240,0.28); }
+.table td.r { font-family: var(--figures); font-weight: 900; font-size: 1.35rem; width: 2.4em; }
+.table td.g { font-weight: 700; }
+.table .n { text-align: end; font-family: var(--figures); font-weight: 800; font-size: 1.2rem; direction: ltr; font-variant-numeric: tabular-nums; }
+.table tr.top td { background: var(--yellow); color: var(--ink); }
+.table tr.top td.g::after { content: attr(data-lead); margin-inline-start: 10px; font-size: 0.8rem; font-weight: 800; background: var(--ink); color: var(--yellow); padding: 1px 7px; }
+.table .rest td { color: var(--grey-on-ink); font-weight: 600; }
+.fixtures { list-style: none; margin: 4px 0 0; padding: 0; }
+.fixtures li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 2px; border-bottom: 1px solid rgba(244,245,240,0.28); }
+.fixtures .d { font-weight: 700; }
+.fixtures .v { font-family: var(--figures); font-weight: 800; font-size: 1.25rem; direction: ltr; font-variant-numeric: tabular-nums; }
+.fixtures li.is-today { background: var(--yellow); color: var(--ink); padding-inline: 10px; border-bottom-color: var(--yellow); }
+.fixtures li.is-today .live { font-family: var(--text); font-size: 0.8rem; font-weight: 800; background: var(--ink); color: var(--yellow); padding: 1px 7px; margin-inline-start: 8px; }
+.fixtures li.is-later { color: var(--grey-on-ink); }
+.fixtures li.is-later .v { font-family: var(--text); font-weight: 600; font-size: 1rem; }
+.motw { margin-top: 36px; background: var(--paper); color: var(--ink); border: var(--bar) solid var(--ink); padding: 18px 20px 20px; }
+.motw h3 { border: 0; padding: 0; font-size: 1.9rem; }
+.motw .who { margin-top: 6px; font-weight: 800; font-size: 1.25rem; }
+.motw .stat { margin-top: 10px; display: flex; gap: 22px; }
+.motw .stat b { display: block; font-family: var(--figures); font-weight: 900; font-size: 2.2rem; line-height: 1; direction: ltr; text-align: start; }
+.motw .stat span { font-size: 0.9rem; font-weight: 600; color: var(--paper-dim); }
+.motw p.q { margin-top: 12px; color: var(--paper-dim); font-size: 0.98rem; }
+@media (max-width: 960px) { .results { grid-template-columns: 1fr; } .score { grid-template-columns: 1fr 1fr; } .score .goals { grid-column: 1 / -1; grid-row: 2; } .team.away { grid-row: 1; grid-column: 2; } }
+@media (max-width: 560px) { .table .hide-s { display: none; } }
+
+/* ---------- Match report (paper) ---------- */
+.report-lead { margin-top: 18px; max-width: 56ch; font-size: 1.2rem; color: var(--paper-dim); }
+.feed { list-style: none; margin: clamp(44px, 6vw, 80px) 0 0; padding: 0; position: relative; display: grid; gap: clamp(36px, 5vw, 64px); }
+.feed::before { content: ""; position: absolute; top: 0; bottom: 0; inset-inline-start: 50%; width: var(--bar); background: var(--ink); transform: translateX(50%); }
+html[dir="ltr"] .feed::before { transform: translateX(-50%); }
+.play { display: grid; grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr); align-items: center; }
+.play .min { grid-column: 2; justify-self: center; width: 124px; height: 124px; border-radius: 50%; background: var(--yellow); color: var(--ink); border: var(--bar) solid var(--ink); display: grid; place-items: center; font-family: var(--figures); font-weight: 900; font-size: 3.4rem; line-height: 1; position: relative; z-index: 1; }
+.play figure { margin: 0; grid-column: 1; grid-row: 1; justify-self: end; width: min(100%, 300px); border: var(--bar) solid var(--ink); background: var(--ink); }
+.play figure img { width: 100%; height: auto; aspect-ratio: 9 / 15; object-fit: cover; object-position: top; }
+.play figure img.natural { aspect-ratio: auto; }
+.report-lead small { display: block; margin-top: 8px; font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+.play .txt { grid-column: 3; grid-row: 1; padding-inline-start: 8px; max-width: 42ch; }
+.play:nth-child(even) figure { grid-column: 3; justify-self: start; }
+.play:nth-child(even) .txt { grid-column: 1; justify-self: end; text-align: end; padding-inline: 0 8px; }
+.play h3 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.15; color: var(--ink); }
+.play p { margin-top: 10px; color: var(--paper-dim); font-size: 1.08rem; }
+.play p.small { font-size: 0.98rem; font-weight: 700; color: var(--ink); }
+@media (max-width: 820px) {
+	.feed::before { inset-inline-start: 38px; transform: none; }
+	html[dir="ltr"] .feed::before { transform: none; }
+	.play, .play:nth-child(even) { grid-template-columns: 84px minmax(0, 1fr); gap: 16px 14px; align-items: start; }
+	.play .min, .play:nth-child(even) .min { grid-column: 1; grid-row: 1; width: 76px; height: 76px; font-size: 2rem; justify-self: start; margin-inline-start: 2px; }
+	.play .txt, .play:nth-child(even) .txt { grid-column: 2; grid-row: 1; justify-self: start; text-align: start; padding: 0; }
+	.play figure, .play:nth-child(even) figure { grid-column: 2; grid-row: 2; justify-self: start; width: min(100%, 240px); }
+}
+
+/* ---------- Highlights (ink) ---------- */
+.hl { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.hl p.lead { margin-top: 18px; color: var(--grey-on-ink); font-size: 1.15rem; max-width: 42ch; }
+.hl .page-h { color: var(--yellow); }
+.screen { position: relative; border: var(--bar) solid var(--yellow); background: #000; }
+.screen video { width: 100%; aspect-ratio: 16 / 9; background: #000; cursor: pointer; }
+.big-play { position: absolute; inset: 0; margin: auto; width: 104px; height: 104px; border-radius: 50%; background: var(--yellow); color: var(--ink); border: var(--bar) solid var(--ink); display: grid; place-items: center; cursor: pointer; transition: transform 160ms var(--ease-out), background-color 140ms; }
+.big-play svg { width: 44px; height: 44px; margin-inline-start: 6px; }
+.big-play:hover { transform: scale(1.06); background: var(--yellow-hi); }
+.screen.is-playing .big-play { display: none; }
+.player { display: flex; align-items: center; gap: 10px; background: var(--ink); border: var(--bar) solid var(--yellow); border-top: 0; padding: 10px; }
+.player button { width: 44px; height: 44px; display: grid; place-items: center; background: var(--yellow); color: var(--ink); border: 0; cursor: pointer; flex: none; }
+.player button:hover { background: var(--paper); }
+.player .time { font-family: var(--figures); font-weight: 800; font-size: 1.2rem; color: var(--yellow); font-variant-numeric: tabular-nums; min-width: 6.4ch; }
+.player input[type=range] { flex: 1; min-width: 60px; height: 44px; margin: 0; background: transparent; -webkit-appearance: none; appearance: none; cursor: pointer; --p: 0%; }
+.player input[type=range]::-webkit-slider-runnable-track { height: 8px; background: linear-gradient(90deg, var(--yellow) var(--p), #3a3d42 var(--p)); }
+.player input[type=range]::-moz-range-track { height: 8px; background: #3a3d42; }
+.player input[type=range]::-moz-range-progress { height: 8px; background: var(--yellow); }
+.player input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; margin-top: -6px; background: var(--paper); border: 3px solid var(--yellow); border-radius: 0; }
+.player input[type=range]::-moz-range-thumb { width: 16px; height: 16px; background: var(--paper); border: 3px solid var(--yellow); border-radius: 0; }
+@media (max-width: 420px) { .player #hl-full { display: none; } }
+.hl-meta { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px 20px; color: var(--grey-on-ink); font-size: 0.95rem; font-weight: 600; }
+.hl-meta a { color: var(--paper); }
+@media (max-width: 900px) { .hl { grid-template-columns: 1fr; } }
+
+/* ---------- Fair play (yellow) ---------- */
+.fair { max-width: 1040px; }
+.fair p { margin-top: 26px; font-size: clamp(1.25rem, 2.3vw, 1.85rem); line-height: 1.75; font-weight: 500; }
+html[lang="en"] .fair p { line-height: 1.5; }
+.fair em { font-style: normal; font-weight: 800; background: var(--ink); color: var(--yellow); padding: 0 0.22em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+/* ---------- Letters (paper) ---------- */
+.letters { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.letters p.lead { margin-top: 16px; color: var(--paper-dim); max-width: 36ch; }
+.mail { border-top: var(--bar) solid var(--ink); }
+.mail details { border-bottom: 2px solid var(--ink); }
+.mail summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 18px 2px; font-weight: 800; font-size: 1.18rem; line-height: 1.45; }
+.mail summary::-webkit-details-marker { display: none; }
+.mail summary:hover { background: var(--yellow); }
+.mail summary .from { display: block; margin-top: 2px; font-weight: 600; font-size: 0.88rem; color: var(--paper-dim); }
+.mail summary svg { transition: transform 220ms var(--ease-out); }
+.mail details[open] summary svg { transform: rotate(45deg); }
+.mail .ans { padding: 0 2px 22px; max-width: 62ch; }
+.mail .ans b { color: var(--ink); background: var(--yellow); padding: 0 6px; }
+@media (max-width: 860px) { .letters { grid-template-columns: 1fr; } }
+
+/* ---------- Back cover (yellow) ---------- */
+.back { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px 56px; align-items: end; }
+.back h2 { font-size: clamp(3.2rem, 9vw, 8.4rem); line-height: 1.02; }
+html[lang="en"] .back h2 { line-height: 0.9; }
+.back h2 span { display: block; width: fit-content; background: var(--ink); color: var(--yellow); padding: 0.12em 0.2em 0; margin-top: 8px; }
+html[lang="en"] .back h2 span { padding: 0.04em 0.16em 0.02em; }
+.back .lead { margin-top: 24px; font-size: 1.3rem; font-weight: 600; max-width: 38ch; }
+.back .stores { margin-top: 30px; }
+.back-side { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.back .flash { width: 160px; height: 160px; }
+.back .flash b { font-size: 2.6rem; }
+.qr { display: flex; align-items: center; gap: 12px; background: var(--paper); border: var(--bar) solid var(--ink); padding: 10px 14px 10px 10px; max-width: 260px; }
+.qr-box { width: 72px; height: 72px; border: 2px dashed var(--paper-dim); display: grid; place-items: center; color: var(--paper-dim); flex: none; }
+.qr small { font-size: 0.88rem; font-weight: 600; color: var(--paper-dim); line-height: 1.4; }
+@media (max-width: 860px) { .back { grid-template-columns: 1fr; } .back-side { flex-direction: row; align-items: center; } }
+@media (max-width: 560px) { .qr { display: none; } }
+
+/* ---------- Colophon ---------- */
+.colo { background: var(--ink); color: var(--grey-on-ink); padding-block: 34px; font-size: 0.95rem; border-top: var(--bar) solid var(--ink); }
+.colo-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; }
+.colo .mark { color: var(--paper); }
+.colo .mark-o { background: var(--yellow); color: var(--ink); }
+.colo nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.colo a { text-decoration: none; }
+.colo a:hover { color: var(--yellow); text-decoration: underline; }
+
+/* ---------- Motion: the cover headline lands once; everything else is visible from the start ---------- */
+@media (prefers-reduced-motion: no-preference) {
+	.cover h1 > span { animation: slam 520ms var(--ease-out) both; transform-origin: right bottom; }
+	html[dir="ltr"] .cover h1 > span { transform-origin: left bottom; }
+	.cover h1 > span.l2 { animation-delay: 110ms; }
+	@keyframes slam { from { opacity: 0; transform: scale(1.14); } 60% { opacity: 1; } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content">تخطّى للمحتوى</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+	<defs>
+		<symbol id="i-walker" viewBox="0 0 24 24"><circle cx="13.6" cy="4.2" r="1.9" fill="currentColor" stroke="none"/><path d="M12.6 8.2 10.8 14M10.8 14l2.6 3.2L13 21M10.8 14l-1.9 3.4-2.3 2.8M12.4 9.2l-3 2.2-.8 2.2M12.4 9.2l2.4 2.4 2.2.8" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+		<symbol id="i-play-store" viewBox="0 0 24 24"><path d="M4.6 2.9 13.9 12l-9.3 9.1c-.3-.2-.5-.6-.5-1V3.9c0-.4.2-.8.5-1Z" fill="currentColor"/><path d="m15.2 10.7-9-7.4 11.3 6.2-2.3 1.2Z M15.2 13.3l2.3 1.2-11.3 6.2 9-7.4Z M18.8 9.9l2 1.1c.8.5.8 1.5 0 2l-2 1.1-2.4-2.1 2.4-2.1Z" fill="currentColor"/></symbol>
+		<symbol id="i-apple" viewBox="0 0 24 24"><path d="M16.5 12.7c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8s-1.8-.8-3-.8c-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.6ZM14.2 5.7c.6-.8 1.1-1.8 1-2.9-1 0-2.1.7-2.8 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.8-1.3Z" fill="currentColor"/></symbol>
+		<symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+		<symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.8v14.4a.8.8 0 0 0 1.2.7l11.2-7.2a.8.8 0 0 0 0-1.4L8.2 4.1A.8.8 0 0 0 7 4.8Z" fill="currentColor"/></symbol>
+		<symbol id="i-sound" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></g></symbol>
+		<symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z"/></g></symbol>
+		<symbol id="i-mute" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m16 9.5 5 5m0-5-5 5"/></g></symbol>
+		<symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+		<symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></g></symbol>
+		<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+		<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+		<symbol id="i-qr" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="6" height="6" rx="1"/><rect x="14.5" y="3.5" width="6" height="6" rx="1"/><rect x="3.5" y="14.5" width="6" height="6" rx="1"/><path d="M14.5 14.5h2.5v2.5h-2.5zM18 18h2.5v2.5H18zM14.5 20.5h1M20.5 14.5v1" stroke-linecap="round"/></g></symbol>
+	</defs>
+</svg>
+
+<header class="mast">
+	<div class="wrap mast-in">
+		<div class="mast-title">
+			<!-- TEMPORARY LOGO: a stand-in until the brand team delivers the mark. -->
+			<a class="mark" href="#top" aria-label="نمشي الأسبوعية — الغلاف" data-en-aria="Namshi Weekly — the cover"><span class="mark-o"><svg><use href="#i-walker"/></svg></span><span class="mark-t" data-en="Namshi">نمشي</span></a>
+			<span class="mast-weekly" data-en="WEEKLY">الأسبوعية</span>
+			<span class="mast-issue"><span data-en="Issue">العدد</span> <span class="num">01</span> · <span id="week-range"></span></span>
+		</div>
+		<nav class="mast-links" aria-label="في العدد ده" data-en-aria="In this issue">
+			<a href="#results" data-en="Results">النتايج</a>
+			<a href="#report" data-en="How it plays">إزاي بتلعب</a>
+			<a href="#highlights" data-en="Highlights">الملخص</a>
+			<a href="#letters" data-en="Letters">بريد القرّاء</a>
+		</nav>
+		<div class="mast-end">
+			<button class="lang" type="button" id="lang" aria-label="Switch to English" data-en-aria="التحويل للعربي"><svg class="i"><use href="#i-globe"/></svg><span id="lang-t" lang="en" data-en="عربي">English</span></button>
+			<a class="btn" href="#back" data-en="Get it free">حمّله مجاناً</a>
+		</div>
+	</div>
+</header>
+
+<main id="main">
+	<svg class="walk" id="walk" aria-hidden="true" focusable="false">
+		<path class="w-under" id="walk-under" d=""/>
+		<path class="w-over" id="walk-over" d=""/>
+		<g class="w-head" id="walk-head"><circle r="17" fill="#ffd21f" stroke="#111317" stroke-width="4"/><use href="#i-walker" x="-12" y="-12" width="24" height="24" color="#111317"/></g>
+	</svg>
+
+	<section class="cover on-dark" id="top" aria-labelledby="cover-h">
+		<div class="wrap cover-in">
+			<div class="cover-main">
+				<h1 id="cover-h"><span class="l1" data-en="A million-step journey">مشوار المليون خطوة</span><span class="l2" data-en="starts with one step.">بيبدأ بخطوة.</span></h1>
+				<p class="sub" data-en="مشوار المليون خطوة بيبدأ بخطوة." lang="en" dir="ltr">A million-step journey starts with one step.</p>
+				<div class="cover-act">
+					<div class="stores">
+						<a class="store" href="#" data-store="play"><svg><use href="#i-play-store"/></svg><span class="store-t"><small data-en="Get it on">حمّله من</small><b>Google Play</b></span></a>
+						<a class="store" href="#" data-store="apple"><svg><use href="#i-apple"/></svg><span class="store-t"><small data-en="Download on the">نزّله من</small><b>App Store</b></span></a>
+					</div>
+					<p class="flash" aria-hidden="true"><span><b data-en="FREE">مجاناً</b><small data-en="Android &amp; iPhone">أندرويد وآيفون</small></span></p>
+				</div>
+			</div>
+		</div>
+		<div class="cover-media">
+			<video id="plate" muted playsinline loop preload="metadata" poster="video/namshi-weekly-hero-poster.jpg" src="video/namshi-weekly-hero-1280x720.mp4" aria-hidden="true"></video>
+			<div class="cover-side">
+				<div class="film-ctl">
+					<button type="button" id="plate-ctl" aria-label="إيقاف الفيديو" data-en-aria="Pause the video"><svg class="i"><use href="#i-pause"/></svg></button>
+					<a href="#highlights" id="watch"><svg class="i"><use href="#i-sound"/></svg><span data-en="Watch the highlights with sound">شوف الملخص بالصوت</span></a>
+				</div>
+				<span class="sample-tag" data-en="Sample figures">أرقام توضيحية</span>
+			</div>
+		</div>
+		<div class="ticker">
+			<div class="wrap ticker-in">
+				<p><span class="fig num" data-live="walkers">18,426</span><span data-en="Egyptians walked this week">مصري ومصرية مشيوا الأسبوع ده</span></p>
+				<p><span class="slots" data-slots="steps" aria-hidden="true"></span><span class="sr-only" data-live="steps-sr"></span><span data-en="steps so far">خطوة لحد دلوقتي</span></p>
+				<a href="#results"><span data-en="Inside, p. 2: the governorate table">جوّه العدد، ص 2: جدول المحافظات</span><svg class="i"><use href="#i-arrow"/></svg></a>
+			</div>
+		</div>
+	</section>
+
+	<section class="page p-ink on-dark" id="results" aria-labelledby="results-h">
+		<p class="folio at-end" aria-hidden="true"><span class="pg">2</span><span class="run" data-en="Namshi Weekly">نمشي الأسبوعية</span></p>
+		<div class="wrap">
+			<h2 id="results-h" class="page-h" data-en="This week, Egypt walked">الأسبوع ده، مصر مشيت</h2>
+			<div class="score" role="group" aria-label="نتيجة الأسبوع" data-en-aria="The week's score">
+				<p class="team"><span data-en="Egypt">مصر</span><small data-en="steps this week">خطوات الأسبوع</small></p>
+				<p class="goals"><span class="slots" data-slots="steps" aria-hidden="true"></span><span class="dash" aria-hidden="true">–</span><span class="slots" aria-hidden="true"><span>0</span></span><span class="sr-only" data-live="score-sr"></span></p>
+				<p class="team away"><span data-en="The couch">الكنبة</span><small data-en="still waiting for a goal">لسه مستنية جول</small></p>
+			</div>
+			<p class="basis" data-en="<b><span class='num' data-live='walkers'>18,426</span> Egyptians</b> have walked about <b><span class='num' data-live='trips'>314</span> trips</b> from Cairo to Luxor since Saturday. Every million steps is roughly that trip, at an average step of about 65 cm."><b><span class="num" data-live="walkers">18,426</span> مصري ومصرية</b> مشيوا حوالي <b><span class="num" data-live="trips">314</span> مشوار</b> من القاهرة للأقصر من السبت لحد دلوقتي. كل مليون خطوة ≈ المشوار ده، على أساس إن متوسط الخطوة حوالي 65 سم.</p>
+			<p class="note"><svg class="i"><use href="#i-info"/></svg><span data-en="Sample figures in this design, to be wired to the app's real totals.">أرقام توضيحية في نسخة التصميم دي، وهتتربط بأرقام التطبيق الحقيقية.</span></p>
+
+			<div class="results">
+				<div>
+					<h3 data-en="The governorate table">جدول المحافظات</h3>
+					<table class="table" id="league">
+						<caption class="sr-only" data-en="Governorates ranked by steps this week (sample figures)">ترتيب المحافظات بعدد خطوات الأسبوع (أرقام توضيحية)</caption>
+						<thead><tr><th scope="col" data-en="#">#</th><th scope="col" data-en="Governorate">المحافظة</th><th scope="col" class="n hide-s" data-en="Walkers">اللاعيبة</th><th scope="col" class="n" data-en="Steps">الخطوات</th></tr></thead>
+						<tbody></tbody>
+					</table>
+				</div>
+				<div>
+					<h3 data-en="The week's fixtures">ماتشات الأسبوع</h3>
+					<ol class="fixtures" id="fixtures" aria-label="الخطوات في كل يوم" data-en-aria="Steps on each day"></ol>
+					<div class="motw">
+						<h3 data-en="Team of the week">فريق الأسبوع</h3>
+						<p class="who" data-en="The Maadi Corniche crew">شلّة كورنيش المعادي</p>
+						<div class="stat">
+							<p><b>1,284,300</b><span data-en="steps">خطوة</span></p>
+							<p><b>14</b><span data-en="players">لاعب</span></p>
+						</div>
+						<p class="q" data-en="A made-up team for this design. Your team's name goes here next week.">فريق توضيحي في نسخة التصميم دي. اسم فريقك ممكن يبقى هنا الأسبوع الجاي.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="page p-paper" id="report" aria-labelledby="report-h">
+		<p class="folio at-start" aria-hidden="true"><span class="pg">3</span><span class="run" data-en="Namshi Weekly">نمشي الأسبوعية</span></p>
+		<div class="wrap">
+			<h2 id="report-h" class="page-h" data-en="Match report: how Namshi plays">تقرير الماتش: إزاي بتلعب نمشي</h2>
+			<p class="report-lead" data-en="Six moments from the app, minute by minute, on its real screens.<small>Screens from a test build of the app, in English; the names on them are sample data.</small>">ست لحظات من التطبيق، دقيقة بدقيقة، من شاشاته الحقيقية.<small>الشاشات من نسخة تجريبية من التطبيق بالإنجليزي، والأسامي اللي عليها توضيحية.</small></p>
+			<ol class="feed">
+				<li class="play">
+					<span class="min num">1'</span>
+					<figure><img src="stills/home.webp" width="540" height="1101" loading="lazy" alt="الشاشة الرئيسية في نمشي: دايرة الهدف اليومي 0 من 10,000 وزرار ابدأ العدّ" data-en-alt="Namshi home screen: the daily goal ring at 0 of 10,000 and a Start counting button"></figure>
+					<div class="txt"><h3 data-en="Kick-off: your first step">البداية: أول خطوة</h3><p data-en="Sign in with a code we send you. Your everyday steps come in from Health Connect or Apple Health; tap “Start counting” when you head out on purpose.">ادخل بكود بيوصلك. خطواتك العادية بتتسحب لوحدها من Health Connect أو Apple Health، ولما تنزل تمشي مخصوص دوس «ابدأ العدّ».</p></div>
+				</li>
+				<li class="play">
+					<span class="min num">15'</span>
+					<figure><img src="stills/challenges.webp" width="540" height="1101" loading="lazy" alt="شاشة التحديات: محارب الأسبوع 47,342 من 70,000 خطوة" data-en-alt="Challenges screen: Weekly Warrior at 47,342 of 70,000 steps"></figure>
+					<div class="txt"><h3 data-en="Challenges">التحديات</h3><p data-en="A target and a deadline: 70,000 steps in a week, or a set distance in a month. Finish and earn points and badges.">هدف وميعاد: 70,000 خطوة في أسبوع، أو مسافة معيّنة في شهر. خلّصها واكسب نقط وشارات.</p><p class="small" data-en="Challenges count the walks you record in the app.">التحديات بتتحسب من المشاوير اللي بتسجّلها في التطبيق.</p></div>
+				</li>
+				<li class="play">
+					<span class="min num">30'</span>
+					<figure><img src="stills/friends.webp" width="540" height="1101" loading="lazy" alt="شاشة الصحاب: ترتيب الصحاب بعدد الخطوات" data-en-alt="Friends screen: friends ranked by steps"></figure>
+					<div class="txt"><h3 data-en="Your friends">صحابك</h3><p data-en="Add friends by their personal code, no searching and no phone numbers, and see who's ahead of you.">ضيف صحابك بالكود الشخصي بتاعهم، من غير بحث ولا أرقام تليفونات، وشوف مين سابقك.</p><p class="small" data-en="They see your steps, never your route.">بيشوفوا خطواتك، عمرهم ما بيشوفوا طريقك.</p></div>
+				</li>
+				<li class="play">
+					<span class="min num">45'</span>
+					<figure><img src="stills/teams.webp" width="540" height="1101" loading="lazy" alt="شاشة الفرق: ترتيب الفرق بمجموع الخطوات" data-en-alt="Teams screen: teams ranked by total steps"></figure>
+					<div class="txt"><h3 data-en="Your team">فريقك</h3><p data-en="Make a team for your class, your department or your friends and share the code. Recorded walks count for the team.">اعمل فريق لفصلك أو قسمك أو شلّتك وابعت الكود. المشاوير المسجّلة بتتحسب للفريق.</p></div>
+				</li>
+				<li class="play">
+					<span class="min num">70'</span>
+					<figure><img class="natural" src="stills/challenge.webp" width="540" height="680" loading="lazy" alt="تفاصيل تحدّي: التقدّم 60%، 19.5 كم اتمشوا و10.5 كم فاضلين" data-en-alt="Challenge detail: 60% progress, 19.5 km walked and 10.5 km to go"></figure>
+					<div class="txt"><h3 data-en="Every kilometre counts">كل كيلو بيفرق</h3><p data-en="Each challenge shows where you stand, what's left, and when it ends.">كل تحدّي بيوريك إنت فين، وفاضل قد إيه، وبيخلص إمتى.</p></div>
+				</li>
+				<li class="play">
+					<span class="min num">90'</span>
+					<figure><img class="natural" src="stills/badges.webp" width="540" height="430" loading="lazy" alt="شاشة الشارات: أول خطوة، قاهر الحديقة، بطل السلسلة، ماشي الليل" data-en-alt="Badges screen: First Steps, Park Conqueror, Streak Master, Night Walker"></figure>
+					<div class="txt"><h3 data-en="Full time: rankings and badges">صفّارة النهاية: الترتيب والشارات</h3><p data-en="Competitions between people, friends and teams, with live standings. And a badge for every milestone.">مسابقات بين الأفراد والصحاب والفرق، وترتيب بيتحدّث طول المسابقة. وكل إنجاز ليه شارة.</p></div>
+				</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="page p-ink on-dark" id="highlights" aria-labelledby="hl-h">
+		<p class="folio at-end" aria-hidden="true"><span class="pg">4</span><span class="run" data-en="Namshi Weekly">نمشي الأسبوعية</span></p>
+		<div class="wrap hl">
+			<div>
+				<h2 id="hl-h" class="page-h" data-en="The week's highlights">ملخص الأسبوع</h2>
+				<p class="lead" data-en="Twenty-four seconds of motion graphics: lacing up, the first step, then a walk that turns into a run through Cairo, the Nile, Alexandria, the pyramids, Luxor, Aswan and Sinai, until the count hits a million.">24 ثانية موشن جرافيك: ربط الكوتشي، أول خطوة، وبعدها مشي بيتحوّل لجري في القاهرة والنيل وإسكندرية والأهرامات والأقصر وأسوان وسينا، لحد ما العدّاد يوصل المليون.</p>
+			</div>
+			<div>
+				<div class="screen" id="hl-screen">
+					<video id="hl-v" playsinline preload="none" poster="video/namshi-weekly-hero-poster.jpg" data-src-ar="video/namshi-weekly-ar-web-1280x720.mp4" data-src-en="video/namshi-weekly-en-web-1280x720.mp4" aria-label="ملخص الأسبوع" data-en-aria="The week's highlights"></video>
+					<button class="big-play" type="button" id="hl-big" aria-label="شغّل الملخص بالصوت" data-en-aria="Play the highlights with sound"><svg><use href="#i-play"/></svg></button>
+				</div>
+				<div class="player" dir="ltr" role="group" aria-label="التحكم في الفيديو" data-en-aria="Video controls">
+					<button type="button" id="hl-pp" aria-label="شغّل" data-en-aria="Play"><svg class="i"><use href="#i-play"/></svg></button>
+					<span class="time" id="hl-time">0:00 / 0:24</span>
+					<input type="range" id="hl-seek" min="0" max="24" step="0.1" value="0" aria-label="مكان الفيديو" data-en-aria="Position in the video">
+					<button type="button" id="hl-mute" aria-label="اكتم الصوت" data-en-aria="Mute"><svg class="i"><use href="#i-sound"/></svg></button>
+					<button type="button" id="hl-full" aria-label="ملء الشاشة" data-en-aria="Full screen"><svg class="i"><use href="#i-full"/></svg></button>
+				</div>
+				<p class="hl-meta"><span data-en="With sound · 24 s">بالصوت · 24 ثانية</span><a id="hl-dl" href="video/namshi-weekly-ar-1080x1920.mp4" download data-en="Download the vertical cut for Reels">نزّل النسخة الطولية للريلز</a></p>
+			</div>
+		</div>
+	</section>
+
+	<section class="page p-yellow" id="fair" aria-labelledby="fair-h">
+		<p class="folio at-start" aria-hidden="true"><span class="pg">5</span><span class="run" data-en="Namshi Weekly">نمشي الأسبوعية</span></p>
+		<div class="wrap fair">
+			<h2 id="fair-h" class="page-h" data-en="Fair play">اللعب النظيف</h2>
+			<p data-en="Friends see <em>your steps</em>, not <em>your route</em>. Location is on <em>only while you record</em> a walk you started. Lost signal? The walk <em>is saved on your phone</em> and sent when you&#39;re back. And every walk <em>is checked</em> before it counts in a competition, with a person reviewing anything that needs a second look.">صحابك بيشوفوا <em>خطواتك</em>، مش <em>طريقك</em>. الموقع بيشتغل <em>بس وإنت بتسجّل</em> مشوار بدأته بنفسك. النت فصل؟ المشوار <em>بيتحفظ على موبايلك</em> وبيتبعت أول ما يرجع. وكل مشوار <em>بيتراجع</em> قبل ما يتحسب في المسابقات، واللي محتاج نظرة تانية بيراجعه بني آدم مننا.</p>
+		</div>
+	</section>
+
+	<section class="page p-paper" id="letters" aria-labelledby="letters-h">
+		<p class="folio at-end" aria-hidden="true"><span class="pg">6</span><span class="run" data-en="Namshi Weekly">نمشي الأسبوعية</span></p>
+		<div class="wrap letters">
+			<div>
+				<h2 id="letters-h" class="page-h" data-en="Readers' letters">بريد القرّاء</h2>
+				<p class="lead" data-en="The questions people send us most, and our answers.">أكتر أسئلة بتوصلنا، وردّنا عليها.</p>
+			</div>
+			<div class="mail">
+				<details><summary><span><span data-en="Is it on Android and iPhone?">التطبيق على أندرويد وآيفون؟</span><span class="from" data-en="— from a reader in Mansoura">— من قارئ في المنصورة</span></span><svg class="i"><use href="#i-plus"/></svg></summary><p class="ans" data-en="<b>Namshi:</b> Yes. Namshi is on Google Play and the App Store, and it's free."><b>نمشي:</b> أيوه، نمشي موجود على Google Play وعلى App Store، ومجاناً.</p></details>
+				<details><summary><span><span data-en="Do my everyday steps count?">خطواتي العادية طول اليوم بتتحسب؟</span><span class="from" data-en="— from a reader in Giza">— من قارئة في الجيزة</span></span><svg class="i"><use href="#i-plus"/></svg></summary><p class="ans" data-en="<b>Namshi:</b> Yes, in your daily stats and your 10,000-step goal. Challenges and competitions count the walks you record in the app."><b>نمشي:</b> أيوه، في إحصائياتك اليومية وهدف الـ 10,000 خطوة. أما التحديات والمسابقات فبتتحسب من المشاوير اللي بتسجّلها في التطبيق.</p></details>
+				<details><summary><span><span data-en="How do I make a team for my work or school?">أعمل فريق لشغلي أو مدرستي إزاي؟</span><span class="from" data-en="— from a teacher in Assiut">— من مدرّس في أسيوط</span></span><svg class="i"><use href="#i-plus"/></svg></summary><p class="ans" data-en="<b>Namshi:</b> Create a team in the app and you get a code. Anyone who enters the code joins. For a big place, make one team per class or department."><b>نمشي:</b> اعمل فريق من التطبيق وهتاخد كود. أي حد يكتب الكود بينضم. ولو المكان كبير، اعمل فريق لكل فصل أو قسم.</p></details>
+				<details><summary><span><span data-en="Will my friends know where I live?">صحابي هيعرفوا أنا ساكنة فين؟</span><span class="from" data-en="— from a reader in Alexandria">— من قارئة في إسكندرية</span></span><svg class="i"><use href="#i-plus"/></svg></summary><p class="ans" data-en="<b>Namshi:</b> No. Friends see your steps and totals. Your route, start point and end point are never shown to them."><b>نمشي:</b> لأ. صحابك بيشوفوا خطواتك ومجموعك بس. طريقك ونقطة البداية والنهاية عمرها ما بتظهر لهم.</p></details>
+				<details><summary><span><span data-en="What if I lose signal mid-walk?">لو النت فصل وأنا ماشي؟</span><span class="from" data-en="— from a reader in Aswan">— من قارئ في أسوان</span></span><svg class="i"><use href="#i-plus"/></svg></summary><p class="ans" data-en="<b>Namshi:</b> Keep walking. The app records offline and sends everything once you're connected again."><b>نمشي:</b> كمّل مشي عادي. التطبيق بيسجّل من غير نت وبيبعت كل حاجة أول ما ترجع أونلاين.</p></details>
+			</div>
+		</div>
+	</section>
+
+	<section class="page p-yellow" id="back" aria-labelledby="back-h">
+		<p class="folio at-start" aria-hidden="true"><span class="pg">7</span><span class="run" data-en="Namshi Weekly">نمشي الأسبوعية</span></p>
+		<div class="wrap back">
+			<div>
+				<h2 id="back-h" data-en="Next issue, <span>you&#39;re on the cover.</span>">العدد الجاي، <span>إنت على الغلاف.</span></h2>
+				<p class="lead" data-en="Download Namshi and take the first step. The other 999,999 we'll count together.">نزّل نمشي وخد أول خطوة. والـ 999,999 الباقيين هنعدّهم سوا.</p>
+				<div class="stores" id="back-stores">
+					<a class="store" href="#" data-store="play"><svg><use href="#i-play-store"/></svg><span class="store-t"><small data-en="Get it on">حمّله من</small><b>Google Play</b></span></a>
+					<a class="store" href="#" data-store="apple"><svg><use href="#i-apple"/></svg><span class="store-t"><small data-en="Download on the">نزّله من</small><b>App Store</b></span></a>
+				</div>
+			</div>
+			<div class="back-side">
+				<p class="flash" aria-hidden="true"><span><b data-en="FREE">مجاناً</b><small data-en="Android &amp; iPhone">أندرويد وآيفون</small></span></p>
+				<div class="qr" aria-hidden="true"><span class="qr-box"><svg class="i" style="width:30px;height:30px"><use href="#i-qr"/></svg></span><small data-en="QR code for the download link goes here">هنا هيتحط QR لرابط التحميل</small></div>
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer class="colo">
+	<div class="wrap colo-in">
+		<a class="mark" href="#top" aria-label="نمشي — لأعلى الصفحة" data-en-aria="Namshi — back to top"><span class="mark-o"><svg><use href="#i-walker"/></svg></span><span class="mark-t" data-en="Namshi">نمشي</span></a>
+		<nav aria-label="روابط" data-en-aria="Links"><a href="#" data-en="Privacy policy">سياسة الخصوصية</a><a href="#" data-en="Terms">الشروط</a><a href="#" data-en="Contact us">كلّمنا</a></nav>
+		<p data-en="© 2026 Namshi · Issue 01 · Film: original motion graphics · Music: Mixkit (free licence)">© 2026 نمشي · العدد 01 · الفيلم موشن جرافيك أصلي · الموسيقى من Mixkit (رخصة مجانية)</p>
+	</div>
+</footer>
+
+<script>
+(() => {
+	const root = document.documentElement;
+	root.classList.add('js');
+	const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+	const fmt = (n) => Math.round(n).toLocaleString('en-US');
+	const $ = (s, el = document) => el.querySelector(s);
+	const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+	// ---------- Language ----------
+	let lang = 'ar';
+	function swap(to) {
+		$$('[data-en]').forEach((el) => { if (!el.dataset.ar) el.dataset.ar = el.innerHTML; el.innerHTML = to === 'en' ? el.dataset.en : el.dataset.ar; });
+		$$('[data-en-aria]').forEach((el) => { if (!el.dataset.arAria) el.dataset.arAria = el.getAttribute('aria-label') || ''; el.setAttribute('aria-label', to === 'en' ? el.dataset.enAria : el.dataset.arAria); });
+		$$('[data-en-alt]').forEach((el) => { if (!el.dataset.arAlt) el.dataset.arAlt = el.alt; el.alt = to === 'en' ? el.dataset.enAlt : el.dataset.arAlt; });
+		const sub = $('.sub');
+		sub.lang = to === 'en' ? 'ar' : 'en';
+		sub.dir = to === 'en' ? 'rtl' : 'ltr';
+		root.lang = to; root.dir = to === 'ar' ? 'rtl' : 'ltr';
+		$('#lang-t').lang = to === 'ar' ? 'en' : 'ar';
+		document.title = to === 'ar' ? 'نمشي الأسبوعية — مشوار المليون خطوة بيبدأ بخطوة' : 'Namshi Weekly — A million-step journey starts with one step';
+		lang = to;
+		const hv = $('#hl-v');
+		if (hv.getAttribute('src')) { hv.pause(); hv.removeAttribute('src'); hv.load(); }
+		syncHl();
+		$('#hl-dl').href = `video/namshi-weekly-${to}-1080x1920.mp4`;
+		renderWeek(); renderLeague(); tick(true); setPlateIcon();
+		requestAnimationFrame(layoutWalk);
+	}
+	$('#lang').addEventListener('click', () => swap(lang === 'ar' ? 'en' : 'ar'));
+
+	// ---------- Stores: the visitor's own store leads ----------
+	const STORE = {play: 'https://play.google.com/store/apps/details?id=REPLACE_ME', apple: 'https://apps.apple.com/app/idREPLACE_ME'};
+	const ua = navigator.userAgent;
+	const os = /android/i.test(ua) ? 'play' : /iphone|ipad|ipod|macintosh/i.test(ua) && 'ontouchend' in document ? 'apple' : null;
+	$$('[data-store]').forEach((a) => {
+		a.href = STORE[a.dataset.store]; a.rel = 'noopener';
+		if (a.dataset.store === (os || 'play')) a.classList.add('is-primary');
+		if (os === 'apple' && a.dataset.store === 'apple') a.parentElement.prepend(a);
+	});
+	$$('a[href="#back"].btn').forEach((a) => { if (os) { a.href = STORE[os]; a.rel = 'noopener'; } });
+
+	// ---------- The week (sample data, shaped like the real aggregate) ----------
+	const DAY_AR = ['السبت', 'الحد', 'الاتنين', 'التلات', 'الأربع', 'الخميس', 'الجمعة'];
+	const DAY_EN = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+	const MON_AR = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+	const MON_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	const SAMPLE = [118240110, 124905332, 121630480, 126410950, 119877300, 109402210, 97120880];
+	const now = new Date();
+	const today = (now.getDay() + 1) % 7;
+	const sat = new Date(now); sat.setDate(now.getDate() - today);
+	const fri = new Date(sat); fri.setDate(sat.getDate() + 6);
+	const frac = Math.max(0.25, (now.getHours() * 60 + now.getMinutes()) / 1440);
+	const days = SAMPLE.map((v, i) => (i < today ? v : i === today ? Math.round(v * frac) : 0));
+	const state = {walkers: 18426, steps: days.reduce((a, b) => a + b, 0)};
+
+	function renderWeek() {
+		const M = lang === 'ar' ? MON_AR : MON_EN;
+		$('#week-range').textContent = lang === 'ar' ? `${sat.getDate()} ${M[sat.getMonth()]} – ${fri.getDate()} ${M[fri.getMonth()]}` : `${M[sat.getMonth()]} ${sat.getDate()} – ${M[fri.getMonth()]} ${fri.getDate()}`;
+		$('#fixtures').innerHTML = days.map((v, i) => {
+			const cls = i === today ? 'is-today' : i > today ? 'is-later' : '';
+			const name = (lang === 'ar' ? DAY_AR : DAY_EN)[i];
+			const val = i > today ? (lang === 'ar' ? 'لسه' : 'to play') : fmt(v);
+			const live = i === today ? `<span class="live">${lang === 'ar' ? 'مباشر' : 'LIVE'}</span>` : '';
+			return `<li class="${cls}"><span class="d">${name}${live}</span><span class="v">${val}</span></li>`;
+		}).join('');
+	}
+
+	// The governorate table (sample figures).
+	const LEAGUE = [
+		['القاهرة', 'Cairo', 3412, 58210400],
+		['الجيزة', 'Giza', 2388, 41905120],
+		['الإسكندرية', 'Alexandria', 2104, 37442860],
+		['الدقهلية', 'Dakahlia', 1265, 22318700],
+		['الشرقية', 'Sharqia', 1122, 19870330],
+		['القليوبية', 'Qalyubia', 998, 17604950],
+		['المنيا', 'Minya', 741, 13208410],
+		['أسيوط', 'Assiut', 676, 11946280],
+		['الأقصر', 'Luxor', 540, 9870110],
+		['أسوان', 'Aswan', 455, 8114630],
+	];
+	function renderLeague() {
+		const ar = lang === 'ar';
+		const rows = LEAGUE.map(([a, e, w, s], i) => `<tr class="${i === 0 ? 'top' : ''}"><td class="r">${i + 1}</td><td class="g"${i === 0 ? ` data-lead="${ar ? 'في الصدارة' : 'TOP'}"` : ''}>${ar ? a : e}</td><td class="n hide-s">${fmt(w)}</td><td class="n">${fmt(s)}</td></tr>`).join('');
+		const rest = `<tr class="rest"><td class="r"></td><td colspan="3">${ar ? 'و17 محافظة كمان في الجدول الكامل جوّه التطبيق' : 'and 17 more governorates in the full table in the app'}</td></tr>`;
+		$('#league tbody').innerHTML = rows + rest;
+	}
+	renderWeek(); renderLeague();
+
+	// Slot numerals: one cell per character, so a changing figure never reflows.
+	function slots(el, text) {
+		if (el.dataset.t === text) return;
+		const chars = [...text];
+		if (el.children.length !== chars.length) el.innerHTML = chars.map((c) => `<span class="${c === ',' ? 'sep' : ''}">${c}</span>`).join('');
+		else chars.forEach((c, i) => { if (el.children[i].textContent !== c) el.children[i].textContent = c; });
+		el.dataset.t = text;
+	}
+	function tick(force) {
+		if (!force) { state.steps += 900 + Math.random() * 900; if (Math.random() < 0.06) state.walkers += 1; }
+		const steps = fmt(state.steps);
+		const words = lang === 'ar' ? 'خطوة' : 'steps';
+		const v = {walkers: fmt(state.walkers), trips: fmt(Math.floor(state.steps / 1e6)), 'steps-sr': `${steps} ${words}`, 'score-sr': lang === 'ar' ? `مصر ${steps}، الكنبة 0` : `Egypt ${steps}, the couch 0`};
+		$$('[data-live]').forEach((el) => (el.textContent = v[el.dataset.live]));
+		$$('[data-slots="steps"]').forEach((el) => slots(el, steps));
+	}
+	tick(true);
+	if (!reduce) setInterval(tick, 900);
+
+	// ---------- Cover video ----------
+	const plate = $('#plate');
+	const pctl = $('#plate-ctl');
+	let userPaused = reduce;
+	function setPlateIcon() {
+		$('use', pctl).setAttribute('href', plate.paused ? '#i-play' : '#i-pause');
+		pctl.setAttribute('aria-label', plate.paused ? (lang === 'ar' ? 'شغّل الفيديو' : 'Play the video') : (lang === 'ar' ? 'إيقاف الفيديو' : 'Pause the video'));
+	}
+	plate.addEventListener('play', setPlateIcon); plate.addEventListener('pause', setPlateIcon);
+	pctl.addEventListener('click', () => { if (plate.paused) { userPaused = false; plate.play().catch(() => {}); } else { userPaused = true; plate.pause(); } });
+	new IntersectionObserver(([e]) => { if (e.isIntersecting && !userPaused) plate.play().catch(setPlateIcon); else if (!e.isIntersecting) plate.pause(); }, {threshold: 0.2}).observe(plate);
+	setPlateIcon();
+
+	// ---------- Highlights: plays in place, in the page's language ----------
+	const hv = $('#hl-v');
+	function loadHl() { const src = hv.dataset[lang === 'ar' ? 'srcAr' : 'srcEn']; if (!hv.getAttribute('src')) hv.src = src; }
+	hv.addEventListener('pointerdown', loadHl);
+	hv.addEventListener('focus', loadHl);
+	const scr = $('#hl-screen');
+	const pp = $('#hl-pp');
+	const seek = $('#hl-seek');
+	const mute = $('#hl-mute');
+	const clock = (x) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, '0')}`;
+	function syncHl() {
+		const d = hv.duration || 24;
+		$('use', pp).setAttribute('href', hv.paused ? '#i-play' : '#i-pause');
+		pp.setAttribute('aria-label', hv.paused ? (lang === 'ar' ? 'شغّل' : 'Play') : (lang === 'ar' ? 'إيقاف' : 'Pause'));
+		scr.classList.toggle('is-playing', !hv.paused);
+		$('#hl-time').textContent = `${clock(hv.currentTime)} / ${clock(d)}`;
+		seek.max = d; seek.value = hv.currentTime;
+		seek.style.setProperty('--p', `${(hv.currentTime / d) * 100}%`);
+		seek.setAttribute('aria-valuetext', `${clock(hv.currentTime)} / ${clock(d)}`);
+		$('use', mute).setAttribute('href', hv.muted ? '#i-mute' : '#i-sound');
+		mute.setAttribute('aria-label', hv.muted ? (lang === 'ar' ? 'شغّل الصوت' : 'Unmute') : (lang === 'ar' ? 'اكتم الصوت' : 'Mute'));
+	}
+	const playHl = () => { loadHl(); plate.pause(); hv.play().catch(() => {}); };
+	const toggleHl = () => (hv.paused ? playHl() : hv.pause());
+	['play', 'pause', 'timeupdate', 'loadedmetadata', 'volumechange', 'ended'].forEach((ev) => hv.addEventListener(ev, syncHl));
+	$('#hl-big').addEventListener('click', playHl);
+	hv.addEventListener('click', toggleHl);
+	pp.addEventListener('click', toggleHl);
+	seek.addEventListener('input', () => { loadHl(); hv.currentTime = +seek.value; syncHl(); });
+	mute.addEventListener('click', () => { hv.muted = !hv.muted; });
+	$('#hl-full').addEventListener('click', () => { loadHl(); (scr.requestFullscreen || scr.webkitRequestFullscreen || (() => {})).call(scr); });
+	$('#watch').addEventListener('click', (e) => {
+		e.preventDefault();
+		loadHl();
+		$('#highlights').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+		playHl();
+	});
+
+	// ---------- The walk line: a route drawn down the issue as you read ----------
+	const main = $('#main');
+	const svg = $('#walk');
+	const under = $('#walk-under');
+	const over = $('#walk-over');
+	const head = $('#walk-head');
+	let total = 0;
+	let samples = [];
+	function layoutWalk() {
+		const mr = main.getBoundingClientRect();
+		const W = main.clientWidth;
+		const H = main.offsetHeight;
+		svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+		const pt = (el) => { const r = el.getBoundingClientRect(); return {x: r.left + r.width / 2 - mr.left, y: r.top + r.height / 2 - mr.top}; };
+		// Start where the cover ends, then each folio's page number, then the back-cover stores.
+		const folios = $$('.folio .pg').map(pt);
+		const coverEnd = $('.cover').getBoundingClientRect().bottom - mr.top;
+		const pts = [{x: folios[0].x, y: coverEnd - 2}, ...folios];
+		const st = $('#back-stores').getBoundingClientRect();
+		pts.push({x: lang === 'ar' ? st.right - mr.left - 30 : st.left - mr.left + 30, y: st.bottom - mr.top + 34});
+		// Walk down the page's edge, and cross over only in the top margin of the next page.
+		let d = `M${pts[0].x},${pts[0].y}`;
+		for (let i = 1; i < pts.length; i++) {
+			const a = pts[i - 1], b = pts[i];
+			const turn = Math.max(a.y + 40, b.y - 70);
+			d += ` L${a.x},${turn - 40} C${a.x},${turn} ${b.x},${turn - 30} ${b.x},${b.y}`;
+		}
+		under.setAttribute('d', d); over.setAttribute('d', d);
+		total = over.getTotalLength();
+		samples = [];
+		for (let l = 0; l <= total; l += 24) samples.push([l, over.getPointAtLength(l).y]);
+		samples.push([total, over.getPointAtLength(total).y]);
+		[under, over].forEach((p) => { p.style.strokeDasharray = `${total} ${total}`; });
+		drawWalk();
+	}
+	function drawWalk() {
+		if (!total) return;
+		let len = total;
+		if (!reduce) {
+			const target = scrollY + innerHeight * 0.62 - (main.getBoundingClientRect().top + scrollY);
+			len = 0;
+			for (const [l, y] of samples) { if (y <= target) len = l; else break; }
+		}
+		[under, over].forEach((p) => { p.style.strokeDashoffset = `${total - len}`; });
+		const p = over.getPointAtLength(len);
+		head.setAttribute('transform', `translate(${p.x},${p.y})`);
+		head.style.opacity = len < 2 ? 0 : 1;
+	}
+	let raf = 0;
+	addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; drawWalk(); }); }, {passive: true});
+	addEventListener('resize', () => requestAnimationFrame(layoutWalk));
+	addEventListener('load', layoutWalk);
+	document.fonts && document.fonts.ready.then(layoutWalk);
+	new ResizeObserver(() => requestAnimationFrame(layoutWalk)).observe(main);
+	$$('.mail details').forEach((d) => d.addEventListener('toggle', () => requestAnimationFrame(layoutWalk)));
+	layoutWalk();
+})();
+</script>
+</body>
+</html>
